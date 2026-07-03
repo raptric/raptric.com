@@ -219,3 +219,21 @@ export function BagIcon({ className = "" }: { className?: string }) {
     </Base>
   );
 }
+
+// Solutions
+export function MailIcon({ className = "" }: { className?: string }) {
+  return (
+    <Base className={className}>
+      <rect x={3} y={5} width={18} height={14} rx={2} />
+      <path d="M4 7 L12 13 L20 7" />
+    </Base>
+  );
+}
+
+export function PhoneIcon({ className = "" }: { className?: string }) {
+  return (
+    <Base className={className}>
+      <path d="M6 3 h4 l2 5 -2.5 1.5 a11 11 0 0 0 5 5 L16 12 l5 2 v4 a2 2 0 0 1 -2 2 A16 16 0 0 1 4 5 a2 2 0 0 1 2 -2 Z" />
+    </Base>
+  );
+}

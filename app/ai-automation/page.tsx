@@ -6,8 +6,8 @@ import { CtaLink } from "@/components/ui/button";
 import { AiAutomationIcon } from "@/components/illustrations/service-icons";
 import OrbitalCore from "@/components/illustrations/orbital-core";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
-import { CheckIcon, FlowIcon } from "@/components/illustrations/concept-icons";
-import { CoverageCard } from "@/components/ui/coverage-card";
+import { FlowIcon, SystemsIcon, AccountableIcon, HeadsetIcon, PhoneIcon, CrmIcon } from "@/components/illustrations/concept-icons";
+import SystemIndex from "@/components/ui/system-index";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
@@ -20,29 +20,35 @@ export const metadata = buildMetadata({
 
 const COVERAGE = [
   {
+    Icon: FlowIcon,
     name: "AI Automation Services",
     body: "End-to-end AI workflow design and implementation across your existing tools.",
     href: "/ai-automation/ai-automation-services",
   },
   {
+    Icon: SystemsIcon,
     name: "n8n Automation Agency",
     body: "n8n workflow builds and maintenance for teams that want an open, self-hostable automation layer.",
     href: "/ai-automation/n8n-automation-agency",
   },
   {
+    Icon: AccountableIcon,
     name: "Business Process Automation",
     body: "Automating the repeatable steps inside a real process, not an isolated task.",
   },
   {
+    Icon: HeadsetIcon,
     name: "AI Customer Support Services",
     body: "AI-handled first response and triage, with a clear handoff to a specialist when it matters.",
     href: "/ai-automation/ai-customer-support-services",
   },
   {
+    Icon: PhoneIcon,
     name: "AI Call Center Solutions",
     body: "Voice and call-handling automation layered onto existing support operations.",
   },
   {
+    Icon: CrmIcon,
     name: "CRM Automation Services",
     body: "Automated data hygiene, lead routing, and follow-up sequences inside the CRM you already use.",
   },
@@ -98,11 +104,7 @@ export default function AiAutomation() {
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
           <Eyebrow className="mb-8">What this covers</Eyebrow>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {COVERAGE.map((item) => (
-              <CoverageCard key={item.name} Icon={CheckIcon} name={item.name} body={item.body} href={item.href} />
-            ))}
-          </div>
+          <SystemIndex items={COVERAGE} />
         </Container>
       </section>
 

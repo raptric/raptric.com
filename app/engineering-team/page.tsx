@@ -13,8 +13,10 @@ import {
   CrmIcon,
   ReportIcon,
   FlowIcon,
+  OnboardIcon,
 } from "@/components/illustrations/concept-icons";
-import { CoverageCard } from "@/components/ui/coverage-card";
+import SystemIndex from "@/components/ui/system-index";
+import DeliveryPipeline from "@/components/illustrations/delivery-pipeline";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
@@ -28,7 +30,7 @@ export const metadata = buildMetadata({
 const COVERAGE = [
   { Icon: SystemsIcon, name: "Software Development Partner", body: "A technical partner for the build, not just a scoped-out proposal.", href: "/engineering-team/software-development-partner" },
   { Icon: AppIcon, name: "SaaS Development Services", body: "Custom platforms, dashboards, portals, APIs, and integrations.", href: "/engineering-team/saas-development-services" },
-  { Icon: DevIcon, name: "Staff Augmentation", body: "Developers embedded inside your existing team and roadmap.", href: "/engineering-team/staff-augmentation-services" },
+  { Icon: OnboardIcon, name: "Staff Augmentation", body: "Developers embedded inside your existing team and roadmap.", href: "/engineering-team/staff-augmentation-services" },
   { Icon: DevIcon, name: "Dedicated Development Team", body: "A consistent team assigned to your product, not rotating contractors.", href: "/engineering-team/dedicated-development-team" },
   { Icon: QaIcon, name: "Support Engineering Team", body: "Engineering-level troubleshooting for technical escalations support can't resolve.", href: "/engineering-team/support-engineering-team" },
   { Icon: CrmIcon, name: "Custom Internal Tools", body: "Internal software built for how your team actually operates.", href: "/engineering-team/custom-internal-tools-development" },
@@ -93,10 +95,28 @@ export default function EngineeringTeam() {
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
           <Eyebrow className="mb-8">What this covers</Eyebrow>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {COVERAGE.map((item) => (
-              <CoverageCard key={item.name} Icon={item.Icon} name={item.name} body={item.body} href={item.href} />
-            ))}
+          <SystemIndex items={COVERAGE} />
+        </Container>
+      </section>
+
+      {/* How delivery runs — dark tech panel */}
+      <section className="border-b border-ink-200">
+        <Container className="py-16 md:py-20">
+          <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+            <div>
+              <Eyebrow className="mb-5">How delivery runs</Eyebrow>
+              <h2 className="text-h1 font-semibold text-ink-900">
+                Visible stages, not a black box.
+              </h2>
+              <p className="mt-5 max-w-md text-body-lg text-ink-600">
+                Work moves from roadmap through build and QA to a shipped
+                release, with reporting at every stage — and QA feeding back
+                into build instead of catching problems after the fact.
+              </p>
+            </div>
+            <div className="rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
+              <DeliveryPipeline className="h-auto w-full" />
+            </div>
           </div>
         </Container>
       </section>

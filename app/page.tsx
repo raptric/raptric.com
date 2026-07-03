@@ -199,28 +199,28 @@ export default function Home() {
             Three pillars, combined into outcomes.
           </h2>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {CORE_AREAS.map((area) => (
-              <Link
-                key={area.href}
-                href={area.href}
-                className="group flex flex-col justify-between rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7 transition-all hover:border-signal-400 hover:shadow-lg"
-              >
-                <div>
-                  <area.Icon className="h-10 w-10 text-ink-800" />
-                  <h3 className="mt-5 text-h3 font-medium text-ink-900">
-                    {area.name}
-                  </h3>
-                  <p className="mt-2 text-body text-ink-600">{area.body}</p>
-                </div>
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
-                  Learn more
-                  <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                    &rarr;
+          <div className="relative mt-16">
+            <div className="absolute left-0 right-0 top-5 hidden h-px bg-ink-200 lg:block" aria-hidden />
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+              {CORE_AREAS.map((area, i) => (
+                <Link key={area.href} href={area.href} className="group relative flex flex-col">
+                  <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-ink-200 bg-mist-200/60 transition-colors group-hover:border-signal-400 group-hover:bg-signal-500/10 lg:bg-mist-50">
+                    <area.Icon className="h-[18px] w-[18px] text-ink-700 transition-colors group-hover:text-signal-600" />
                   </span>
-                </span>
-              </Link>
-            ))}
+                  <div className="mt-5">
+                    <span className="font-mono text-xs text-ink-400">{String(i + 1).padStart(2, "0")}</span>
+                    <h3 className="mt-1 text-h3 font-medium text-ink-900">{area.name}</h3>
+                    <p className="mt-2 text-body text-ink-600">{area.body}</p>
+                  </div>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
+                    Learn more
+                    <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                      &rarr;
+                    </span>
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </Container>
       </section>

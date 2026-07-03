@@ -13,11 +13,12 @@ import {
   BuildingIcon,
   AppIcon,
   BagIcon,
-  CheckIcon,
   FlowIcon,
   AccountableIcon,
+  PhoneIcon,
 } from "@/components/illustrations/concept-icons";
-import { CoverageCard } from "@/components/ui/coverage-card";
+import SystemIndex from "@/components/ui/system-index";
+import EscalationPath from "@/components/illustrations/escalation-path";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
@@ -32,7 +33,7 @@ const COVERAGE = [
   { Icon: HeadsetIcon, name: "Customer Support Outsourcing", body: "Multi-channel support for the people who use what you sell.", href: "/support-operations/customer-support-outsourcing" },
   { Icon: TicketIcon, name: "Technical Support Outsourcing", body: "Tier 1 and Tier 2 troubleshooting, with clear escalation paths.", href: "/support-operations/technical-support-outsourcing" },
   { Icon: ChatIcon, name: "Call Center Outsourcing", body: "Voice support structured around complexity, not just queue order.", href: "/support-operations/call-center-outsourcing-services" },
-  { Icon: CheckIcon, name: "Phone Answering Services", body: "Professional call coverage so nothing goes to voicemail.", href: "/support-operations/phone-answering-services" },
+  { Icon: PhoneIcon, name: "Phone Answering Services", body: "Professional call coverage so nothing goes to voicemail.", href: "/support-operations/phone-answering-services" },
   { Icon: FlowIcon, name: "Chat Support Outsourcing", body: "Live chat handled by specialists, backed by automation for volume.", href: "/support-operations/chat-support-outsourcing" },
   { Icon: OnboardIcon, name: "Virtual Assistant Services", body: "Ongoing operational support for the recurring work that piles up.", href: "/support-operations/virtual-assistant-services" },
   { Icon: AccountableIcon, name: "Human-in-the-Loop Support", body: "A designed handoff between automation and specialists, with audit trails.", href: "/support-operations/human-in-the-loop-support" },
@@ -103,10 +104,29 @@ export default function SupportOperations() {
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
           <Eyebrow className="mb-8">What this covers</Eyebrow>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {COVERAGE.map((item) => (
-              <CoverageCard key={item.name} Icon={item.Icon} name={item.name} body={item.body} href={item.href} />
-            ))}
+          <SystemIndex items={COVERAGE} />
+        </Container>
+      </section>
+
+      {/* How escalation runs — dark tech panel */}
+      <section className="border-b border-ink-200">
+        <Container className="py-16 md:py-20">
+          <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+            <div>
+              <Eyebrow className="mb-5">How escalation runs</Eyebrow>
+              <h2 className="text-h1 font-semibold text-ink-900">
+                Most volume resolves before it reaches a person.
+              </h2>
+              <p className="mt-5 max-w-md text-body-lg text-ink-600">
+                Tier 1 automation absorbs the repeatable requests. What&apos;s
+                left escalates through Tier 2, and anything that still needs
+                judgment reaches a specialist — with the context already
+                attached, not a cold handoff.
+              </p>
+            </div>
+            <div className="rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
+              <EscalationPath className="h-auto w-full" />
+            </div>
           </div>
         </Container>
       </section>

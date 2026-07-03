@@ -52,7 +52,7 @@ export default function CustomInternalToolsDevelopment() {
         ],
         related: [
           { label: "SaaS Development Services", href: "/engineering-team/saas-development-services" },
-          { label: "Back Office Operations", href: "/solutions/back-office-operations" },
+          { label: "LinkOS", href: "/solutions/linkos" },
           { label: "Engineering Team overview", href: "/engineering-team" },
         ],
       }}

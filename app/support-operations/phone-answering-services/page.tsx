@@ -1,5 +1,5 @@
 import ChildServicePage from "@/components/service/child-service-page";
-import { CheckIcon } from "@/components/illustrations/concept-icons";
+import { PhoneIcon } from "@/components/illustrations/concept-icons";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -17,7 +17,7 @@ export default function PhoneAnsweringServices() {
         title: "Phone Answering Services",
         intro:
           "Live call answering under your business name — message taking, appointment scheduling, and basic routing, so calls stop going to voicemail.",
-        Icon: CheckIcon,
+        Icon: PhoneIcon,
         parentLabel: "Support Operations",
         parentHref: "/support-operations",
         path: "/support-operations/phone-answering-services",
