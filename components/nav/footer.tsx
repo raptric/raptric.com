@@ -1,5 +1,5 @@
 import Logo from "./logo";
-import { NAV_LINKS, FOOTER_LINKS } from "./nav-links";
+import { SERVICE_LINKS, FOOTER_LINKS } from "./nav-links";
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
 
         <nav aria-label="Service areas" className="flex flex-col gap-2.5">
           <p className="label mb-1 text-mist-50/40">Services</p>
-          {NAV_LINKS.map((link) => (
+          {SERVICE_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}

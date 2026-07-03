@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/nav/nav";
 import Footer from "@/components/nav/footer";
+import { OrganizationSchema, WebSiteSchema } from "@/components/seo/json-ld";
+import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,9 +19,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Raptric — Operating Systems for Business Workflows",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Raptric — AI Automation, Support Operations & Engineering Teams",
+    template: "%s | Raptric",
+  },
   description:
-    "Raptric builds operating systems for business workflows — the AI automation, software, and operational structure that let a business actually run on what's built.",
+    "Raptric builds operating systems for business workflows — AI automation, support operations, and embedded engineering capacity, combined.",
 };
 
 export default function RootLayout({
@@ -33,6 +39,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-mist-100 text-ink-900">
+        <OrganizationSchema />
+        <WebSiteSchema />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

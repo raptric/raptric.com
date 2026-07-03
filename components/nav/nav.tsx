@@ -15,7 +15,7 @@ export default function Nav() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Logo variant="light" />
 
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Primary">
+        <nav className="hidden xl:flex items-center gap-6" aria-label="Primary">
           {NAV_LINKS.map((link) => {
             const active = pathname.startsWith(link.href);
             return (
@@ -49,7 +49,7 @@ export default function Nav() {
 
           <button
             type="button"
-            className="lg:hidden flex h-9 w-9 items-center justify-center text-mist-50"
+            className="xl:hidden flex h-9 w-9 items-center justify-center text-mist-50"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -75,7 +75,7 @@ export default function Nav() {
         <nav
           id="mobile-nav"
           aria-label="Primary"
-          className="lg:hidden border-t border-mist-50/10 bg-ink-950 px-6 py-4"
+          className="xl:hidden border-t border-mist-50/10 bg-ink-950 px-6 py-4"
         >
           <ul className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => {

@@ -6,7 +6,6 @@ import {
   AiAutomationIcon,
   SaasDevelopmentIcon,
   CustomerOperationsIcon,
-  BusinessOperationsIcon,
   TechnologyAdvisoryIcon,
 } from "@/components/illustrations/service-icons";
 import {
@@ -22,37 +21,39 @@ import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "AI Automation, Support Operations & Engineering Teams | Raptric",
+  description:
+    "Raptric helps companies scale support, automate operations, and ship products faster with AI workflows, human teams, and embedded engineering capacity.",
+  path: "/",
+});
 
 const CORE_AREAS = [
   {
     Icon: AiAutomationIcon,
     name: "AI Automation",
     href: "/ai-automation",
-    body: "The intelligence layer inside modern operating systems.",
-  },
-  {
-    Icon: SaasDevelopmentIcon,
-    name: "SaaS Development",
-    href: "/saas-development",
-    body: "The product and platform layer used to build scalable systems.",
+    body: "AI workflows, agents, and process automation built into how the business runs.",
   },
   {
     Icon: CustomerOperationsIcon,
-    name: "Customer Operations",
-    href: "/customer-operations",
-    body: "Systems for support, onboarding, and communication workflows.",
+    name: "Support Operations",
+    href: "/support-operations",
+    body: "Customer support, technical support, and call center coverage that scales.",
   },
   {
-    Icon: BusinessOperationsIcon,
-    name: "Business Operations",
-    href: "/business-operations",
-    body: "Systems for internal execution, reporting, CRM, and process management.",
+    Icon: SaasDevelopmentIcon,
+    name: "Engineering Team",
+    href: "/engineering-team",
+    body: "SaaS development, staff augmentation, and dedicated teams, embedded in your roadmap.",
   },
   {
     Icon: TechnologyAdvisoryIcon,
-    name: "Technology Advisory",
-    href: "/technology-advisory",
-    body: "Guidance for planning and implementing business operating systems.",
+    name: "Solutions",
+    href: "/solutions",
+    body: "The three pillars combined into concrete business outcomes.",
   },
 ];
 
@@ -195,10 +196,10 @@ export default function Home() {
         <Container className="py-20 md:py-24">
           <Eyebrow className="mb-5">Core areas</Eyebrow>
           <h2 className="max-w-xl text-h1 font-semibold text-ink-900">
-            Five layers of one operating system.
+            Three pillars, combined into outcomes.
           </h2>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {CORE_AREAS.map((area) => (
               <Link
                 key={area.href}

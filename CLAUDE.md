@@ -3,9 +3,39 @@
 TRACKING_MODE: LOCAL (no Asana — user opted out of Asana workflow for this project)
 COMPANY: Elandz
 PROJECT_NAME: Raptric Website
-PROJECT_STATUS: IN DEVELOPMENT — v2 rebuild (v1 discarded 2026-07-02)
+PROJECT_STATUS: IN DEVELOPMENT — v3 master brief, Phase 1 in progress (2026-07-04)
 
-GITHUB_REPO_NAME: TBD
+GITHUB_REPO_NAME: raptric/raptric.com (GitHub) — Vercel project `raptric-com`, deployed via `main` (production → raptric.com) and `staging` (→ staging.raptric.com)
+
+# v3 — Master Build Brief (current, supersedes v2 nav/IA)
+
+[BRIEF-v3-master.md](./BRIEF-v3-master.md) is now the authority for navigation, information architecture, SEO strategy, and page-by-page content direction. v2's positioning language ("operating systems for business workflows") is KEPT — v3 explicitly praises it as strong — but the service-line structure changes:
+
+**New nav (6 items):** AI Automation · Support Operations · Engineering Team · Solutions · About · Contact — replaces the v2 5-item nav (AI Automation/SaaS Development/Customer Operations/Business Operations/Technology Advisory).
+
+**Content remapping (confirmed 2026-07-04):**
+- v2 Customer Operations content (Customer Support, Tech Support, Onboarding, Communication) → folds into new `/support-operations/`
+- v2 Business Operations technical content (QA, Dev Staff Augmentation, Application Support) + v2 SaaS Development → folds into new `/engineering-team/`
+- CRM Support & Administration → moves to new `/solutions/` (back-office solution)
+- Technology Advisory as a standalone nav item is dropped per brief (folds into Engineering Team framing / Solutions where relevant)
+
+**Build sequence — phased, committed and pushed to `staging` separately per phase, user reviews between phases:**
+- Phase 1 (current): Homepage, `/ai-automation/`, `/support-operations/`, `/engineering-team/`, `/solutions/` (parents only, no children yet), `/about/` (new), `/contact/` (fix — add missing H1), `robots.txt`, `sitemap.xml`, canonical/OG/JSON-LD infra
+- Phase 2 (not started): 8 named child pages (AI Automation Services, n8n Automation Agency, Customer Support Outsourcing, Technical Support Outsourcing, Software Development Partner, Staff Augmentation Services, SaaS Development Services, AI Customer Support Services)
+- Phase 3 (not started): remaining child pages, solution pages, case studies, insights program expansion
+
+Do not build Phase 2/3 pages until explicitly asked — user wants to review each phase on staging before the next starts.
+
+**Visual direction for v3 pages (creative brief from user — "use images, AI process visuals, tech presentation to connect with audience"):**
+- AI Automation: lean tech/AI-native — workflow/orchestration diagrams, glowing node visuals (reuse `OrbitalCore`/`WorkflowGraph`), dashboard/status-card aesthetic. Least photography-dependent section.
+- Support Operations: lean photography — real people, collaborative/human warmth, reuse the established Unsplash photo series where it fits tonally.
+- Engineering Team: mix — dev-team photography (`step-build.jpg`-style) + technical/code-adjacent graphics.
+- Solutions: card-grid hub, small representative icon or graphic per use case.
+- About: photography + the established `IconBadge` "Why Raptric"-style treatment for operating philosophy.
+
+**About page:** no real founder/company bio supplied yet. Per user instruction, drafted with safe, non-invented content (operating philosophy, generic background framing already established — no company names, no fabricated specifics) and clearly flagged for the user to fill in real details.
+
+**Old v2 pages removed in Phase 1:** `/saas-development`, `/customer-operations`, `/business-operations`, `/technology-advisory` deleted; 301 redirects added from those paths to their v3 equivalents.
 
 # Tech Stack
 
@@ -46,7 +76,7 @@ Modern AI SaaS / product-company register — not the old "blueprint/operating-m
 - No invented stats, client names, testimonials, or logos
 - No pricing/tiers
 - Banned phrases: best-in-class, cutting-edge solutions, one-stop shop, innovative digital agency, and similar hype/filler
-- Nav is fixed, 5 items, no dropdowns: AI Automation · SaaS Development · Customer Operations · Business Operations · Technology Advisory, plus logo (left) and Let's Talk CTA (right)
+- Nav is fixed, 6 items, no dropdowns (per v3): AI Automation · Support Operations · Engineering Team · Solutions · About · Contact, plus logo (left) and Let's Talk CTA (right) — see v3 section above, this supersedes the old 5-item v2 nav
 - Privacy Policy / Terms are footer link targets only — pages not built, no legal copy supplied, do not invent it
 
 # Workflow References

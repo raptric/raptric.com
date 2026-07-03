@@ -1,13 +1,22 @@
 export const NAV_LINKS = [
   { label: "AI Automation", href: "/ai-automation" },
-  { label: "SaaS Development", href: "/saas-development" },
-  { label: "Customer Operations", href: "/customer-operations" },
-  { label: "Business Operations", href: "/business-operations" },
-  { label: "Technology Advisory", href: "/technology-advisory" },
+  { label: "Support Operations", href: "/support-operations" },
+  { label: "Engineering Team", href: "/engineering-team" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+] as const;
+
+export const SERVICE_LINKS = [
+  { label: "AI Automation", href: "/ai-automation" },
+  { label: "Support Operations", href: "/support-operations" },
+  { label: "Engineering Team", href: "/engineering-team" },
+  { label: "Solutions", href: "/solutions" },
 ] as const;
 
 export const FOOTER_LINKS = [
-  { label: "About", href: "/#why-raptric" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
   { label: "Insights", href: "/insights" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
