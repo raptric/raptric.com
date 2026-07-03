@@ -16,6 +16,7 @@ import {
   CheckIcon,
   FlowIcon,
 } from "@/components/illustrations/concept-icons";
+import { CoverageCard } from "@/components/ui/coverage-card";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
@@ -27,8 +28,8 @@ export const metadata = buildMetadata({
 });
 
 const COVERAGE = [
-  { Icon: HeadsetIcon, name: "Customer Support Outsourcing", body: "Multi-channel support for the people who use what you sell." },
-  { Icon: TicketIcon, name: "Technical Support Outsourcing", body: "Tier 1 and Tier 2 troubleshooting, with clear escalation paths." },
+  { Icon: HeadsetIcon, name: "Customer Support Outsourcing", body: "Multi-channel support for the people who use what you sell.", href: "/support-operations/customer-support-outsourcing" },
+  { Icon: TicketIcon, name: "Technical Support Outsourcing", body: "Tier 1 and Tier 2 troubleshooting, with clear escalation paths.", href: "/support-operations/technical-support-outsourcing" },
   { Icon: ChatIcon, name: "Call Center Outsourcing", body: "Voice support structured around complexity, not just queue order." },
   { Icon: CheckIcon, name: "Phone Answering Services", body: "Professional call coverage so nothing goes to voicemail." },
   { Icon: FlowIcon, name: "Chat Support Outsourcing", body: "Live chat handled by specialists, backed by automation for volume." },
@@ -102,14 +103,7 @@ export default function SupportOperations() {
           <Eyebrow className="mb-8">What this covers</Eyebrow>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {COVERAGE.map((item) => (
-              <div
-                key={item.name}
-                className="flex flex-col gap-3 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6"
-              >
-                <IconBadge Icon={item.Icon} className="h-11 w-11" />
-                <h3 className="text-h3 font-medium text-ink-900">{item.name}</h3>
-                <p className="text-body text-ink-600">{item.body}</p>
-              </div>
+              <CoverageCard key={item.name} Icon={item.Icon} name={item.name} body={item.body} href={item.href} />
             ))}
           </div>
         </Container>

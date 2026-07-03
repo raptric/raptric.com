@@ -14,6 +14,7 @@ import {
   ReportIcon,
   FlowIcon,
 } from "@/components/illustrations/concept-icons";
+import { CoverageCard } from "@/components/ui/coverage-card";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
@@ -25,9 +26,9 @@ export const metadata = buildMetadata({
 });
 
 const COVERAGE = [
-  { Icon: SystemsIcon, name: "Software Development Partner", body: "A technical partner for the build, not just a scoped-out proposal." },
-  { Icon: AppIcon, name: "SaaS Development Services", body: "Custom platforms, dashboards, portals, APIs, and integrations." },
-  { Icon: DevIcon, name: "Staff Augmentation", body: "Developers embedded inside your existing team and roadmap." },
+  { Icon: SystemsIcon, name: "Software Development Partner", body: "A technical partner for the build, not just a scoped-out proposal.", href: "/engineering-team/software-development-partner" },
+  { Icon: AppIcon, name: "SaaS Development Services", body: "Custom platforms, dashboards, portals, APIs, and integrations.", href: "/engineering-team/saas-development-services" },
+  { Icon: DevIcon, name: "Staff Augmentation", body: "Developers embedded inside your existing team and roadmap.", href: "/engineering-team/staff-augmentation-services" },
   { Icon: DevIcon, name: "Dedicated Development Team", body: "A consistent team assigned to your product, not rotating contractors." },
   { Icon: QaIcon, name: "Support Engineering Team", body: "Engineering-level troubleshooting for technical escalations support can't resolve." },
   { Icon: CrmIcon, name: "Custom Internal Tools", body: "Internal software built for how your team actually operates." },
@@ -94,11 +95,7 @@ export default function EngineeringTeam() {
           <Eyebrow className="mb-8">What this covers</Eyebrow>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {COVERAGE.map((item) => (
-              <div key={item.name} className="flex flex-col gap-3 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6">
-                <IconBadge Icon={item.Icon} className="h-11 w-11" />
-                <h3 className="text-h3 font-medium text-ink-900">{item.name}</h3>
-                <p className="text-body text-ink-600">{item.body}</p>
-              </div>
+              <CoverageCard key={item.name} Icon={item.Icon} name={item.name} body={item.body} href={item.href} />
             ))}
           </div>
         </Container>

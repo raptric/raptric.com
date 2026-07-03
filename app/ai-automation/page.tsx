@@ -7,6 +7,7 @@ import { AiAutomationIcon } from "@/components/illustrations/service-icons";
 import OrbitalCore from "@/components/illustrations/orbital-core";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import { CheckIcon, FlowIcon } from "@/components/illustrations/concept-icons";
+import { CoverageCard } from "@/components/ui/coverage-card";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
@@ -21,10 +22,12 @@ const COVERAGE = [
   {
     name: "AI Automation Services",
     body: "End-to-end AI workflow design and implementation across your existing tools.",
+    href: "/ai-automation/ai-automation-services",
   },
   {
     name: "n8n Automation Agency",
     body: "n8n workflow builds and maintenance for teams that want an open, self-hostable automation layer.",
+    href: "/ai-automation/n8n-automation-agency",
   },
   {
     name: "Business Process Automation",
@@ -33,6 +36,7 @@ const COVERAGE = [
   {
     name: "AI Customer Support Services",
     body: "AI-handled first response and triage, with a clear handoff to a specialist when it matters.",
+    href: "/ai-automation/ai-customer-support-services",
   },
   {
     name: "AI Call Center Solutions",
@@ -96,14 +100,7 @@ export default function AiAutomation() {
           <Eyebrow className="mb-8">What this covers</Eyebrow>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {COVERAGE.map((item) => (
-              <div
-                key={item.name}
-                className="flex flex-col gap-3 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6"
-              >
-                <IconBadge Icon={CheckIcon} className="h-9 w-9" />
-                <h3 className="text-h3 font-medium text-ink-900">{item.name}</h3>
-                <p className="text-body text-ink-600">{item.body}</p>
-              </div>
+              <CoverageCard key={item.name} Icon={CheckIcon} name={item.name} body={item.body} href={item.href} />
             ))}
           </div>
         </Container>
