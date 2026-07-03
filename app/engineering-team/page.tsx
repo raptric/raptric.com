@@ -29,9 +29,9 @@ const COVERAGE = [
   { Icon: SystemsIcon, name: "Software Development Partner", body: "A technical partner for the build, not just a scoped-out proposal.", href: "/engineering-team/software-development-partner" },
   { Icon: AppIcon, name: "SaaS Development Services", body: "Custom platforms, dashboards, portals, APIs, and integrations.", href: "/engineering-team/saas-development-services" },
   { Icon: DevIcon, name: "Staff Augmentation", body: "Developers embedded inside your existing team and roadmap.", href: "/engineering-team/staff-augmentation-services" },
-  { Icon: DevIcon, name: "Dedicated Development Team", body: "A consistent team assigned to your product, not rotating contractors." },
-  { Icon: QaIcon, name: "Support Engineering Team", body: "Engineering-level troubleshooting for technical escalations support can't resolve." },
-  { Icon: CrmIcon, name: "Custom Internal Tools", body: "Internal software built for how your team actually operates." },
+  { Icon: DevIcon, name: "Dedicated Development Team", body: "A consistent team assigned to your product, not rotating contractors.", href: "/engineering-team/dedicated-development-team" },
+  { Icon: QaIcon, name: "Support Engineering Team", body: "Engineering-level troubleshooting for technical escalations support can't resolve.", href: "/engineering-team/support-engineering-team" },
+  { Icon: CrmIcon, name: "Custom Internal Tools", body: "Internal software built for how your team actually operates.", href: "/engineering-team/custom-internal-tools-development" },
 ];
 
 const PROBLEMS = [

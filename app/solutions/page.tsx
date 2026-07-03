@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
@@ -26,36 +27,42 @@ const SOLUTIONS = [
     name: "AI Customer Support",
     body: "AI-handled first response with a specialist checkpoint for anything that needs judgment.",
     pillar: "AI Automation + Support Operations",
+    href: "/solutions/ai-customer-support",
   },
   {
     Icon: TicketIcon,
     name: "Technical Support Systems",
     body: "Structured Tier 1/2 troubleshooting workflows that route by complexity, not queue position.",
     pillar: "Support Operations",
+    href: "/solutions/technical-support-systems",
   },
   {
     Icon: CrmIcon,
     name: "Back Office Operations",
     body: "CRM administration, reporting, and process automation for the recurring work that piles up.",
     pillar: "Engineering Team + AI Automation",
+    href: "/solutions/back-office-operations",
   },
   {
     Icon: AppIcon,
     name: "SaaS Product Delivery",
     body: "A dedicated or augmented engineering team taking a product from roadmap to shipped release.",
     pillar: "Engineering Team",
+    href: "/solutions/saas-product-delivery",
   },
   {
     Icon: ReportIcon,
     name: "Lead Management Automation",
     body: "Automated lead routing, scoring, and follow-up sequences inside the CRM you already run.",
     pillar: "AI Automation",
+    href: "/solutions/lead-management-automation",
   },
   {
     Icon: AccountableIcon,
     name: "AI + Human Operations",
     body: "The defined split between what's automated and what's staffed, designed as one system.",
     pillar: "All three pillars",
+    href: "/solutions/ai-human-operations",
   },
 ];
 
@@ -81,9 +88,10 @@ export default function Solutions() {
         <Container className="py-16 md:py-20">
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {SOLUTIONS.map((s) => (
-              <div
+              <Link
                 key={s.name}
-                className="flex flex-col justify-between rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7"
+                href={s.href}
+                className="flex flex-col justify-between rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7 transition-all hover:border-signal-400 hover:shadow-lg"
               >
                 <div>
                   <IconBadge Icon={s.Icon} className="h-11 w-11" />
@@ -91,7 +99,7 @@ export default function Solutions() {
                   <p className="mt-2 text-body text-ink-600">{s.body}</p>
                 </div>
                 <p className="label mt-6 text-signal-600">{s.pillar}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </Container>

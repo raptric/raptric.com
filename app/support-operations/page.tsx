@@ -15,6 +15,7 @@ import {
   BagIcon,
   CheckIcon,
   FlowIcon,
+  AccountableIcon,
 } from "@/components/illustrations/concept-icons";
 import { CoverageCard } from "@/components/ui/coverage-card";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
@@ -30,10 +31,11 @@ export const metadata = buildMetadata({
 const COVERAGE = [
   { Icon: HeadsetIcon, name: "Customer Support Outsourcing", body: "Multi-channel support for the people who use what you sell.", href: "/support-operations/customer-support-outsourcing" },
   { Icon: TicketIcon, name: "Technical Support Outsourcing", body: "Tier 1 and Tier 2 troubleshooting, with clear escalation paths.", href: "/support-operations/technical-support-outsourcing" },
-  { Icon: ChatIcon, name: "Call Center Outsourcing", body: "Voice support structured around complexity, not just queue order." },
-  { Icon: CheckIcon, name: "Phone Answering Services", body: "Professional call coverage so nothing goes to voicemail." },
-  { Icon: FlowIcon, name: "Chat Support Outsourcing", body: "Live chat handled by specialists, backed by automation for volume." },
-  { Icon: OnboardIcon, name: "Virtual Assistant Services", body: "Ongoing operational support for the recurring work that piles up." },
+  { Icon: ChatIcon, name: "Call Center Outsourcing", body: "Voice support structured around complexity, not just queue order.", href: "/support-operations/call-center-outsourcing-services" },
+  { Icon: CheckIcon, name: "Phone Answering Services", body: "Professional call coverage so nothing goes to voicemail.", href: "/support-operations/phone-answering-services" },
+  { Icon: FlowIcon, name: "Chat Support Outsourcing", body: "Live chat handled by specialists, backed by automation for volume.", href: "/support-operations/chat-support-outsourcing" },
+  { Icon: OnboardIcon, name: "Virtual Assistant Services", body: "Ongoing operational support for the recurring work that piles up.", href: "/support-operations/virtual-assistant-services" },
+  { Icon: AccountableIcon, name: "Human-in-the-Loop Support", body: "A designed handoff between automation and specialists, with audit trails.", href: "/support-operations/human-in-the-loop-support" },
 ];
 
 const INDUSTRIES = [
