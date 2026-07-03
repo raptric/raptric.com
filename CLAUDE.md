@@ -3,7 +3,9 @@
 TRACKING_MODE: LOCAL (no Asana — user opted out of Asana workflow for this project)
 COMPANY: Elandz
 PROJECT_NAME: Raptric Website
-PROJECT_STATUS: IN DEVELOPMENT — v3 master brief, Phase 1 in progress (2026-07-04)
+PROJECT_STATUS: IN DEVELOPMENT — v3 master brief, Phase 1 shipped to staging, nav dropdowns added, Phase 2 next (2026-07-04)
+
+**Nav has dropdown child menus** (`components/nav/nav-links.ts` — `NAV_LINKS` now nested, each parent with a `children` array). Desktop: hover/focus dropdown panel. Mobile: accordion expand. The child `href` values in that file are the EXACT URLs Phase 2 must build to — don't invent different slugs, match what's already linked from the nav.
 
 GITHUB_REPO_NAME: raptric/raptric.com (GitHub) — Vercel project `raptric-com`, deployed via `main` (production → raptric.com) and `staging` (→ staging.raptric.com)
 
