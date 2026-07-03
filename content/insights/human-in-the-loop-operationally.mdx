@@ -1,0 +1,11 @@
+---
+title: "What \"human-in-the-loop\" actually requires operationally"
+date: "2026-06-02"
+summary: "It's not a checkbox in a workflow builder. It's a structural decision about where judgment sits and how it's staffed."
+---
+
+"Human-in-the-loop" gets used as if it's a setting — a checkbox in a workflow builder, an approval step dropped into a pipeline. Treated that way, it usually means a person glancing at whatever the automation produced and clicking approve, which isn't judgment, it's a formality with a person attached to it.
+
+Real human-in-the-loop is a staffing decision before it's a technical one. It requires knowing, specifically, which cases the automation will get wrong or shouldn't be trusted to decide — not "hard cases" in the abstract, but the actual categories that show up in that operation. It requires routing those cases to someone with the standing and the context to actually decide, not just review. And it requires that person's judgment to feed back into where the automation/specialist line sits next time, so the loop is doing something instead of just existing.
+
+Skip any of that and "human-in-the-loop" is decoration — a compliance gesture that doesn't change what the system does. Do all of it and it's the actual mechanism that lets an operation run at volume without losing the judgment calls that matter. That difference is invisible from the outside until something goes wrong, which is exactly why it's worth building deliberately instead of assuming a checkbox covers it.
