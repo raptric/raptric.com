@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import HeroComposition from "@/components/illustrations/hero-composition";
@@ -36,24 +37,28 @@ const CORE_AREAS = [
     name: "AI Automation",
     href: "/ai-automation",
     body: "Workflow orchestration, agent systems, human checkpoints, and operational AI built into the stack you already run.",
+    highlights: ["n8n orchestration", "agent routing", "HITL control"],
   },
   {
     Icon: SaasDevelopmentIcon,
     name: "Engineering Team",
     href: "/engineering-team",
     body: "Embedded product, platform, and internal-systems capacity that ships inside your roadmap instead of around it.",
+    highlights: ["product delivery", "embedded team", "platform tooling"],
   },
   {
     Icon: CustomerOperationsIcon,
     name: "Support Operations",
     href: "/support-operations",
     body: "Tech support, customer care, and HITL operations designed to scale without turning into a staffing mess.",
+    highlights: ["tech support", "human review", "AI-assisted coverage"],
   },
   {
     Icon: TechnologyAdvisoryIcon,
     name: "Solutions",
     href: "/solutions",
     body: "Packaged systems like DentOS, LinkOS, EOS, and Voice AI built from the pillars above.",
+    highlights: ["DentOS", "LinkOS", "EOS", "Voice AI"],
   },
 ];
 
@@ -131,6 +136,12 @@ const OUTCOMES = [
     value: "A system that actually runs",
   },
 ];
+
+const [AI_AREA, ENGINEERING_AREA, SUPPORT_AREA, SOLUTIONS_AREA] = CORE_AREAS;
+const AiAreaIcon = AI_AREA.Icon;
+const EngineeringAreaIcon = ENGINEERING_AREA.Icon;
+const SupportAreaIcon = SUPPORT_AREA.Icon;
+const SolutionsAreaIcon = SOLUTIONS_AREA.Icon;
 
 export default function Home() {
   return (
@@ -213,13 +224,13 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-b border-ink-200">
+      <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-20 md:py-24">
           <div className="grid gap-12 md:grid-cols-[0.88fr_1.12fr] md:items-center md:gap-16">
             <div>
               <Eyebrow className="mb-5">System design</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
-                One system. Not a stack of vendors.
+                A control room for workflows, not another stack of vendors.
               </h2>
               <p className="mt-5 max-w-md text-body-lg text-ink-600">
                 The automation layer routes work. The human layer handles
@@ -238,8 +249,46 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="overflow-hidden rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
-              <WorkflowGraph className="h-auto w-full" />
+            <div className="grid gap-4">
+              <div className="overflow-hidden rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
+                <WorkflowGraph className="h-auto w-full" />
+              </div>
+              <div className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
+                <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 shadow-xl">
+                  <Image
+                    src="/photos/step-design.jpg"
+                    alt="Raptric team sketching workflow architecture"
+                    fill
+                    sizes="(min-width: 768px) 24vw, 90vw"
+                    className="object-cover opacity-82"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/35 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-950/75 p-4 backdrop-blur">
+                    <p className="label text-signal-300">Architecture review</p>
+                    <p className="mt-2 text-sm leading-6 text-mist-50/78">
+                      Real exceptions, routing logic, and operator visibility get designed before a workflow ever goes live.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid gap-4">
+                  <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5 shadow-lg">
+                    <p className="label text-slate-500">Checkpoint rule</p>
+                    <p className="mt-3 text-body text-ink-700">
+                      AI handles repeatability. Humans handle trust, judgment, and the edge cases that define the customer experience.
+                    </p>
+                  </div>
+                  <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-gradient-to-br from-signal-500 to-signal-700 p-5 text-white shadow-lg">
+                    <p className="label text-white/70">Live signal</p>
+                    <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
+                      {["Input", "Route", "Resolve"].map((item) => (
+                        <div key={item} className="rounded-md border border-white/12 bg-white/8 px-3 py-2 text-center">
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
@@ -253,42 +302,131 @@ export default function Home() {
           </h2>
 
           <div className="mt-14 grid gap-5 lg:grid-cols-12">
-            {CORE_AREAS.map((area, index) => (
-              <Link
-                key={area.href}
-                href={area.href}
-                className={`group rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-signal-300 hover:shadow-xl ${
-                  index === 3 ? "lg:col-span-12" : "lg:col-span-4"
-                }`}
-              >
-                <div className={`grid gap-6 ${index === 3 ? "lg:grid-cols-[0.48fr_0.52fr] lg:items-center" : ""}`}>
-                  <div>
-                    <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-signal-400 to-signal-600 shadow-md shadow-signal-500/25">
-                      <area.Icon className="h-7 w-7 text-white" />
-                    </span>
-                    <h3 className="mt-5 text-h3 font-medium text-ink-900">{area.name}</h3>
-                    <p className="mt-3 max-w-sm text-body text-ink-600">{area.body}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
-                      Learn more
-                      <span className="transition-transform duration-200 group-hover:translate-x-1">
-                        &rarr;
+            <Link
+              href={AI_AREA.href}
+              className="group relative overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-7 text-mist-50 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:col-span-7"
+            >
+              <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-signal-500/25 blur-[90px]" />
+              <div className="relative grid gap-8 lg:grid-cols-[0.56fr_0.44fr] lg:items-center">
+                <div>
+                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/8 shadow-md backdrop-blur">
+                    <AiAreaIcon className="h-7 w-7 text-signal-300" />
+                  </span>
+                  <h3 className="mt-5 text-h2 font-medium">{AI_AREA.name}</h3>
+                  <p className="mt-3 max-w-md text-body text-mist-50/70">{AI_AREA.body}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {AI_AREA.highlights.map((item) => (
+                      <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-mist-50/72">
+                        {item}
                       </span>
-                    </span>
+                    ))}
                   </div>
-
-                  {index === 3 ? (
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {["DentOS", "LinkOS", "EOS", "Voice AI"].map((solution) => (
-                        <div key={solution} className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-100 px-4 py-4">
-                          <p className="label text-ink-400">Solution</p>
-                          <p className="mt-2 text-sm font-medium text-ink-900">{solution}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ) : null}
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-signal-300">
+                    Learn more
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+                  </span>
                 </div>
-              </Link>
-            ))}
+                <div className="rounded-[var(--radius-lg)] border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <WorkflowGraph className="h-auto w-full" />
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href={ENGINEERING_AREA.href}
+              className="group overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:col-span-5"
+            >
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/photos/step-build.jpg"
+                  alt="Engineering delivery workspace"
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 90vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-ink-950/10 to-transparent" />
+                <div className="absolute left-5 top-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/14 shadow-md backdrop-blur">
+                  <EngineeringAreaIcon className="h-7 w-7 text-white" />
+                </div>
+              </div>
+              <div className="p-7">
+                <h3 className="text-h2 font-medium text-ink-900">{ENGINEERING_AREA.name}</h3>
+                <p className="mt-3 text-body text-ink-600">{ENGINEERING_AREA.body}</p>
+                <div className="mt-6 grid grid-cols-3 gap-2">
+                  {ENGINEERING_AREA.highlights.map((item) => (
+                    <div key={item} className="rounded-md border border-ink-200 bg-mist-100 px-3 py-2 text-center text-xs text-ink-600">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href={SUPPORT_AREA.href}
+              className="group overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:col-span-5"
+            >
+              <div className="grid lg:grid-cols-[0.48fr_0.52fr]">
+                <div className="relative min-h-[300px]">
+                  <Image
+                    src="/photos/support-team.jpg"
+                    alt="Human support team coordinating live operations"
+                    fill
+                    sizes="(min-width: 1024px) 20vw, 90vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-ink-950/10 to-transparent" />
+                </div>
+                <div className="p-7">
+                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-signal-400 to-signal-600 shadow-md shadow-signal-500/25">
+                    <SupportAreaIcon className="h-7 w-7 text-white" />
+                  </span>
+                  <h3 className="mt-5 text-h2 font-medium text-ink-900">{SUPPORT_AREA.name}</h3>
+                  <p className="mt-3 text-body text-ink-600">{SUPPORT_AREA.body}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {SUPPORT_AREA.highlights.map((item) => (
+                      <span key={item} className="rounded-full border border-ink-200 bg-mist-100 px-3 py-1.5 text-xs text-ink-600">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href={SOLUTIONS_AREA.href}
+              className="group overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-gradient-to-br from-mist-50 to-mist-100 p-7 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:col-span-7"
+            >
+              <div className="grid gap-6 lg:grid-cols-[0.45fr_0.55fr] lg:items-center">
+                <div>
+                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-signal-400 to-signal-600 shadow-md shadow-signal-500/25">
+                    <SolutionsAreaIcon className="h-7 w-7 text-white" />
+                  </span>
+                  <h3 className="mt-5 text-h2 font-medium text-ink-900">{SOLUTIONS_AREA.name}</h3>
+                  <p className="mt-3 max-w-sm text-body text-ink-600">{SOLUTIONS_AREA.body}</p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
+                    Learn more
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+                  </span>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {SOLUTIONS_AREA.highlights.map((solution, index) => (
+                    <div
+                      key={solution}
+                      className={`rounded-[var(--radius-md)] border px-4 py-4 ${
+                        index % 2 === 0
+                          ? "border-signal-200 bg-white"
+                          : "border-ink-200 bg-mist-50"
+                      }`}
+                    >
+                      <p className="label text-ink-400">Solution</p>
+                      <p className="mt-2 text-sm font-medium text-ink-900">{solution}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Link>
           </div>
         </Container>
       </section>
