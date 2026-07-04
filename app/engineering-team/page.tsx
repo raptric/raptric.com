@@ -143,30 +143,13 @@ export default function EngineeringTeam() {
             <SaasDevelopmentIcon className="h-12 w-12 text-signal-400" />
             <Eyebrow className="mb-4 mt-6 text-signal-400">Engineering Team</Eyebrow>
             <h1 className="text-display font-semibold">
-              Engineering teams that plug into the roadmap and ship with the system.
+              Engineering teams that ship with the roadmap.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
-              We provide product, platform, and internal-systems engineering
-              for companies that need more than developers for hire. The work
-              stays connected to delivery truth, QA discipline, and the
-              operational reality the software has to support.
+              Product, platform, and internal-systems engineering for companies
+              that need visible delivery, strong QA discipline, and technical
+              work that stays aligned with how the business actually runs.
             </p>
-
-            <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
-              {[
-                "SaaS development teams",
-                "Embedded staff augmentation",
-                "Support engineering",
-                "Internal systems builds",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-mist-50/12 bg-mist-50/[0.04] px-3.5 py-1.5"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
@@ -184,44 +167,15 @@ export default function EngineeringTeam() {
 
           <div className="relative">
             <div className="absolute inset-0 -z-10 bg-signal-500/14 blur-[110px]" />
-            <div className="grid gap-4 md:grid-cols-[1fr_0.38fr]">
-              <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
-                <div className="relative min-h-[440px]">
-                  <Image
-                    src="/photos/hero-team.jpg"
-                    alt="Engineering team planning delivery together"
-                    fill
-                    sizes="(min-width: 1024px) 40vw, 92vw"
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/82 via-ink-950/26 to-transparent" />
-                  <div className="absolute left-5 top-5 rounded-full border border-mist-50/12 bg-ink-950/70 px-4 py-2 text-xs font-medium text-mist-50/80 backdrop-blur">
-                    Engineering delivery layer
-                  </div>
-                  <div className="absolute bottom-5 left-5 right-5 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-5 backdrop-blur">
-                    <p className="label text-signal-300">Build posture</p>
-                    <p className="mt-3 text-sm leading-6 text-mist-50/78">
-                      Product engineering, QA, and release coordination kept visible to the people who own the roadmap.
-                    </p>
+            <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
+              <div className="relative min-h-[440px]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(108,92,231,0.22),transparent_32%),radial-gradient(circle_at_top_right,rgba(108,92,231,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))]" />
+                <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/55 to-transparent" />
+                <div className="relative flex min-h-[440px] items-center justify-center px-8 py-12">
+                  <div className="w-full max-w-2xl rounded-[var(--radius-lg)] border border-mist-50/10 bg-ink-900/50 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur">
+                    <WorkflowGraph className="h-auto w-full" />
                   </div>
                 </div>
-              </div>
-
-              <div className="grid gap-4">
-                {[
-                  ["Where we fit", "Product backlog, platform systems, support escalations, and the internal tooling that keeps operations moving."],
-                  ["Commercial fit", "Strong for SaaS teams, internal platform builds, and companies that need staff augmentation with real engineering ownership."],
-                  ["Delivery signal", "Roadmap fit, QA readiness, and shared delivery truth across product, engineering, and support."],
-                ].map(([label, body]) => (
-                  <div
-                    key={label}
-                    className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur"
-                  >
-                    <p className="label text-signal-300">{label}</p>
-                    <p className="mt-3 text-sm leading-6 text-mist-50/78">{body}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
