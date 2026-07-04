@@ -414,20 +414,45 @@ export default function AiAutomation() {
         <Container className="py-16 md:py-20">
           <Eyebrow className="mb-6">Why Raptric</Eyebrow>
           <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
-            <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 shadow-xl">
-              <Image
-                src="/photos/hero-team.jpg"
-                alt="Raptric team working hands-on with automation systems"
-                fill
-                sizes="(min-width: 1024px) 26vw, 90vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/74 via-ink-950/14 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-4 backdrop-blur">
-                <p className="label text-signal-300">Execution posture</p>
-                <p className="mt-2 text-sm leading-6 text-mist-50/78">
-                  Built by a team that works inside automation systems, not just around the messaging of them.
-                </p>
+            <div className="grid gap-4">
+              <div className="relative min-h-[420px] overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 shadow-xl">
+                <Image
+                  src="/photos/hero-team.jpg"
+                  alt="Raptric team working hands-on with automation systems"
+                  fill
+                  sizes="(min-width: 1024px) 26vw, 90vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-950/74 via-ink-950/14 to-transparent" />
+                <div className="absolute left-4 top-4 rounded-full border border-mist-50/14 bg-ink-950/72 px-3 py-1.5 backdrop-blur">
+                  <span className="label text-signal-300">Hands-on execution</span>
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-4 backdrop-blur">
+                  <p className="label text-signal-300">Execution posture</p>
+                  <p className="mt-2 text-sm leading-6 text-mist-50/78">
+                    Built by a team that works inside automation systems, not just around the messaging of them.
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-5 text-mist-50 shadow-lg">
+                  <p className="label text-signal-300">Operator context</p>
+                  <p className="mt-3 text-sm leading-6 text-mist-50/76">
+                    Real systems have ambiguity, escalations, mismatched data,
+                    and people working around tooling gaps. We build with that
+                    reality in mind.
+                  </p>
+                </div>
+                <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-gradient-to-br from-signal-500 to-signal-700 p-5 text-white shadow-lg">
+                  <p className="label text-white/70">Build advantage</p>
+                  <div className="mt-4 grid grid-cols-3 gap-2 text-xs">
+                    {["n8n", "Make", "APIs"].map((item) => (
+                      <div key={item} className="rounded-md border border-white/12 bg-white/8 px-3 py-2 text-center">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
             <div className="grid gap-3">
