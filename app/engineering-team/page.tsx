@@ -182,9 +182,9 @@ export default function EngineeringTeam() {
             </div>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-[0.7fr_0.3fr]">
+          <div className="grid gap-4 lg:grid-cols-[0.74fr_0.26fr]">
             <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
-              <div className="grid min-h-[480px] grid-rows-[0.58fr_0.42fr]">
+              <div className="grid min-h-[460px] grid-rows-[0.54fr_0.46fr]">
                 <div className="relative overflow-hidden border-b border-mist-50/10">
                   <Image
                     src="/photos/hero-team.jpg"
@@ -217,7 +217,7 @@ export default function EngineeringTeam() {
                   <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-mist-50/[0.05] p-5 backdrop-blur">
                     <p className="label text-signal-300">Signals</p>
                     <div className="mt-3 grid gap-2 text-sm text-mist-50/72">
-                      {["Roadmap fit", "QA readiness", "Release confidence"].map((item) => (
+                      {["Roadmap fit", "QA readiness"].map((item) => (
                         <div
                           key={item}
                           className="rounded-md border border-mist-50/10 bg-ink-950/36 px-3 py-2"
@@ -227,7 +227,7 @@ export default function EngineeringTeam() {
                       ))}
                     </div>
                     <div className="mt-4 rounded-md border border-mist-50/10 bg-ink-950/36 px-3 py-3 text-sm text-mist-50/72">
-                      Build stages stay visible enough for leadership, product, and support to work from the same delivery truth.
+                      Shared delivery truth for product, leadership, and support.
                     </div>
                   </div>
                 </div>
@@ -241,24 +241,6 @@ export default function EngineeringTeam() {
                   Product backlog, platform systems, support escalations, and
                   the internal tooling that keeps real operations moving.
                 </p>
-              </div>
-              <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-ink-900 shadow-xl">
-                <div className="relative h-44">
-                  <Image
-                    src="/photos/dark-city.jpg"
-                    alt="Night systems view reflecting engineering scale and complexity"
-                    fill
-                    sizes="(min-width: 1024px) 16vw, 92vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="label text-signal-300">Operating pressure</p>
-                    <p className="mt-2 text-sm text-mist-50/78">
-                      The work has to survive real volume, real users, and real downstream dependencies.
-                    </p>
-                  </div>
-                </div>
               </div>
               <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-gradient-to-br from-signal-500/18 to-transparent p-5 shadow-xl">
                 <p className="label text-signal-300">Commercial fit</p>
@@ -377,7 +359,7 @@ export default function EngineeringTeam() {
               <div className="grid gap-5 md:grid-cols-[0.62fr_0.38fr]">
                 <div className="rounded-[var(--radius-lg)] border border-mist-50/10 bg-mist-50/[0.04] p-5">
                   <p className="label text-signal-300">Build path</p>
-                  <div className="mt-5 grid gap-3 sm:grid-cols-4">
+                  <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     {["Roadmap", "Build", "QA", "Release"].map((item) => (
                       <div
                         key={item}
@@ -459,10 +441,10 @@ export default function EngineeringTeam() {
         <Container className="py-18 md:py-22">
           <div className="grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:gap-16">
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 text-mist-50 shadow-xl">
-              <div className="relative min-h-[420px]">
+              <div className="relative">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(108,92,231,0.34),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(108,92,231,0.16),transparent_28%),linear-gradient(180deg,#0b0b0f,#12121a)]" />
                 <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-signal-500/14 blur-[110px]" />
-                <div className="absolute inset-x-0 bottom-0 p-7">
+                <div className="relative p-7">
                   <Eyebrow className="text-signal-300">What teams bring us in to fix</Eyebrow>
                   <h2 className="mt-4 text-h1 font-semibold">
                     Engineering gaps turn into operational problems fast.
