@@ -182,65 +182,46 @@ export default function EngineeringTeam() {
             </div>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-[0.78fr_0.22fr]">
-            <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
-              <div className="grid min-h-[420px] grid-rows-[0.74fr_0.26fr]">
-                <div className="relative overflow-hidden border-b border-mist-50/10">
+          <div className="relative">
+            <div className="absolute inset-0 -z-10 bg-signal-500/14 blur-[110px]" />
+            <div className="grid gap-4 md:grid-cols-[1fr_0.38fr]">
+              <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
+                <div className="relative min-h-[440px]">
                   <Image
                     src="/photos/hero-team.jpg"
                     alt="Engineering team planning delivery together"
                     fill
-                    sizes="(min-width: 1024px) 42vw, 92vw"
+                    sizes="(min-width: 1024px) 40vw, 92vw"
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/25 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/82 via-ink-950/26 to-transparent" />
                   <div className="absolute left-5 top-5 rounded-full border border-mist-50/12 bg-ink-950/70 px-4 py-2 text-xs font-medium text-mist-50/80 backdrop-blur">
-                    Delivery visibility layer
+                    Engineering delivery layer
                   </div>
                   <div className="absolute bottom-5 left-5 right-5 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-5 backdrop-blur">
                     <p className="label text-signal-300">Build posture</p>
                     <p className="mt-3 text-sm leading-6 text-mist-50/78">
-                      Product engineering, QA loops, and release coordination
-                      designed to stay visible to the people who own the roadmap.
+                      Product engineering, QA, and release coordination kept visible to the people who own the roadmap.
                     </p>
                   </div>
                 </div>
+              </div>
 
-                <div className="grid gap-3 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] p-5 md:grid-cols-3">
-                  {[
-                    "Roadmap fit",
-                    "QA readiness",
-                    "Shared delivery truth",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/50 px-4 py-3 text-sm text-mist-50/74"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                  <div className="md:col-span-3 rounded-[var(--radius-md)] border border-mist-50/10 bg-gradient-to-r from-signal-500/10 via-mist-50/[0.02] to-signal-500/10 px-4 py-3 text-sm text-mist-50/72">
-                    Product, engineering, QA, and support working from the same delivery picture.
+              <div className="grid gap-4">
+                {[
+                  ["Where we fit", "Product backlog, platform systems, support escalations, and the internal tooling that keeps operations moving."],
+                  ["Commercial fit", "Strong for SaaS teams, internal platform builds, and companies that need staff augmentation with real engineering ownership."],
+                  ["Delivery signal", "Roadmap fit, QA readiness, and shared delivery truth across product, engineering, and support."],
+                ].map(([label, body]) => (
+                  <div
+                    key={label}
+                    className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur"
+                  >
+                    <p className="label text-signal-300">{label}</p>
+                    <p className="mt-3 text-sm leading-6 text-mist-50/78">{body}</p>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid gap-4">
-              <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur">
-                <p className="label text-signal-300">Where we fit</p>
-                <p className="mt-3 text-sm leading-6 text-mist-50/78">
-                  Product backlog, platform systems, support escalations, and
-                  the internal tooling that keeps real operations moving.
-                </p>
-              </div>
-              <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-gradient-to-br from-signal-500/18 to-transparent p-5 shadow-xl">
-                <p className="label text-signal-300">Commercial fit</p>
-                <p className="mt-3 text-sm leading-6 text-mist-50/78">
-                  Strong for SaaS teams, internal platform builds, and companies
-                  that need staff augmentation with real engineering ownership.
-                </p>
+                ))}
               </div>
             </div>
           </div>
