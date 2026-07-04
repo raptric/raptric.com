@@ -6,65 +6,94 @@ import { CtaLink } from "@/components/ui/button";
 import { AiAutomationIcon } from "@/components/illustrations/service-icons";
 import OrbitalCore from "@/components/illustrations/orbital-core";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
-import { FlowIcon, SystemsIcon, AccountableIcon, HeadsetIcon, PhoneIcon, CrmIcon } from "@/components/illustrations/concept-icons";
-import SystemIndex from "@/components/ui/system-index";
+import {
+  FlowIcon,
+  SystemsIcon,
+  AccountableIcon,
+  HeadsetIcon,
+  PhoneIcon,
+  CrmIcon,
+  BuildIcon,
+  ClockIcon,
+  CheckIcon,
+} from "@/components/illustrations/concept-icons";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "AI Automation Services — Workflows, Agents & Business Process Automation",
+  title: "AI Automation | Workflows, Agents, n8n & Process Design | Raptric",
   description:
-    "AI automation services built into how the business runs: AI workflows, n8n automation, business process automation, AI customer support, AI call center solutions, and CRM automation.",
+    "AI automation built into the operation: workflows, agents, n8n systems, CRM routing, human checkpoints, and production-grade orchestration around real business processes.",
   path: "/ai-automation",
 });
 
-const COVERAGE = [
+const CAPABILITIES = [
   {
     Icon: FlowIcon,
-    name: "AI Automation Services",
-    body: "End-to-end AI workflow design and implementation across your existing tools.",
-    href: "/ai-automation/ai-automation-services",
+    name: "AI workflows",
+    body: "Multi-step automations that move work across intake, routing, enrichment, review, and resolution.",
   },
   {
     Icon: SystemsIcon,
-    name: "n8n Automation Agency",
-    body: "n8n workflow builds and maintenance for teams that want an open, self-hostable automation layer.",
-    href: "/ai-automation/n8n-automation-agency",
+    name: "Agent systems",
+    body: "AI agents scoped to bounded operational tasks, with guardrails and escalation when confidence drops.",
   },
   {
     Icon: AccountableIcon,
-    name: "Business Process Automation",
-    body: "Automating the repeatable steps inside a real process, not an isolated task.",
+    name: "Human checkpoints",
+    body: "Structured specialist review wherever risk, quality, or judgment should not be left to automation alone.",
   },
   {
     Icon: HeadsetIcon,
-    name: "AI Customer Support Services",
-    body: "AI-handled first response and triage, with a clear handoff to a specialist when it matters.",
-    href: "/ai-automation/ai-customer-support-services",
+    name: "Support automation",
+    body: "AI-first handling for inbound service volume, with clean handoff into tech support and customer operations.",
   },
   {
     Icon: PhoneIcon,
-    name: "AI Call Center Solutions",
-    body: "Voice and call-handling automation layered onto existing support operations.",
+    name: "Voice and intake flows",
+    body: "AI-powered voice, triage, and request capture tied to the systems downstream, not isolated call logic.",
   },
   {
     Icon: CrmIcon,
-    name: "CRM Automation Services",
-    body: "Automated data hygiene, lead routing, and follow-up sequences inside the CRM you already use.",
+    name: "CRM and ops orchestration",
+    body: "Lead routing, data hygiene, lifecycle automation, and internal operating triggers around the core record system.",
   },
 ];
 
-const PROBLEMS = [
-  "AI pilots that never make it into production.",
-  "Automation that handles the easy 80% and breaks on exceptions.",
-  "No clear owner for automation once it's built.",
-  "Manual, repetitive work consuming specialist time.",
+const STACK = [
+  "n8n workflow orchestration",
+  "LLM-assisted routing and classification",
+  "CRM and helpdesk integrations",
+  "Human-in-the-loop review layers",
+  "Escalation logic and audit trails",
+  "Internal assistants and ops copilots",
+];
+
+const PROOFS = [
+  "Built around the existing stack, not a rip-and-replace fantasy.",
+  "Designed around exception paths as much as happy paths.",
+  "Structured so a specialist can step in with context already attached.",
 ];
 
 const USE_CASES = [
-  "An agent that triages inbound requests and routes exceptions to a specialist",
-  "n8n workflows connecting a CRM, a billing system, and support tooling that don't talk to each other",
-  "Automated data entry, reconciliation, and lead routing running on a schedule, not a person",
+  {
+    title: "Revenue and lead operations",
+    body: "Automated intake, enrichment, scoring, routing, follow-up triggers, and CRM hygiene for teams that cannot afford lead leakage.",
+  },
+  {
+    title: "Support triage and first response",
+    body: "Classification, initial response, and escalation into specialists based on urgency, complexity, and channel.",
+  },
+  {
+    title: "Internal workflow systems",
+    body: "Approval flows, reconciliation, data movement, and exception handling across back-office tools and human review queues.",
+  },
+];
+
+const WHY = [
+  "Most teams do not need more AI experiments. They need a system that survives real volume.",
+  "The useful question is not whether AI can do it. The useful question is where AI should stop and a person should take over.",
+  "Good automation reduces manual drag without hiding the operational truth of what still needs human judgment.",
 ];
 
 export default function AiAutomation() {
@@ -72,139 +101,190 @@ export default function AiAutomation() {
     <>
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "AI Automation", path: "/ai-automation" }]} />
       <ServiceSchema
-        name="AI Automation Services"
-        description="AI workflows, AI agents, internal assistants, and process automation built into how the business runs."
+        name="AI Automation"
+        description="AI workflows, agents, n8n automation, CRM orchestration, and human-in-the-loop checkpoints built into how the business runs."
         path="/ai-automation"
       />
 
-      {/* Header — tech-native treatment */}
       <section className="relative overflow-hidden bg-ink-950 text-mist-50">
-        <OrbitalCore className="pointer-events-none absolute -right-32 top-1/2 h-[560px] w-[560px] -translate-y-1/2 opacity-70 md:-right-16" />
-        <Container className="relative py-20 md:py-28">
-          <div className="max-w-2xl">
+        <OrbitalCore className="pointer-events-none absolute right-[-180px] top-1/2 h-[640px] w-[640px] -translate-y-1/2 opacity-80" />
+        <Container className="relative grid gap-12 py-20 md:grid-cols-[0.94fr_1.06fr] md:items-center md:py-28">
+          <div>
             <AiAutomationIcon className="h-12 w-12 text-signal-400" />
             <Eyebrow className="mb-4 mt-6 text-signal-400">AI Automation</Eyebrow>
             <h1 className="text-display font-semibold">
               AI automation built into the operation, not bolted onto it.
             </h1>
-            <p className="mt-6 max-w-xl text-body-lg text-mist-50/65">
-              AI workflows, agents, internal assistants, and process
-              automation — engineered against your real tools and real
-              exceptions, with a specialist checkpoint wherever judgment is
-              required.
+            <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
+              We design production-grade AI workflows, agent systems, and
+              automation layers around the way your business already moves work,
+              with clear human checkpoints wherever judgment matters.
             </p>
-            <div className="mt-9">
+
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
+              {["n8n orchestration", "agent routing", "CRM automation", "HITL checkpoints"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-mist-50/12 bg-mist-50/[0.04] px-3.5 py-1.5"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+              <Link
+                href="/support-operations"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
+              >
+                See the support layer
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  &rarr;
+                </span>
+              </Link>
             </div>
           </div>
-        </Container>
-      </section>
 
-      {/* Coverage grid — SEO surface for Phase 2 children */}
-      <section className="border-b border-ink-200">
-        <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">What this covers</Eyebrow>
-          <SystemIndex items={COVERAGE} />
-        </Container>
-      </section>
-
-      {/* How it runs — dark tech panel */}
-      <section className="border-b border-ink-200">
-        <Container className="py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
-            <div>
-              <Eyebrow className="mb-5">How it runs</Eyebrow>
-              <h2 className="text-h1 font-semibold text-ink-900">
-                Every automation has a specialist checkpoint.
-              </h2>
-              <p className="mt-5 max-w-md text-body-lg text-ink-600">
-                Input flows through the automated steps that can handle it.
-                Anything that can&apos;t — the exception, the edge case, the
-                judgment call — routes to a person before it becomes an
-                outcome.
-              </p>
-            </div>
-            <div className="rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
+          <div className="grid gap-4 lg:grid-cols-[1fr_0.52fr]">
+            <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-6 shadow-2xl backdrop-blur">
               <WorkflowGraph className="h-auto w-full" />
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Problems solved */}
-      <section className="border-b border-ink-200 bg-mist-200/60">
-        <Container className="py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
-            <div>
-              <Eyebrow className="mb-4">Problems this solves</Eyebrow>
-              <h2 className="text-h2 font-semibold text-ink-900">
-                What we&apos;re usually brought in to fix.
-              </h2>
-            </div>
-            <dl className="flex flex-col gap-6">
-              {PROBLEMS.map((p, i) => (
-                <div key={p} className="border-t border-ink-200 pt-4 first:border-t-0 first:pt-0">
-                  <dt className="label text-signal-600">{`0${i + 1}`}</dt>
-                  <dd className="mt-1.5 text-body-lg text-ink-700">{p}</dd>
+            <div className="grid gap-4">
+              <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur">
+                <p className="label text-signal-300">Production logic</p>
+                <div className="mt-4 grid gap-3">
+                  {["Input", "Classify", "Route", "Review", "Resolve"].map((step) => (
+                    <div key={step} className="flex items-center justify-between border-b border-mist-50/8 pb-2 last:border-b-0 last:pb-0">
+                      <span className="text-sm text-mist-50/72">{step}</span>
+                      <span className="font-mono text-xs text-mist-50/46">live</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </dl>
+              </div>
+              <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur">
+                <p className="label text-signal-300">Design rule</p>
+                <p className="mt-3 text-sm leading-6 text-mist-50/78">
+                  Automate the repeatable layer. Escalate the uncertain layer.
+                  Keep the audit trail intact.
+                </p>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Use cases */}
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">Example use cases</Eyebrow>
-          <div className="grid gap-5 md:grid-cols-3">
-            {USE_CASES.map((u, i) => (
-              <div
-                key={u}
-                className="flex flex-col gap-4 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 transition-shadow hover:shadow-lg"
-              >
-                <IconBadge Icon={FlowIcon} variant="muted" className="h-10 w-10" />
-                <span className="font-mono text-xs text-ink-400">{`Use case 0${i + 1}`}</span>
-                <p className="text-body-lg text-ink-900">{u}</p>
+          <Eyebrow className="mb-8">Capability map</Eyebrow>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {CAPABILITIES.map((item) => (
+              <div key={item.name} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7">
+                <IconBadge Icon={item.Icon} className="h-12 w-12" />
+                <h2 className="mt-5 text-h3 font-medium text-ink-900">{item.name}</h2>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Related */}
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow className="mb-5">Why Raptric</Eyebrow>
-            <p className="text-h3 font-medium text-ink-900">
-              We build automation as a working part of the operation, with a
-              specialist checkpoint wherever judgment is required — not a
-              script that only works in the demo.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
-              <Link href="/support-operations" className="text-signal-600 hover:underline">
-                Support Operations →
-              </Link>
-              <Link href="/engineering-team" className="text-signal-600 hover:underline">
-                Engineering Team →
-              </Link>
-              <Link href="/solutions" className="text-signal-600 hover:underline">
-                Solutions →
-              </Link>
+          <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-start md:gap-16">
+            <div>
+              <Eyebrow className="mb-5">Technical surfaces</Eyebrow>
+              <h2 className="text-h1 font-semibold text-ink-900">
+                The stack matters less than the orchestration around it.
+              </h2>
+              <p className="mt-5 max-w-md text-body-lg text-ink-600">
+                We can build around n8n, internal assistants, CRM workflows,
+                helpdesk systems, and support routing, but the real value is in
+                how the pieces coordinate under live conditions.
+              </p>
+            </div>
+            <div className="grid gap-3">
+              {STACK.map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 px-4 py-3">
+                  <IconBadge Icon={CheckIcon} variant="muted" className="h-8 w-8 shrink-0" />
+                  <p className="text-body text-ink-700">{item}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Container>
       </section>
 
-      {/* CTA */}
+      <section className="border-b border-ink-200">
+        <Container className="py-16 md:py-20">
+          <div className="grid gap-10 md:grid-cols-[0.82fr_1.18fr] md:gap-16">
+            <div>
+              <Eyebrow className="mb-4">Why teams bring us in</Eyebrow>
+              <h2 className="text-h2 font-semibold text-ink-900">
+                AI value usually breaks at the operational boundary.
+              </h2>
+            </div>
+            <div className="grid gap-4">
+              {WHY.map((item, index) => (
+                <div key={item} className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-5">
+                  <span className="label text-signal-600">{`0${index + 1}`}</span>
+                  <p className="mt-2 text-body-lg text-ink-700">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-200/60">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-8">Proof in practice</Eyebrow>
+          <div className="grid gap-5 md:grid-cols-3">
+            {USE_CASES.map((item) => (
+              <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6">
+                <IconBadge Icon={BuildIcon} variant="muted" className="h-10 w-10" />
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-6">What good looks like</Eyebrow>
+          <div className="grid gap-4 md:grid-cols-3">
+            {PROOFS.map((item) => (
+              <div key={item} className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-5">
+                <IconBadge Icon={ClockIcon} variant="muted" className="h-9 w-9" />
+                <p className="mt-4 text-body text-ink-700">{item}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-ink-950 text-mist-50">
         <Container className="py-16 text-center md:py-20">
-          <h2 className="mx-auto max-w-lg text-h2 font-semibold">
-            Ready to talk about AI automation?
+          <h2 className="mx-auto max-w-2xl text-h2 font-semibold">
+            Ready to design the automation layer around the work you actually run?
           </h2>
-          <div className="mt-8">
+          <p className="mx-auto mt-4 max-w-xl text-body-lg text-mist-50/65">
+            We can map the workflow, identify where AI belongs, and define
+            where specialist judgment should still stay in the loop.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+            <Link
+              href="/engineering-team"
+              className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
+            >
+              Explore engineering team
+              <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                &rarr;
+              </span>
+            </Link>
           </div>
         </Container>
       </section>

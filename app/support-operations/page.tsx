@@ -9,53 +9,96 @@ import {
   HeadsetIcon,
   TicketIcon,
   OnboardIcon,
-  ChatIcon,
   BuildingIcon,
   AppIcon,
   BagIcon,
   FlowIcon,
   AccountableIcon,
   PhoneIcon,
+  CheckIcon,
 } from "@/components/illustrations/concept-icons";
-import SystemIndex from "@/components/ui/system-index";
 import EscalationPath from "@/components/illustrations/escalation-path";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Support Operations — Customer Support, Technical Support & Call Center Outsourcing",
+  title: "Support Operations | Tech Support, HITL Operations & Customer Care Systems | Raptric",
   description:
-    "Support operations built to scale: customer support outsourcing, technical support outsourcing, call center outsourcing, phone answering, chat support, virtual assistants, and human-in-the-loop support.",
+    "Support operations for growing businesses: tech support, customer care, AI-assisted support, human-in-the-loop review, escalation systems, and specialist coverage across industries.",
   path: "/support-operations",
 });
 
 const COVERAGE = [
-  { Icon: HeadsetIcon, name: "Customer Support Outsourcing", body: "Multi-channel support for the people who use what you sell.", href: "/support-operations/customer-support-outsourcing" },
-  { Icon: TicketIcon, name: "Technical Support Outsourcing", body: "Tier 1 and Tier 2 troubleshooting, with clear escalation paths.", href: "/support-operations/technical-support-outsourcing" },
-  { Icon: ChatIcon, name: "Call Center Outsourcing", body: "Voice support structured around complexity, not just queue order.", href: "/support-operations/call-center-outsourcing-services" },
-  { Icon: PhoneIcon, name: "Phone Answering Services", body: "Professional call coverage so nothing goes to voicemail.", href: "/support-operations/phone-answering-services" },
-  { Icon: FlowIcon, name: "Chat Support Outsourcing", body: "Live chat handled by specialists, backed by automation for volume.", href: "/support-operations/chat-support-outsourcing" },
-  { Icon: OnboardIcon, name: "Virtual Assistant Services", body: "Ongoing operational support for the recurring work that piles up.", href: "/support-operations/virtual-assistant-services" },
-  { Icon: AccountableIcon, name: "Human-in-the-Loop Support", body: "A designed handoff between automation and specialists, with audit trails.", href: "/support-operations/human-in-the-loop-support" },
+  {
+    Icon: TicketIcon,
+    name: "Technical support",
+    body: "Tiered troubleshooting, escalation handling, and issue resolution that can sit beside the product or platform team.",
+  },
+  {
+    Icon: HeadsetIcon,
+    name: "Customer care",
+    body: "Email, chat, and service coverage designed to feel consistent instead of overloaded and reactive.",
+  },
+  {
+    Icon: AccountableIcon,
+    name: "HITL operations",
+    body: "Human-in-the-loop review layers for support, back-office flows, and exception handling where confidence alone is not enough.",
+  },
+  {
+    Icon: PhoneIcon,
+    name: "Voice coverage",
+    body: "Inbound call handling, triage, and specialist routing for teams that need a human layer as part of the experience.",
+  },
+  {
+    Icon: FlowIcon,
+    name: "AI-assisted support",
+    body: "Automation and AI handling repeatable first-line volume while the team stays focused on judgment-heavy work.",
+  },
+  {
+    Icon: OnboardIcon,
+    name: "Operational support capacity",
+    body: "Coverage that can flex around onboarding, recurring workflow assistance, and high-volume operational queues.",
+  },
+];
+
+const OPERATING_MODES = [
+  {
+    title: "AI-assisted support",
+    body: "Best when volume is high, repeatability is decent, and the team needs faster first response without losing structure.",
+  },
+  {
+    title: "HITL support",
+    body: "Best when AI can help route, classify, or draft, but a person still needs to validate, decide, or communicate.",
+  },
+  {
+    title: "Specialist-led support",
+    body: "Best when the business needs fully human handling because context, empathy, compliance, or complexity carry the decision.",
+  },
 ];
 
 const INDUSTRIES = [
-  { Icon: BuildingIcon, name: "Hospitality", body: "Guest services for hotels — reservations, communications, and on-property coordination." },
-  { Icon: AppIcon, name: "SaaS & Digital Products", body: "Support and onboarding for software users, routed by ticket complexity." },
-  { Icon: BagIcon, name: "E-commerce & Consumer Brands", body: "Order support and post-purchase communication that scales with demand." },
+  {
+    Icon: BuildingIcon,
+    name: "Hospitality and service businesses",
+    body: "Guest support, scheduling, communication, and issue handling with a human layer that reflects the brand.",
+  },
+  {
+    Icon: AppIcon,
+    name: "SaaS and digital products",
+    body: "Tier 1 and Tier 2 support, onboarding flow support, and escalation into product or engineering when needed.",
+  },
+  {
+    Icon: BagIcon,
+    name: "Commerce and operations-heavy teams",
+    body: "Post-purchase support, logistics touchpoints, operational follow-up, and exception handling at scale.",
+  },
 ];
 
 const PROBLEMS = [
-  "Support quality that degrades as volume grows.",
-  "Response times that scale linearly with headcount.",
-  "Automation and human support that aren't structured together.",
-  "Coverage gaps — nights, weekends, spikes — nobody wants to staff for.",
-];
-
-const USE_CASES = [
-  "An onboarding flow that combines automated steps with a specialist check-in",
-  "A support triage system that routes by complexity, not just by queue",
-  "Human-in-the-loop escalation for the calls and chats that need real judgment",
+  "Support volume rising faster than the team can absorb it.",
+  "AI tools that answer fast but break trust when the request becomes nuanced.",
+  "No clear split between what should be automated, what should be reviewed, and what should stay fully human.",
+  "Technical issues and customer issues routed through the same channel without a real escalation design.",
 ];
 
 export default function SupportOperations() {
@@ -64,64 +107,112 @@ export default function SupportOperations() {
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Support Operations", path: "/support-operations" }]} />
       <ServiceSchema
         name="Support Operations"
-        description="Customer support, technical support, call center, phone answering, chat support, virtual assistant, and human-in-the-loop support services."
+        description="Tech support, customer care, AI-assisted support, voice coverage, and human-in-the-loop operations for growing teams."
         path="/support-operations"
       />
 
-      {/* Header — photography treatment */}
       <section className="relative overflow-hidden bg-ink-950 text-mist-50">
-        <Container className="grid items-center gap-12 py-20 md:grid-cols-2 md:gap-16 md:py-28">
+        <Container className="grid items-center gap-12 py-20 md:grid-cols-[0.94fr_1.06fr] md:gap-16 md:py-28">
           <div>
             <CustomerOperationsIcon className="h-12 w-12 text-signal-400" />
             <Eyebrow className="mb-4 mt-6 text-signal-400">Support Operations</Eyebrow>
             <h1 className="text-display font-semibold">
-              Support your customers actually feel good about.
+              Technical support and human operations that scale with the business.
             </h1>
-            <p className="mt-6 max-w-xl text-body-lg text-mist-50/65">
-              Customer support, technical support, call center coverage, and
-              virtual assistance — staffed by specialists and backed by
-              automation, so quality doesn&apos;t erode as volume grows.
+            <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
+              We design support systems that can blend AI, specialist review,
+              and fully human handling depending on the workflow, the customer,
+              and the level of judgment required.
             </p>
-            <div className="mt-9">
+
+            <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
+              {["Tech support", "HITL operations", "AI-assisted coverage", "Pure human handling"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-mist-50/12 bg-mist-50/[0.04] px-3.5 py-1.5"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+              <Link
+                href="/ai-automation"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
+              >
+                See the automation layer
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  &rarr;
+                </span>
+              </Link>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-2xl">
-            <Image
-              src="/photos/support-team.jpg"
-              alt="Support specialist helping a customer over a video call"
-              fill
-              sizes="(min-width: 768px) 45vw, 90vw"
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
+
+          <div className="grid gap-4 lg:grid-cols-[0.92fr_0.48fr]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 shadow-2xl">
+              <Image
+                src="/photos/support-team.jpg"
+                alt="Support specialist helping a customer while monitoring multiple systems"
+                fill
+                sizes="(min-width: 1024px) 34vw, 90vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/72 via-ink-950/18 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-4 backdrop-blur">
+                <p className="label text-signal-300">Support model</p>
+                <p className="mt-2 text-sm leading-6 text-mist-50/78">
+                  Route the repeatable volume fast. Escalate the technical work
+                  cleanly. Keep human judgment where trust depends on it.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              {["AI-first intake", "Specialist review", "Escalation with context"].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-4 shadow-xl backdrop-blur"
+                >
+                  <p className="label text-signal-300">Layer</p>
+                  <p className="mt-3 text-sm leading-6 text-mist-50/78">{item}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Coverage */}
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">What this covers</Eyebrow>
-          <SystemIndex items={COVERAGE} />
+          <Eyebrow className="mb-8">Capability map</Eyebrow>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {COVERAGE.map((item) => (
+              <div key={item.name} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7">
+                <IconBadge Icon={item.Icon} className="h-12 w-12" />
+                <h2 className="mt-5 text-h3 font-medium text-ink-900">{item.name}</h2>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 
-      {/* How escalation runs — dark tech panel */}
-      <section className="border-b border-ink-200">
+      <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+          <div className="grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:items-center md:gap-16">
             <div>
-              <Eyebrow className="mb-5">How escalation runs</Eyebrow>
+              <Eyebrow className="mb-5">Escalation design</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
-                Most volume resolves before it reaches a person.
+                Most volume should resolve before it reaches the deepest layer.
               </h2>
               <p className="mt-5 max-w-md text-body-lg text-ink-600">
-                Tier 1 automation absorbs the repeatable requests. What&apos;s
-                left escalates through Tier 2, and anything that still needs
-                judgment reaches a specialist — with the context already
-                attached, not a cold handoff.
+                The point is not to remove people. The point is to design a
+                system where people spend their time on the moments that
+                actually require human judgment, technical skill, or customer
+                sensitivity.
               </p>
             </div>
             <div className="rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
@@ -131,86 +222,99 @@ export default function SupportOperations() {
         </Container>
       </section>
 
-      {/* Industries */}
-      <section className="border-b border-ink-200 bg-mist-200/60">
+      <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-4">Industries</Eyebrow>
-          <h2 className="max-w-xl text-h2 font-semibold text-ink-900">Where this is already proven.</h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {INDUSTRIES.map((ind) => (
-              <div key={ind.name} className="flex flex-col gap-4 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6">
-                <IconBadge Icon={ind.Icon} variant="muted" className="h-11 w-11" />
-                <div>
-                  <h3 className="text-h3 font-medium text-ink-900">{ind.name}</h3>
-                  <p className="mt-1.5 text-body text-ink-600">{ind.body}</p>
-                </div>
+          <Eyebrow className="mb-8">Operating modes</Eyebrow>
+          <div className="grid gap-5 md:grid-cols-3">
+            {OPERATING_MODES.map((item) => (
+              <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6">
+                <IconBadge Icon={FlowIcon} variant="muted" className="h-10 w-10" />
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Problems */}
+      <section className="border-b border-ink-200 bg-mist-200/60">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-4">Industry fit</Eyebrow>
+          <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
+            The support model can be AI-assisted, HITL, or fully human depending on the environment.
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {INDUSTRIES.map((item) => (
+              <div key={item.name} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6">
+                <IconBadge Icon={item.Icon} variant="muted" className="h-11 w-11" />
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.name}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+          <div className="grid gap-10 md:grid-cols-[0.84fr_1.16fr] md:gap-16">
             <div>
-              <Eyebrow className="mb-4">Problems this solves</Eyebrow>
-              <h2 className="text-h2 font-semibold text-ink-900">What we&apos;re usually brought in to fix.</h2>
+              <Eyebrow className="mb-4">What teams bring us in to fix</Eyebrow>
+              <h2 className="text-h2 font-semibold text-ink-900">
+                The support operation looks fine until complexity shows up.
+              </h2>
             </div>
-            <dl className="flex flex-col gap-6">
-              {PROBLEMS.map((p, i) => (
-                <div key={p} className="border-t border-ink-200 pt-4 first:border-t-0 first:pt-0">
-                  <dt className="label text-signal-600">{`0${i + 1}`}</dt>
-                  <dd className="mt-1.5 text-body-lg text-ink-700">{p}</dd>
+            <div className="grid gap-4">
+              {PROBLEMS.map((item, index) => (
+                <div key={item} className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-5">
+                  <span className="label text-signal-600">{`0${index + 1}`}</span>
+                  <p className="mt-2 text-body-lg text-ink-700">{item}</p>
                 </div>
               ))}
-            </dl>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Use cases */}
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">Example use cases</Eyebrow>
-          <div className="grid gap-5 md:grid-cols-3">
-            {USE_CASES.map((u, i) => (
-              <div key={u} className="flex flex-col gap-4 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 transition-shadow hover:shadow-lg">
-                <IconBadge Icon={FlowIcon} variant="muted" className="h-10 w-10" />
-                <span className="font-mono text-xs text-ink-400">{`Use case 0${i + 1}`}</span>
-                <p className="text-body-lg text-ink-900">{u}</p>
+          <Eyebrow className="mb-6">How the model should feel</Eyebrow>
+          <div className="grid gap-3">
+            {[
+              "Customers should feel continuity, not handoff confusion.",
+              "Technical issues should route differently from general service volume.",
+              "AI should reduce drag, not become a trust problem that the human team has to repair later.",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-3 rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 px-4 py-3">
+                <IconBadge Icon={CheckIcon} variant="muted" className="h-8 w-8 shrink-0" />
+                <p className="text-body text-ink-700">{item}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* Why + related */}
-      <section className="border-b border-ink-200">
-        <Container className="py-16 md:py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <Eyebrow className="mb-5">Why Raptric</Eyebrow>
-            <p className="text-h3 font-medium text-ink-900">
-              We design support operations as a system with a defined split
-              between automation and specialist judgment — not headcount
-              thrown at growth.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
-              <Link href="/ai-automation" className="text-signal-600 hover:underline">AI Automation →</Link>
-              <Link href="/engineering-team" className="text-signal-600 hover:underline">Engineering Team →</Link>
-              <Link href="/solutions" className="text-signal-600 hover:underline">Solutions →</Link>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA */}
       <section className="bg-ink-950 text-mist-50">
         <Container className="py-16 text-center md:py-20">
-          <h2 className="mx-auto max-w-lg text-h2 font-semibold">Ready to talk about support operations?</h2>
-          <div className="mt-8">
+          <h2 className="mx-auto max-w-2xl text-h2 font-semibold">
+            Need a support model that blends AI, tech support, and human judgment cleanly?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-body-lg text-mist-50/65">
+            We can help define what should be automated, what should be
+            specialist-led, and what should stay fully human for your industry
+            and risk profile.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+            <Link
+              href="/engineering-team"
+              className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
+            >
+              Explore engineering team
+              <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                &rarr;
+              </span>
+            </Link>
           </div>
         </Container>
       </section>
