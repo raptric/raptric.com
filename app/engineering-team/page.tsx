@@ -182,9 +182,9 @@ export default function EngineeringTeam() {
             </div>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-[0.74fr_0.26fr]">
+          <div className="grid gap-4 lg:grid-cols-[0.78fr_0.22fr]">
             <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
-              <div className="grid min-h-[460px] grid-rows-[0.54fr_0.46fr]">
+              <div className="grid min-h-[420px] grid-rows-[0.74fr_0.26fr]">
                 <div className="relative overflow-hidden border-b border-mist-50/10">
                   <Image
                     src="/photos/hero-team.jpg"
@@ -207,28 +207,21 @@ export default function EngineeringTeam() {
                   </div>
                 </div>
 
-                <div className="grid gap-4 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] p-5 md:grid-cols-[1.08fr_0.92fr]">
-                  <div className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/55 p-4">
-                    <p className="label text-signal-300">System map</p>
-                    <div className="mt-4">
-                      <WorkflowGraph className="h-auto w-full" />
+                <div className="grid gap-3 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] p-5 md:grid-cols-3">
+                  {[
+                    "Roadmap fit",
+                    "QA readiness",
+                    "Shared delivery truth",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/50 px-4 py-3 text-sm text-mist-50/74"
+                    >
+                      {item}
                     </div>
-                  </div>
-                  <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-mist-50/[0.05] p-5 backdrop-blur">
-                    <p className="label text-signal-300">Signals</p>
-                    <div className="mt-3 grid gap-2 text-sm text-mist-50/72">
-                      {["Roadmap fit", "QA readiness"].map((item) => (
-                        <div
-                          key={item}
-                          className="rounded-md border border-mist-50/10 bg-ink-950/36 px-3 py-2"
-                        >
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-4 rounded-md border border-mist-50/10 bg-ink-950/36 px-3 py-3 text-sm text-mist-50/72">
-                      Shared delivery truth for product, leadership, and support.
-                    </div>
+                  ))}
+                  <div className="md:col-span-3 rounded-[var(--radius-md)] border border-mist-50/10 bg-gradient-to-r from-signal-500/10 via-mist-50/[0.02] to-signal-500/10 px-4 py-3 text-sm text-mist-50/72">
+                    Product, engineering, QA, and support working from the same delivery picture.
                   </div>
                 </div>
               </div>
@@ -477,6 +470,24 @@ export default function EngineeringTeam() {
                         The team does not just need developers. It needs structure, accountability, and a cleaner bridge between engineering and operations.
                       </p>
                     </div>
+                  </div>
+                  <div className="mt-4 overflow-hidden rounded-[var(--radius-md)] border border-mist-50/10 bg-[radial-gradient(circle_at_left,rgba(108,92,231,0.28),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-4">
+                    <p className="label text-signal-300">Pressure pattern</p>
+                    <div className="mt-4 flex items-center gap-3">
+                      {["Roadmap", "Delivery", "Operations"].map((item, index) => (
+                        <div key={item} className="flex min-w-0 flex-1 items-center gap-3">
+                          <div className="rounded-full border border-mist-50/15 bg-ink-900/60 px-3 py-2 text-xs text-mist-50/78">
+                            {item}
+                          </div>
+                          {index < 2 ? (
+                            <div className="h-px flex-1 bg-gradient-to-r from-signal-400/70 to-mist-50/10" />
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-4 text-sm leading-6 text-mist-50/70">
+                      When those three layers drift apart, the business feels it as missed releases, messy escalations, and growing internal workaround debt.
+                    </p>
                   </div>
                 </div>
               </div>
