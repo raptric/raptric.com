@@ -55,20 +55,20 @@ const SERVICE_LINES = [
 
 const EXPERTISE = [
   {
-    title: "n8n automation builds",
-    body: "Open, self-hostable workflows for teams that want control over routing, integrations, retries, triggers, and long-term maintainability.",
+    title: "Operational automation architecture",
+    body: "We break the workflow down into intake, routing, transformation, review, exception handling, and reporting so the system survives more than a happy path demo.",
   },
   {
-    title: "Make.com and rapid orchestration",
-    body: "Fast-moving automation layers for companies that need practical wins quickly, while still keeping an eye on process logic and scale.",
+    title: "Tooling fluency across the stack",
+    body: "We work hands-on with n8n, Make.com, APIs, CRM systems, helpdesk tooling, and custom glue logic to choose the right level of build for the workflow.",
   },
   {
-    title: "Cursor-powered build workflows",
-    body: "AI-assisted engineering where prompts are not the product. We use modern build tools to move faster, but the output still has to survive real operational use.",
+    title: "AI plus human review design",
+    body: "We define confidence boundaries, specialist checkpoints, and escalation paths so AI helps throughput without quietly degrading trust or quality.",
   },
   {
-    title: "CRM and support automation",
-    body: "Lead routing, follow-up logic, ticket triage, data hygiene, and exception handling built around the systems revenue and support teams already depend on.",
+    title: "Build speed with engineering discipline",
+    body: "Modern tools like Cursor can accelerate delivery, but the real advantage comes from engineers who understand production logic, edge cases, and operational consequences.",
   },
 ];
 
@@ -98,6 +98,21 @@ const PROOF_POINTS = [
   "Hands-on with the tooling, not just strategy language.",
   "Built around live workflows and exception paths, not happy-path diagrams.",
   "Structured for traffic, conversion, and actual operational adoption.",
+];
+
+const SALES_SIGNALS = [
+  {
+    title: "Where buyers usually start",
+    body: "Lead routing, support triage, workflow automation, CRM follow-up, and back-office process cleanup are the most common starting points because the business pain is already visible there.",
+  },
+  {
+    title: "What makes these systems stick",
+    body: "Clear ownership, operator visibility, escalation design, and process fit. The automation only lasts when the people around it can trust it.",
+  },
+  {
+    title: "How this turns into revenue impact",
+    body: "Faster response, fewer dropped requests, better use of specialist time, cleaner routing, and less manual drag across the sales and support cycle.",
+  },
 ];
 
 const FAQS = [
@@ -263,8 +278,48 @@ export default function AiAutomation() {
                 ))}
               </div>
             </div>
-            <div className="overflow-hidden rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
-              <WorkflowGraph className="h-auto w-full" />
+            <div className="grid gap-4">
+              <div className="overflow-hidden rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
+                <WorkflowGraph className="h-auto w-full" />
+              </div>
+              <div className="grid gap-4 md:grid-cols-[1.02fr_0.98fr]">
+                <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 shadow-xl">
+                  <Image
+                    src="/photos/step-build.jpg"
+                    alt="AI automation systems being mapped across tools and operators"
+                    fill
+                    sizes="(min-width: 768px) 24vw, 90vw"
+                    className="object-cover opacity-84"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/38 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-4 backdrop-blur">
+                    <p className="label text-signal-300">Systems mapping</p>
+                    <p className="mt-2 text-sm leading-6 text-mist-50/78">
+                      The technical shape matters, but the handoffs, edge cases,
+                      and operator view are what decide whether the system lasts.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid gap-4">
+                  <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5 shadow-lg">
+                    <p className="label text-slate-500">Decision rule</p>
+                    <p className="mt-3 text-body text-ink-700">
+                      AI handles repeatability. Humans handle ambiguity, risk,
+                      and communication moments that define trust.
+                    </p>
+                  </div>
+                  <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-gradient-to-br from-signal-500 to-signal-700 p-5 text-white shadow-lg">
+                    <p className="label text-white/70">Production lens</p>
+                    <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
+                      {["Route", "Review", "Resolve"].map((item) => (
+                        <div key={item} className="rounded-md border border-white/12 bg-white/8 px-3 py-2 text-center">
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
@@ -273,26 +328,60 @@ export default function AiAutomation() {
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
           <Eyebrow className="mb-8">Hands-on expertise</Eyebrow>
-          <div className="grid gap-5 md:grid-cols-2">
-            {EXPERTISE.map((item) => (
-              <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-lg">
-                <IconBadge Icon={BuildIcon} variant="muted" className="h-10 w-10" />
-                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
-                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-7 text-mist-50 shadow-xl">
+              <p className="label text-signal-300">What buyers need confidence in</p>
+              <h2 className="mt-4 text-h2 font-medium">
+                The team has to know the tools, the workflow logic, and the failure modes.
+              </h2>
+              <p className="mt-4 text-body text-mist-50/72">
+                This is not generic AI consulting. Buyers need to know the team
+                can work inside the stack, make practical tooling decisions, and
+                build systems that stay useful once volume, ambiguity, and edge
+                cases start showing up.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {TOOL_STACK.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-mist-50/76"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="grid gap-5 md:grid-cols-2">
+              {EXPERTISE.map((item) => (
+                <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-lg">
+                  <IconBadge Icon={BuildIcon} variant="muted" className="h-10 w-10" />
+                  <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                  <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
 
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-[0.84fr_1.16fr] md:gap-16">
+          <div className="grid gap-10 md:grid-cols-[0.78fr_1.22fr] md:items-center md:gap-16">
             <div>
               <Eyebrow className="mb-4">Why buyers reach out</Eyebrow>
               <h2 className="text-h2 font-semibold text-ink-900">
                 The gap is usually not tooling. It is structure.
               </h2>
+              <div className="mt-8 rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-5 text-mist-50 shadow-xl">
+                <p className="label text-signal-300">Typical pattern</p>
+                <div className="mt-4 grid gap-3">
+                  {["Tool bought", "Workflow patched", "Volume grows", "System breaks"].map((item) => (
+                    <div key={item} className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-mist-50/76">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="grid gap-4">
               {BUYER_PROBLEMS.map((item, index) => (
@@ -324,21 +413,37 @@ export default function AiAutomation() {
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
           <Eyebrow className="mb-6">Why Raptric</Eyebrow>
-          <div className="grid gap-3">
-            {PROOF_POINTS.map((item) => (
-              <div key={item} className="flex items-center gap-3 rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 px-4 py-3">
-                <IconBadge Icon={CheckIcon} variant="muted" className="h-8 w-8 shrink-0" />
-                <p className="text-body text-ink-700">{item}</p>
+          <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+            <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 shadow-xl">
+              <Image
+                src="/photos/hero-team.jpg"
+                alt="Raptric team working hands-on with automation systems"
+                fill
+                sizes="(min-width: 1024px) 26vw, 90vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/74 via-ink-950/14 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-4 backdrop-blur">
+                <p className="label text-signal-300">Execution posture</p>
+                <p className="mt-2 text-sm leading-6 text-mist-50/78">
+                  Built by a team that works inside automation systems, not just around the messaging of them.
+                </p>
               </div>
-            ))}
-          </div>
-          <div className="mt-10 rounded-[var(--radius-lg)] border border-ink-200 bg-gradient-to-br from-mist-50 to-mist-100 p-6 shadow-lg">
-            <p className="label text-slate-500">Next proof layer</p>
-            <p className="mt-3 text-body-lg text-ink-700">
-              Solutions like DentOS, LinkOS, EOS, and Voice AI can later act as
-              proof of work and case-study style examples of how our AI
-              automation capabilities get packaged into operational systems.
-            </p>
+            </div>
+            <div className="grid gap-3">
+              {PROOF_POINTS.map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 px-4 py-4">
+                  <IconBadge Icon={CheckIcon} variant="muted" className="h-8 w-8 shrink-0" />
+                  <p className="text-body text-ink-700">{item}</p>
+                </div>
+              ))}
+              {SALES_SIGNALS.map((item) => (
+                <div key={item.title} className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-5">
+                  <p className="label text-signal-600">{item.title}</p>
+                  <p className="mt-3 text-body text-ink-700">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
