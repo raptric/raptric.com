@@ -184,27 +184,35 @@ export default function EngineeringTeam() {
 
           <div className="grid gap-4 lg:grid-cols-[0.7fr_0.3fr]">
             <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
-              <div className="relative min-h-[480px]">
-                <Image
-                  src="/photos/step-build.jpg"
-                  alt="Engineering delivery workspace with code and release coordination"
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 92vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/26 to-transparent" />
-                <div className="absolute left-5 top-5 rounded-full border border-mist-50/12 bg-ink-950/70 px-4 py-2 text-xs font-medium text-mist-50/80 backdrop-blur">
-                  Delivery visibility layer
-                </div>
-
-                <div className="absolute bottom-5 left-5 right-5 grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
-                  <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-5 backdrop-blur">
+              <div className="grid min-h-[480px] grid-rows-[0.58fr_0.42fr]">
+                <div className="relative overflow-hidden border-b border-mist-50/10">
+                  <Image
+                    src="/photos/hero-team.jpg"
+                    alt="Engineering team planning delivery together"
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 92vw"
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/25 to-transparent" />
+                  <div className="absolute left-5 top-5 rounded-full border border-mist-50/12 bg-ink-950/70 px-4 py-2 text-xs font-medium text-mist-50/80 backdrop-blur">
+                    Delivery visibility layer
+                  </div>
+                  <div className="absolute bottom-5 left-5 right-5 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-5 backdrop-blur">
                     <p className="label text-signal-300">Build posture</p>
                     <p className="mt-3 text-sm leading-6 text-mist-50/78">
                       Product engineering, QA loops, and release coordination
                       designed to stay visible to the people who own the roadmap.
                     </p>
+                  </div>
+                </div>
+
+                <div className="grid gap-4 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] p-5 md:grid-cols-[1.08fr_0.92fr]">
+                  <div className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/55 p-4">
+                    <p className="label text-signal-300">System map</p>
+                    <div className="mt-4">
+                      <WorkflowGraph className="h-auto w-full" />
+                    </div>
                   </div>
                   <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-mist-50/[0.05] p-5 backdrop-blur">
                     <p className="label text-signal-300">Signals</p>
@@ -217,6 +225,9 @@ export default function EngineeringTeam() {
                           {item}
                         </div>
                       ))}
+                    </div>
+                    <div className="mt-4 rounded-md border border-mist-50/10 bg-ink-950/36 px-3 py-3 text-sm text-mist-50/72">
+                      Build stages stay visible enough for leadership, product, and support to work from the same delivery truth.
                     </div>
                   </div>
                 </div>
@@ -234,17 +245,17 @@ export default function EngineeringTeam() {
               <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-ink-900 shadow-xl">
                 <div className="relative h-44">
                   <Image
-                    src="/photos/hero-team.jpg"
-                    alt="Engineering team planning delivery together"
+                    src="/photos/dark-city.jpg"
+                    alt="Night systems view reflecting engineering scale and complexity"
                     fill
                     sizes="(min-width: 1024px) 16vw, 92vw"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="label text-signal-300">Team rhythm</p>
+                    <p className="label text-signal-300">Operating pressure</p>
                     <p className="mt-2 text-sm text-mist-50/78">
-                      Planning, build, QA, and feedback staying in one loop.
+                      The work has to survive real volume, real users, and real downstream dependencies.
                     </p>
                   </div>
                 </div>
@@ -366,14 +377,13 @@ export default function EngineeringTeam() {
               <div className="grid gap-5 md:grid-cols-[0.62fr_0.38fr]">
                 <div className="rounded-[var(--radius-lg)] border border-mist-50/10 bg-mist-50/[0.04] p-5">
                   <p className="label text-signal-300">Build path</p>
-                  <div className="mt-5 flex items-center justify-between gap-2">
-                    {["Roadmap", "Build", "QA", "Release"].map((item, index) => (
-                      <div key={item} className="flex flex-1 items-center gap-2">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-signal-400/60 bg-ink-900 text-sm text-mist-50/78">
-                          {index + 1}
-                        </div>
-                        <div className="hidden h-px flex-1 bg-gradient-to-r from-signal-400/60 to-mist-50/15 last:hidden md:block" />
-                        <span className="sr-only">{item}</span>
+                  <div className="mt-5 grid gap-3 sm:grid-cols-4">
+                    {["Roadmap", "Build", "QA", "Release"].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/55 px-4 py-3 text-center text-sm font-medium text-mist-50/80"
+                      >
+                        {item}
                       </div>
                     ))}
                   </div>
@@ -449,15 +459,9 @@ export default function EngineeringTeam() {
         <Container className="py-18 md:py-22">
           <div className="grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:gap-16">
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 text-mist-50 shadow-xl">
-              <div className="relative h-full min-h-[420px]">
-                <Image
-                  src="/photos/dark-city.jpg"
-                  alt="Night systems view representing delivery pressure"
-                  fill
-                  sizes="(min-width: 768px) 32vw, 92vw"
-                  className="object-cover opacity-72"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-ink-950/15" />
+              <div className="relative min-h-[420px]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(108,92,231,0.34),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(108,92,231,0.16),transparent_28%),linear-gradient(180deg,#0b0b0f,#12121a)]" />
+                <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-signal-500/14 blur-[110px]" />
                 <div className="absolute inset-x-0 bottom-0 p-7">
                   <Eyebrow className="text-signal-300">What teams bring us in to fix</Eyebrow>
                   <h2 className="mt-4 text-h1 font-semibold">
@@ -477,6 +481,20 @@ export default function EngineeringTeam() {
                         {item}
                       </span>
                     ))}
+                  </div>
+                  <div className="mt-8 grid gap-3 md:grid-cols-2">
+                    <div className="rounded-[var(--radius-md)] border border-mist-50/10 bg-mist-50/[0.04] p-4">
+                      <p className="label text-signal-300">Typical symptom</p>
+                      <p className="mt-2 text-sm leading-6 text-mist-50/72">
+                        Product goals look fine on paper, but release confidence keeps dropping as delivery pressure rises.
+                      </p>
+                    </div>
+                    <div className="rounded-[var(--radius-md)] border border-mist-50/10 bg-mist-50/[0.04] p-4">
+                      <p className="label text-signal-300">What it really means</p>
+                      <p className="mt-2 text-sm leading-6 text-mist-50/72">
+                        The team does not just need developers. It needs structure, accountability, and a cleaner bridge between engineering and operations.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
