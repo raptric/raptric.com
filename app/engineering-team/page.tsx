@@ -5,6 +5,7 @@ import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
 import MethodologyScroll from "@/components/sections/methodology-scroll";
+import EngineeringHeroVisual from "@/components/illustrations/engineering-hero-visual";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import { SaasDevelopmentIcon } from "@/components/illustrations/service-icons";
 import {
@@ -169,11 +170,11 @@ export default function EngineeringTeam() {
             <div className="absolute inset-0 -z-10 bg-signal-500/14 blur-[110px]" />
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
               <div className="relative min-h-[440px]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(108,92,231,0.22),transparent_32%),radial-gradient(circle_at_top_right,rgba(108,92,231,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(108,92,231,0.16),transparent_34%),radial-gradient(circle_at_top_right,rgba(108,92,231,0.1),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))]" />
                 <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/55 to-transparent" />
                 <div className="relative flex min-h-[440px] items-center justify-center px-8 py-12">
-                  <div className="w-full max-w-2xl rounded-[var(--radius-lg)] border border-mist-50/10 bg-ink-900/50 p-8 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur">
-                    <WorkflowGraph className="h-auto w-full" />
+                  <div className="w-full max-w-2xl">
+                    <EngineeringHeroVisual className="h-auto w-full" />
                   </div>
                 </div>
               </div>
