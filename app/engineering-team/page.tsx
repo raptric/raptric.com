@@ -4,115 +4,161 @@ import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
+import MethodologyScroll from "@/components/sections/methodology-scroll";
+import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import { SaasDevelopmentIcon } from "@/components/illustrations/service-icons";
 import {
-  DevIcon,
   AppIcon,
   QaIcon,
   SystemsIcon,
   CrmIcon,
   OnboardIcon,
-  BuildIcon,
   CheckIcon,
+  ReportIcon,
+  AccountableIcon,
 } from "@/components/illustrations/concept-icons";
-import DeliveryPipeline from "@/components/illustrations/delivery-pipeline";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Engineering Team | Embedded Product, SaaS & Delivery Capacity | Raptric",
+  title: "Engineering Teams | SaaS Development, Staff Augmentation & Product Delivery | Raptric",
   description:
-    "Embedded engineering capacity for product delivery: software development partnership, SaaS delivery, staff augmentation, dedicated teams, support engineering, and internal tools.",
+    "Embedded engineering teams for SaaS development, staff augmentation, support engineering, internal tools, and product delivery that stays visible from roadmap through release.",
   path: "/engineering-team",
 });
 
-const CAPABILITIES = [
+const CAPABILITY_LAYERS = [
   {
     Icon: SystemsIcon,
-    name: "Software development partner",
-    body: "A technical partner who can shape scope, architecture, tradeoffs, and delivery decisions around the actual roadmap.",
+    title: "Software development partner",
+    body: "Architecture, scoping, tradeoffs, and execution decisions that stay tied to the roadmap instead of drifting into a detached dev lane.",
   },
   {
     Icon: AppIcon,
-    name: "SaaS and platform builds",
-    body: "Dashboards, portals, internal systems, APIs, and product surfaces that need to be dependable under live use.",
+    title: "SaaS and platform builds",
+    body: "Portals, dashboards, APIs, and product surfaces that need reliability under live usage, not just a polished first release.",
   },
   {
     Icon: OnboardIcon,
-    name: "Embedded staff augmentation",
-    body: "Developers and technical operators who can join the team rhythm without turning into a detached vendor lane.",
-  },
-  {
-    Icon: DevIcon,
-    name: "Dedicated product pods",
-    body: "A consistent team structure for companies that need continuity, ownership, and predictable execution.",
+    title: "Embedded staff augmentation",
+    body: "Engineers who can step into sprint rhythm, standards, QA discipline, and release coordination without becoming parallel overhead.",
   },
   {
     Icon: QaIcon,
-    name: "Support engineering",
-    body: "Engineering-level troubleshooting and resolution paths for technical issues support cannot close on its own.",
+    title: "Support engineering",
+    body: "A technical bridge for incidents, escalations, bug investigation, and the issues support cannot close without engineering depth.",
   },
   {
     Icon: CrmIcon,
-    name: "Internal operations tooling",
-    body: "Custom systems for the work behind the scenes: routing, reporting, task flow, approvals, and operator visibility.",
+    title: "Internal operations tooling",
+    body: "Systems behind the scenes for routing, approvals, reporting, reconciliation, and operational visibility.",
   },
 ];
 
-const ENGAGEMENTS = [
+const ENGAGEMENT_STEPS = [
   {
-    title: "Embedded inside your roadmap",
-    body: "Best when you already have product direction and need capacity that can plug into sprint cycles, standards, and shipping discipline.",
+    n: "01",
+    label: "Embedded team",
+    title: "Join the roadmap and ship inside the existing product motion",
+    body: "Best when the company already has product direction and needs engineering capacity that can plug into planning, build cadence, QA, and release discipline quickly.",
+    image: "/photos/step-build.jpg",
   },
   {
-    title: "Dedicated pod around a build",
-    body: "Best when a product, platform, or operating system needs to move from concept to delivery with one accountable team around it.",
+    n: "02",
+    label: "Dedicated pod",
+    title: "Own a build stream with one accountable engineering pod",
+    body: "Best when a SaaS product, internal platform, or systems rebuild needs a focused team with a clear scope, delivery owner, and a visible path from backlog to release.",
+    image: "/photos/step-design.jpg",
   },
   {
-    title: "Hybrid with support and operations",
-    body: "Best when engineering has to work alongside AI automation and support layers instead of pretending product delivery exists in isolation.",
+    n: "03",
+    label: "Hybrid model",
+    title: "Pair engineering with automation and operations where the workflow depends on all three",
+    body: "Best when technical delivery is deeply tied to support, automation, internal tooling, or operator workflows and cannot be treated like isolated product development.",
+    image: "/photos/hero-team.jpg",
   },
 ];
 
 const PROBLEMS = [
-  "A roadmap that outruns the available engineering capacity.",
-  "Outsourced development that disappears behind status updates instead of surfacing delivery truth.",
-  "Internal tools that keep accumulating because nothing was designed around the real process.",
-  "Support teams escalating technical issues into a product team that never built a real operating bridge for them.",
+  {
+    n: "01",
+    title: "Roadmaps that move faster than the delivery capacity behind them",
+    body: "Plans keep expanding while product, platform, and internal tooling needs compete for the same few engineers.",
+  },
+  {
+    n: "02",
+    title: "Build work that sounds healthy in status updates but never exposes the real delivery truth",
+    body: "Leaders get progress language instead of real visibility into blockers, QA friction, or scope drift.",
+  },
+  {
+    n: "03",
+    title: "Internal tools piling up because no one designed around the actual operating model",
+    body: "Systems multiply, manual work stays hidden, and product teams end up supporting brittle workflows they never meant to own.",
+  },
+  {
+    n: "04",
+    title: "Technical support and product delivery living in different worlds",
+    body: "Escalations reach engineering late, feedback loops stay weak, and issues repeat because no bridge was built between teams.",
+  },
 ];
 
-const PROOF_POINTS = [
-  "Visible delivery stages instead of black-box execution.",
-  "QA and support engineering treated as part of the system, not cleanup after the build.",
-  "Product, platform, and operations tooling considered together when the workflow actually depends on all three.",
+const PROOF_PILLARS = [
+  {
+    Icon: ReportIcon,
+    title: "Visible delivery signals",
+    body: "Roadmap, build, QA, release, and issue flow stay visible enough for leaders to make decisions before risk turns into delay.",
+  },
+  {
+    Icon: CheckIcon,
+    title: "QA and support engineered in",
+    body: "Testing, escalation handling, and post-release realities are part of the build model, not cleanup after launch.",
+  },
+  {
+    Icon: AccountableIcon,
+    title: "Authentic ownership",
+    body: "We do not hide behind velocity theater. The work is structured to show what is shipping, what is blocked, and what needs a decision.",
+  },
 ];
 
 export default function EngineeringTeam() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Engineering Team", path: "/engineering-team" }]} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Engineering Team", path: "/engineering-team" },
+        ]}
+      />
       <ServiceSchema
         name="Engineering Team"
-        description="Software development partnership, SaaS delivery, staff augmentation, support engineering, and internal systems."
+        description="Embedded engineering teams for SaaS development, staff augmentation, support engineering, and internal systems."
         path="/engineering-team"
       />
 
       <section className="relative overflow-hidden bg-ink-950 text-mist-50">
-        <Container className="grid items-center gap-12 py-20 md:grid-cols-[0.94fr_1.06fr] md:gap-16 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/40 to-transparent" />
+        <div className="absolute right-0 top-20 h-72 w-72 rounded-full bg-signal-500/16 blur-[120px]" />
+        <Container className="grid items-center gap-14 py-18 md:grid-cols-[0.92fr_1.08fr] md:py-24">
           <div>
             <SaasDevelopmentIcon className="h-12 w-12 text-signal-400" />
             <Eyebrow className="mb-4 mt-6 text-signal-400">Engineering Team</Eyebrow>
             <h1 className="text-display font-semibold">
-              Engineering capacity, embedded into the system instead of outsourced into a black box.
+              Engineering teams that plug into the roadmap and ship with the system.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
-              We provide product, platform, and internal-systems capacity for
-              teams that need more than developers for hire. The goal is not
-              just output, it is visible delivery that fits the business.
+              We provide product, platform, and internal-systems engineering
+              for companies that need more than developers for hire. The work
+              stays connected to delivery truth, QA discipline, and the
+              operational reality the software has to support.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
-              {["Product engineering", "SaaS delivery", "Embedded teams", "Support engineering"].map((item) => (
+              {[
+                "SaaS development teams",
+                "Embedded staff augmentation",
+                "Support engineering",
+                "Internal systems builds",
+              ].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-mist-50/12 bg-mist-50/[0.04] px-3.5 py-1.5"
@@ -128,7 +174,7 @@ export default function EngineeringTeam() {
                 href="/solutions"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
               >
-                See packaged systems
+                See the systems we build around
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &rarr;
                 </span>
@@ -136,84 +182,163 @@ export default function EngineeringTeam() {
             </div>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-[0.92fr_0.48fr]">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 shadow-2xl">
-              <Image
-                src="/photos/step-build.jpg"
-                alt="Engineer working across multiple delivery surfaces"
-                fill
-                sizes="(min-width: 1024px) 34vw, 90vw"
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/72 via-ink-950/18 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-4 backdrop-blur">
-                <p className="label text-signal-300">Delivery posture</p>
-                <p className="mt-2 text-sm leading-6 text-mist-50/78">
-                  Visible build stages, QA loops, and engineering ownership that
-                  stays connected to the actual operating model.
-                </p>
+          <div className="grid gap-4 lg:grid-cols-[0.7fr_0.3fr]">
+            <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
+              <div className="relative min-h-[480px]">
+                <Image
+                  src="/photos/step-build.jpg"
+                  alt="Engineering delivery workspace with code and release coordination"
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 92vw"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/26 to-transparent" />
+                <div className="absolute left-5 top-5 rounded-full border border-mist-50/12 bg-ink-950/70 px-4 py-2 text-xs font-medium text-mist-50/80 backdrop-blur">
+                  Delivery visibility layer
+                </div>
+
+                <div className="absolute bottom-5 left-5 right-5 grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
+                  <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/78 p-5 backdrop-blur">
+                    <p className="label text-signal-300">Build posture</p>
+                    <p className="mt-3 text-sm leading-6 text-mist-50/78">
+                      Product engineering, QA loops, and release coordination
+                      designed to stay visible to the people who own the roadmap.
+                    </p>
+                  </div>
+                  <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-mist-50/[0.05] p-5 backdrop-blur">
+                    <p className="label text-signal-300">Signals</p>
+                    <div className="mt-3 grid gap-2 text-sm text-mist-50/72">
+                      {["Roadmap fit", "QA readiness", "Release confidence"].map((item) => (
+                        <div
+                          key={item}
+                          className="rounded-md border border-mist-50/10 bg-ink-950/36 px-3 py-2"
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div className="grid gap-4">
-              {["Roadmap fit", "QA feedback loop", "Operational context"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-4 shadow-xl backdrop-blur"
-                >
-                  <p className="label text-signal-300">Signal</p>
-                  <p className="mt-3 text-sm leading-6 text-mist-50/78">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-b border-ink-200">
-        <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">Capability map</Eyebrow>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {CAPABILITIES.map((item) => (
-              <div key={item.name} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7">
-                <IconBadge Icon={item.Icon} className="h-12 w-12" />
-                <h2 className="mt-5 text-h3 font-medium text-ink-900">{item.name}</h2>
-                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+              <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur">
+                <p className="label text-signal-300">Where we fit</p>
+                <p className="mt-3 text-sm leading-6 text-mist-50/78">
+                  Product backlog, platform systems, support escalations, and
+                  the internal tooling that keeps real operations moving.
+                </p>
               </div>
-            ))}
+              <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-ink-900 shadow-xl">
+                <div className="relative h-44">
+                  <Image
+                    src="/photos/hero-team.jpg"
+                    alt="Engineering team planning delivery together"
+                    fill
+                    sizes="(min-width: 1024px) 16vw, 92vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="label text-signal-300">Team rhythm</p>
+                    <p className="mt-2 text-sm text-mist-50/78">
+                      Planning, build, QA, and feedback staying in one loop.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-gradient-to-br from-signal-500/18 to-transparent p-5 shadow-xl">
+                <p className="label text-signal-300">Commercial fit</p>
+                <p className="mt-3 text-sm leading-6 text-mist-50/78">
+                  Strong for SaaS teams, internal platform builds, and companies
+                  that need staff augmentation with real engineering ownership.
+                </p>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-b border-ink-200 bg-mist-200/60">
-        <Container className="py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:items-center md:gap-16">
-            <div>
-              <Eyebrow className="mb-5">Delivery model</Eyebrow>
-              <h2 className="text-h1 font-semibold text-ink-900">
-                Visible stages, not a black box.
-              </h2>
-              <p className="mt-5 max-w-md text-body-lg text-ink-600">
-                Work should move through roadmap, build, QA, and release with
-                transparency. That is what makes external capacity feel like a
-                real engineering partner instead of a detached execution queue.
-              </p>
-            </div>
-            <div className="rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl">
-              <DeliveryPipeline className="h-auto w-full" />
-            </div>
-          </div>
-        </Container>
-      </section>
+      <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
+        <Container className="py-18 md:py-22">
+          <Eyebrow className="mb-5">Capability map</Eyebrow>
+          <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
+            Engineering depth across product, platform, support, and the systems behind the scenes.
+          </h2>
 
-      <section className="border-b border-ink-200">
-        <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">Engagement models</Eyebrow>
-          <div className="grid gap-5 md:grid-cols-3">
-            {ENGAGEMENTS.map((item) => (
-              <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6">
-                <IconBadge Icon={BuildIcon} variant="muted" className="h-10 w-10" />
+          <div className="mt-12 grid gap-5 lg:grid-cols-12">
+            <div className="relative overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-7 text-mist-50 shadow-xl lg:col-span-7">
+              <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-signal-500/20 blur-[90px]" />
+              <div className="relative grid gap-8 lg:grid-cols-[0.52fr_0.48fr] lg:items-center">
+                <div>
+                  <IconBadge Icon={SystemsIcon} className="h-12 w-12" />
+                  <h3 className="mt-5 text-h2 font-medium">
+                    One engineering layer serving more than one workflow.
+                  </h3>
+                  <p className="mt-4 max-w-md text-body text-mist-50/70">
+                    The strongest teams can move between SaaS delivery, internal
+                    systems, support escalation paths, and platform tooling
+                    without acting like each problem belongs to a different vendor.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {["Product", "Platform", "QA", "Support bridge", "Tooling"].map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-mist-50/72"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-[var(--radius-lg)] border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <WorkflowGraph className="h-auto w-full" />
+                </div>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 shadow-lg lg:col-span-5">
+              <div className="relative h-52">
+                <Image
+                  src="/photos/step-design.jpg"
+                  alt="Product and platform design session"
+                  fill
+                  sizes="(min-width: 1024px) 28vw, 92vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-950/72 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/76 p-4 backdrop-blur">
+                  <p className="label text-signal-300">Architecture + delivery</p>
+                  <p className="mt-2 text-sm leading-6 text-mist-50/78">
+                    Scope, sequencing, and technical decisions shaped around
+                    what the product team can really ship and support.
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-3 p-5">
+                <div className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-100 p-4">
+                  <p className="label text-ink-400">Good fit</p>
+                  <p className="mt-2 text-body text-ink-700">
+                    Teams that need a software development partner, not random capacity.
+                  </p>
+                </div>
+                <div className="rounded-[var(--radius-md)] border border-signal-200 bg-white p-4">
+                  <p className="label text-signal-600">Common asks</p>
+                  <p className="mt-2 text-body text-ink-700">
+                    SaaS development, staff augmentation, release help, and internal systems.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {CAPABILITY_LAYERS.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm lg:col-span-4"
+              >
+                <IconBadge Icon={item.Icon} className="h-11 w-11" />
                 <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
               </div>
@@ -222,20 +347,150 @@ export default function EngineeringTeam() {
         </Container>
       </section>
 
-      <section className="border-b border-ink-200 bg-mist-200/60">
-        <Container className="py-16 md:py-20">
-          <div className="grid gap-10 md:grid-cols-[0.84fr_1.16fr] md:gap-16">
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-18 md:py-22">
+          <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-16">
             <div>
-              <Eyebrow className="mb-4">What teams bring us in to fix</Eyebrow>
-              <h2 className="text-h2 font-semibold text-ink-900">
-                Engineering gaps become operational problems faster than most teams expect.
+              <Eyebrow className="mb-5">Delivery model</Eyebrow>
+              <h2 className="text-h1 font-semibold text-ink-900">
+                Delivery visibility designed into the work from day one.
               </h2>
+              <p className="mt-5 max-w-md text-body-lg text-ink-600">
+                Roadmap, build, QA, release, and post-launch support should not
+                be a mystery. The operating model around engineering is part of
+                the service, not something the client has to reverse-engineer later.
+              </p>
             </div>
+
+            <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-6 shadow-xl">
+              <div className="grid gap-5 md:grid-cols-[0.62fr_0.38fr]">
+                <div className="rounded-[var(--radius-lg)] border border-mist-50/10 bg-mist-50/[0.04] p-5">
+                  <p className="label text-signal-300">Build path</p>
+                  <div className="mt-5 flex items-center justify-between gap-2">
+                    {["Roadmap", "Build", "QA", "Release"].map((item, index) => (
+                      <div key={item} className="flex flex-1 items-center gap-2">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-signal-400/60 bg-ink-900 text-sm text-mist-50/78">
+                          {index + 1}
+                        </div>
+                        <div className="hidden h-px flex-1 bg-gradient-to-r from-signal-400/60 to-mist-50/15 last:hidden md:block" />
+                        <span className="sr-only">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-6 grid gap-3">
+                    {[
+                      "Scope and tradeoffs stay visible to product owners.",
+                      "QA loops are scheduled, not treated as a surprise.",
+                      "Release readiness is tracked before it becomes stress.",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/50 px-4 py-3 text-sm text-mist-50/72"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid gap-4">
+                  <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/10">
+                    <div className="relative h-40">
+                      <Image
+                        src="/photos/step-launch.jpg"
+                        alt="Release and production-readiness view"
+                        fill
+                        sizes="(min-width: 768px) 18vw, 92vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink-950/82 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <p className="label text-signal-300">Production reality</p>
+                        <p className="mt-2 text-sm text-mist-50/78">
+                          Release quality matters because the software has to survive live operations.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="rounded-[var(--radius-lg)] border border-mist-50/10 bg-mist-50/[0.04] p-5">
+                    <p className="label text-signal-300">Client view</p>
+                    <div className="mt-4 grid gap-2 text-sm text-mist-50/72">
+                      <div className="rounded-md border border-mist-50/10 bg-ink-900/40 px-3 py-2">
+                        Build status with context
+                      </div>
+                      <div className="rounded-md border border-mist-50/10 bg-ink-900/40 px-3 py-2">
+                        QA findings with decisions
+                      </div>
+                      <div className="rounded-md border border-mist-50/10 bg-ink-900/40 px-3 py-2">
+                        Release plan without guesswork
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200">
+        <Container className="py-18 md:py-22">
+          <Eyebrow className="mb-3">Engagement models</Eyebrow>
+          <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
+            Different structures depending on whether you need capacity, ownership, or a systems pod.
+          </h2>
+          <div className="mt-14">
+            <MethodologyScroll steps={ENGAGEMENT_STEPS} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-200/60">
+        <Container className="py-18 md:py-22">
+          <div className="grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:gap-16">
+            <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 text-mist-50 shadow-xl">
+              <div className="relative h-full min-h-[420px]">
+                <Image
+                  src="/photos/dark-city.jpg"
+                  alt="Night systems view representing delivery pressure"
+                  fill
+                  sizes="(min-width: 768px) 32vw, 92vw"
+                  className="object-cover opacity-72"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-ink-950/15" />
+                <div className="absolute inset-x-0 bottom-0 p-7">
+                  <Eyebrow className="text-signal-300">What teams bring us in to fix</Eyebrow>
+                  <h2 className="mt-4 text-h1 font-semibold">
+                    Engineering gaps turn into operational problems fast.
+                  </h2>
+                  <p className="mt-4 max-w-lg text-body text-mist-50/72">
+                    By the time most companies ask for help, the issue is no
+                    longer just velocity. It is roadmap pressure, QA risk,
+                    support pain, and internal workarounds piling up around the product.
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {["Roadmap strain", "QA drag", "Tooling debt", "Escalation chaos"].map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-mist-50/12 bg-mist-50/[0.05] px-3 py-1.5 text-xs text-mist-50/72"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="grid gap-4">
-              {PROBLEMS.map((item, index) => (
-                <div key={item} className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-5">
-                  <span className="label text-signal-600">{`0${index + 1}`}</span>
-                  <p className="mt-2 text-body-lg text-ink-700">{item}</p>
+              {PROBLEMS.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm"
+                >
+                  <span className="label text-signal-600">{item.n}</span>
+                  <h3 className="mt-3 text-h3 font-medium text-ink-900">{item.title}</h3>
+                  <p className="mt-3 text-body text-ink-600">{item.body}</p>
                 </div>
               ))}
             </div>
@@ -243,40 +498,63 @@ export default function EngineeringTeam() {
         </Container>
       </section>
 
-      <section className="border-b border-ink-200">
-        <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-6">What strong delivery looks like</Eyebrow>
-          <div className="grid gap-3">
-            {PROOF_POINTS.map((item) => (
-              <div key={item} className="flex items-center gap-3 rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 px-4 py-3">
-                <IconBadge Icon={CheckIcon} variant="muted" className="h-8 w-8 shrink-0" />
-                <p className="text-body text-ink-700">{item}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="bg-ink-950 text-mist-50">
-        <Container className="py-16 text-center md:py-20">
-          <h2 className="mx-auto max-w-2xl text-h2 font-semibold">
-            Need engineering capacity that can actually live inside the system you are building?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-body-lg text-mist-50/65">
-            We can plug into the roadmap, build the missing systems, and stay
-            aligned with the operational reality those systems have to support.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
-            <Link
-              href="/support-operations"
-              className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
-            >
-              Explore support operations
-              <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                &rarr;
-              </span>
-            </Link>
+        <Container className="py-18 md:py-22">
+          <div className="grid gap-10 md:grid-cols-[0.88fr_1.12fr] md:gap-16">
+            <div>
+              <Eyebrow className="mb-5 text-signal-300">What strong delivery looks like</Eyebrow>
+              <h2 className="text-h1 font-semibold">
+                Serious engineering support should feel accountable, visible, and steady under pressure.
+              </h2>
+              <p className="mt-5 max-w-md text-body-lg text-mist-50/68">
+                This is the difference between rented development capacity and a
+                team that can actually help a company ship product and support real usage.
+              </p>
+            </div>
+
+            <div className="grid gap-4">
+              {PROOF_PILLARS.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-6 backdrop-blur"
+                >
+                  <div className="flex items-start gap-4">
+                    <IconBadge Icon={item.Icon} className="h-11 w-11 shrink-0" />
+                    <div>
+                      <h3 className="text-h3 font-medium">{item.title}</h3>
+                      <p className="mt-3 text-body text-mist-50/70">{item.body}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-7 md:p-8">
+            <div className="grid gap-6 md:grid-cols-[0.68fr_0.32fr] md:items-center">
+              <div>
+                <p className="label text-signal-300">Commercial close</p>
+                <h3 className="mt-3 text-h2 font-semibold">
+                  Need engineering capacity that can live inside the system you are building?
+                </h3>
+                <p className="mt-3 max-w-2xl text-body text-mist-50/68">
+                  We can plug into the roadmap, build the missing systems, and
+                  stay aligned with the support, automation, and internal workflows that the software has to serve.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center gap-4 md:justify-end">
+                <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+                <Link
+                  href="/support-operations"
+                  className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
+                >
+                  Explore support operations
+                  <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                    &rarr;
+                  </span>
+                </Link>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
