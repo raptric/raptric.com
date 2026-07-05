@@ -191,7 +191,7 @@ export default function SupportOperations() {
                 <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/55 to-transparent" />
                 <div className="relative min-h-[440px]">
                   <Image
-                    src="/photos/support-hero-generated.png"
+                    src="/photos/support-hitl-generated.png"
                     alt="Support operations team coordinating technical support and human review"
                     fill
                     sizes="(min-width: 768px) 48vw, 100vw"
