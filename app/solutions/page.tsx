@@ -1,121 +1,635 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
+import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import EmailFlow from "@/components/illustrations/email-flow";
 import VoiceFlow from "@/components/illustrations/voice-flow";
 import ClaimFlow from "@/components/illustrations/claim-flow";
-import { SystemsIcon, MailIcon, PhoneIcon, HealthIcon } from "@/components/illustrations/concept-icons";
+import {
+  SystemsIcon,
+  MailIcon,
+  PhoneIcon,
+  HealthIcon,
+  FlowIcon,
+  BuildingIcon,
+  BriefcaseIcon,
+  BagIcon,
+  CheckIcon,
+} from "@/components/illustrations/concept-icons";
 import { BreadcrumbSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
+type SolutionGroup = {
+  title: string;
+  items: string[];
+};
+
+type BaseSolution = {
+  Icon: typeof SystemsIcon;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  body: string;
+  visual: ReactNode;
+  bestFor?: string[];
+  note?: string;
+  technologies?: string[];
+};
+
+type CapabilitiesSolution = BaseSolution & {
+  capabilities: string[];
+  workflow?: string[];
+  groups?: never;
+};
+
+type GroupedSolution = BaseSolution & {
+  groups: SolutionGroup[];
+  bestFor?: string[];
+  note?: string;
+  technologies?: string[];
+  capabilities?: never;
+  workflow?: never;
+};
+
+type HybridSolution = BaseSolution & {
+  groups: SolutionGroup[];
+  bestFor?: string[];
+  note?: string;
+  technologies?: string[];
+  capabilities?: never;
+  workflow?: never;
+};
+
+type Solution = CapabilitiesSolution | GroupedSolution | HybridSolution;
+
 export const metadata = buildMetadata({
-  title: "Solutions — Packaged Systems We've Built",
+  title: "Solutions | AI Platforms, Workflow Systems & Automation Products | Raptric",
   description:
-    "LinkOS, eOS, Voice AI, and Healthcare & RCM Operations — packaged systems Raptric has built end-to-end, each combining automation with specialist judgment.",
+    "AI voice agents, healthcare workflow platforms, SEO outreach systems, AI sales engagement platforms, and lead intelligence systems built around real business operations.",
   path: "/solutions",
 });
 
-const SOLUTIONS = [
-  {
-    Icon: SystemsIcon,
-    name: "LinkOS",
-    status: "Live",
-    category: "Packaged Operating System",
-    body: "The first operating system we've built end-to-end — automation carrying the volume, specialist operators carrying the judgment calls.",
-    href: "/solutions/linkos",
-    diagram: <WorkflowGraph className="h-auto w-full" />,
-  },
-  {
-    Icon: MailIcon,
-    name: "eOS",
-    status: "In Development",
-    category: "Packaged Email Marketing OS",
-    body: "A hyper-personalized email marketing operating system, sequencing outreach by a contact's profile, designation, and role to get the meeting.",
-    href: "/solutions/eos",
-    diagram: <EmailFlow className="h-auto w-full" />,
-  },
+const WHAT_WE_BUILD = [
+  "Large Language Models (LLMs)",
+  "AI Agents",
+  "Workflow Automation",
+  "CRM & ERP Integrations",
+  "Voice AI",
+  "Data Pipelines",
+  "Web Scraping & Research Automation",
+  "API Integrations",
+  "Analytics & Reporting",
+  "Secure Cloud Infrastructure",
+];
+
+const SOLUTIONS: Solution[] = [
   {
     Icon: PhoneIcon,
-    name: "Voice AI",
-    status: "Live",
-    category: "Packaged Voice Operations System",
-    body: "A voice system that answers, resolves, and routes inbound calls — handing off to a specialist with full context when it should.",
-    href: "/solutions/voice-ai",
-    diagram: <VoiceFlow className="h-auto w-full" />,
+    eyebrow: "Solution 1",
+    title: "AI Voice Agents",
+    subtitle: "Intelligent Voice AI for sales, support, and operations.",
+    body: "Deploy AI voice agents capable of handling inbound calls, outbound campaigns, appointment scheduling, lead qualification, customer support, and operational workflows.",
+    capabilities: [
+      "Natural conversations",
+      "Appointment scheduling",
+      "CRM updates",
+      "Call summaries",
+      "Lead qualification",
+      "Multi-step workflows",
+      "Human handoff",
+      "Multilingual support",
+    ],
+    bestFor: [
+      "Healthcare",
+      "Real Estate",
+      "Local Businesses",
+      "Customer Support",
+      "Sales Teams",
+      "Professional Services",
+    ],
+    visual: <VoiceFlow className="h-auto w-full" />,
   },
   {
     Icon: HealthIcon,
-    name: "Healthcare & RCM Operations",
-    status: "Live",
-    category: "Packaged Voice & Agentic AI System",
-    body: "Voice and agentic AI applied to healthcare revenue cycle work — claim intake and adjudication automated, specialist review where it matters.",
-    href: "/solutions/healthcare-rcm-operations",
-    diagram: <ClaimFlow className="h-auto w-full" />,
+    eyebrow: "Solution 2",
+    title: "End-to-End Healthcare Workflow Platform",
+    subtitle: "Comprehensive healthcare operations engineered from patient intake to revenue cycle workflows.",
+    body: "We have extensive experience engineering healthcare workflow platforms that streamline clinical and administrative operations - from patient intake to revenue cycle management.",
+    groups: [
+      {
+        title: "Front Desk",
+        items: [
+          "Appointment scheduling",
+          "Calendar management",
+          "Online bookings",
+          "Patient check-in",
+          "Patient communication",
+        ],
+      },
+      {
+        title: "Patient Management",
+        items: [
+          "Electronic patient records",
+          "Treatment history",
+          "Medical documentation",
+          "Case management",
+        ],
+      },
+      {
+        title: "Practice Operations",
+        items: [
+          "Staff management",
+          "Multi-location support",
+          "Role-based permissions",
+          "Workflow automation",
+        ],
+      },
+      {
+        title: "Revenue Cycle Management",
+        items: [
+          "Insurance verification",
+          "Claims processing",
+          "Billing workflows",
+          "Payment tracking",
+          "Financial reporting",
+        ],
+      },
+      {
+        title: "Communication",
+        items: [
+          "AI voice agents",
+          "SMS reminders",
+          "Email notifications",
+          "Patient engagement",
+        ],
+      },
+      {
+        title: "Reporting",
+        items: [
+          "Operational dashboards",
+          "Revenue analytics",
+          "Performance tracking",
+        ],
+      },
+    ],
+    technologies: [
+      "AI automation",
+      "Workflow engines",
+      "API integrations",
+      "Secure cloud infrastructure",
+      "HIPAA-aware architecture",
+    ],
+    visual: <ClaimFlow className="h-auto w-full" />,
+  },
+  {
+    Icon: SystemsIcon,
+    eyebrow: "Solution 3",
+    title: "AI SEO Outreach Platform",
+    subtitle: "AI-powered link building and outreach systems for prospecting, qualification, and campaign execution.",
+    body: "An intelligent platform that automates backlink prospecting, qualification, content analysis, AI scoring, and personalized outreach - helping SEO teams scale link acquisition efficiently.",
+    workflow: [
+      "Campaign setup",
+      "AI keyword strategy",
+      "Search engine discovery",
+      "Website crawling",
+      "Content extraction",
+      "AI relevance analysis",
+      "Quality scoring",
+      "Prospect management",
+      "Outreach automation",
+      "Campaign reporting",
+    ],
+    capabilities: [
+      "AI keyword generation",
+      "Prospect discovery",
+      "Website analysis",
+      "Content extraction",
+      "Quality scoring",
+      "AI qualification",
+      "Campaign management",
+      "Outreach automation",
+      "Team collaboration",
+      "Reporting dashboard",
+    ],
+    bestFor: [
+      "SEO Agencies",
+      "Digital Marketing Agencies",
+      "SaaS Companies",
+      "Growth Teams",
+    ],
+    visual: <WorkflowGraph className="h-auto w-full" />,
+  },
+  {
+    Icon: MailIcon,
+    eyebrow: "Solution 4",
+    title: "AI Sales Engagement Platform",
+    subtitle: "Hyper-personalized outbound systems that combine AI research, lead intelligence, and automated campaign execution.",
+    body: "Build highly personalized outbound campaigns that combine AI research, lead intelligence, account management, and automated email sequences to increase response rates.",
+    groups: [
+      {
+        title: "Campaign Builder",
+        items: ["ICP", "Industry", "Persona", "Decision makers"],
+      },
+      {
+        title: "Lead Management",
+        items: ["Companies", "Accounts", "Contacts", "Pipeline"],
+      },
+      {
+        title: "AI Research",
+        items: [
+          "Public website analysis",
+          "Professional profile context",
+          "Company enrichment",
+          "Prospect intelligence",
+        ],
+      },
+      {
+        title: "Personalization Engine",
+        items: [
+          "Role-aware messaging",
+          "Industry context",
+          "Company signals",
+          "Business priorities",
+        ],
+      },
+      {
+        title: "Automation",
+        items: [
+          "Email sequences",
+          "Follow-ups",
+          "A/B testing",
+          "Campaign analytics",
+        ],
+      },
+    ],
+    bestFor: [
+      "B2B SaaS",
+      "Agencies",
+      "Healthcare",
+      "Consulting",
+      "Enterprise Sales",
+    ],
+    note: "Instead of pitching the wrong contact, the platform can adapt messaging and request an introduction to the real decision-maker.",
+    visual: <EmailFlow className="h-auto w-full" />,
+  },
+  {
+    Icon: FlowIcon,
+    eyebrow: "Solution 5",
+    title: "AI Lead Intelligence Platform",
+    subtitle: "Turn local business data into qualified sales opportunities.",
+    body: "Automatically discover businesses, enrich company profiles, identify decision-makers, and build qualified prospect databases ready for outreach.",
+    workflow: [
+      "Business discovery",
+      "Business research",
+      "Company enrichment",
+      "Decision maker identification",
+      "Contact discovery",
+      "Lead qualification",
+      "CRM export",
+      "Outreach",
+    ],
+    capabilities: [
+      "Business discovery",
+      "Data enrichment",
+      "Contact identification",
+      "Decision maker mapping",
+      "AI qualification",
+      "CRM export",
+      "API integrations",
+    ],
+    bestFor: [
+      "Agencies",
+      "Local Services",
+      "Healthcare",
+      "Franchises",
+      "B2B Sales",
+      "Market Research",
+    ],
+    visual: (
+      <div className="grid gap-4">
+        <div className="rounded-[var(--radius-md)] border border-mist-50/10 bg-mist-50/[0.04] p-4">
+          <p className="label text-signal-300">Workflow</p>
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-mist-50/74">
+            {["Discovery", "Enrichment", "Contacts", "Qualification", "CRM", "Outreach"].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-mist-50/10 bg-ink-900/50 px-3 py-1.5"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="rounded-[var(--radius-md)] border border-mist-50/10 bg-mist-50/[0.04] p-4">
+          <p className="label text-signal-300">Outcome</p>
+          <p className="mt-3 text-sm leading-6 text-mist-50/74">
+            Local business data becomes structured, qualified lead intelligence ready for sales teams and CRM workflows.
+          </p>
+        </div>
+      </div>
+    ),
   },
 ];
 
-const STATUS_STYLES: Record<string, string> = {
-  Live: "text-signal-600",
-  "In Development": "text-ink-500",
-};
+const INDUSTRIES = [
+  {
+    Icon: HealthIcon,
+    title: "Healthcare",
+    body: "AI-powered patient engagement, workflow automation, scheduling, and operational platforms.",
+  },
+  {
+    Icon: SystemsIcon,
+    title: "Marketing & SEO",
+    body: "Campaign automation, backlink prospecting, outreach, and growth systems.",
+  },
+  {
+    Icon: MailIcon,
+    title: "Sales",
+    body: "Lead generation, AI personalization, outbound automation, and CRM integration.",
+  },
+  {
+    Icon: BriefcaseIcon,
+    title: "Professional Services",
+    body: "Workflow automation, client management, appointment systems, and operational workflows.",
+  },
+  {
+    Icon: BuildingIcon,
+    title: "Local Businesses",
+    body: "Voice AI, customer engagement, booking automation, and lead management.",
+  },
+  {
+    Icon: BagIcon,
+    title: "Enterprise Operations",
+    body: "Custom AI systems, internal automation, workflow orchestration, and analytics.",
+  },
+];
+
+const STACK_GROUPS = [
+  {
+    title: "Artificial Intelligence",
+    items: [
+      "Large Language Models",
+      "AI Agents",
+      "Retrieval-Augmented Generation (RAG)",
+      "Prompt Engineering",
+      "Intelligent Workflow Orchestration",
+    ],
+  },
+  {
+    title: "Automation",
+    items: [
+      "Business Process Automation",
+      "Workflow Engines",
+      "Event-Driven Systems",
+      "API Integrations",
+    ],
+  },
+  {
+    title: "Backend Engineering",
+    items: [
+      "Scalable APIs",
+      "Database Design",
+      "Authentication",
+      "Cloud Infrastructure",
+      "Security",
+    ],
+  },
+  {
+    title: "Data",
+    items: [
+      "Search & Discovery",
+      "Data Enrichment",
+      "Knowledge Bases",
+      "Analytics",
+      "Reporting",
+    ],
+  },
+  {
+    title: "Integrations",
+    items: [
+      "CRM Platforms",
+      "Calendar Systems",
+      "Email Platforms",
+      "Voice Providers",
+      "Payment Systems",
+      "Third-Party APIs",
+    ],
+  },
+];
+
+const WHY_US = [
+  "AI-first product engineering",
+  "Production-ready software - not prototypes",
+  "Deep workflow automation expertise",
+  "End-to-end platform development",
+  "Enterprise-grade architecture",
+  "Scalable cloud infrastructure",
+  "Custom integrations",
+  "Human-centered UX",
+];
 
 export default function Solutions() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Solutions", path: "/solutions" }]} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Solutions", path: "/solutions" },
+        ]}
+      />
 
-      <section className="bg-ink-950 text-mist-50">
-        <Container className="py-20 md:py-24">
-          <Eyebrow className="mb-4 text-signal-400">Solutions</Eyebrow>
-          <h1 className="max-w-2xl text-display font-semibold">
-            Packaged systems, not service tiers.
-          </h1>
-          <p className="mt-6 max-w-xl text-body-lg text-mist-50/65">
-            AI Automation, Support Operations, and Engineering Team are how we
-            work. The systems below are what we&apos;ve built with it — live
-            products, run end-to-end, not a menu of generic offerings.
-          </p>
+      <section className="relative overflow-hidden bg-ink-950 text-mist-50">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/40 to-transparent" />
+        <div className="absolute right-0 top-20 h-72 w-72 rounded-full bg-signal-500/16 blur-[120px]" />
+        <Container className="grid items-center gap-14 py-18 md:grid-cols-[0.9fr_1.1fr] md:py-24">
+          <div>
+            <Eyebrow className="mb-4 text-signal-400">Solutions</Eyebrow>
+            <h1 className="max-w-3xl text-display font-semibold">
+              AI-powered operating systems built for real business workflows.
+            </h1>
+            <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
+              We do not build isolated AI features. We engineer complete business
+              systems that combine automation, AI, integrations, data, and
+              software delivery into one operational layer.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <CtaLink href="/contact">Discuss Your Project</CtaLink>
+              <Link
+                href="/ai-automation"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
+              >
+                Explore AI automation
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  &rarr;
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-6 shadow-2xl backdrop-blur">
+            <p className="label text-signal-300">What we build</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {WHAT_WE_BUILD.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/50 px-4 py-3 text-sm text-mist-50/76"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
+        <Container className="py-18 md:py-22">
+          <Eyebrow className="mb-5">What we build</Eyebrow>
+          <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
+            Complete business systems - not isolated AI features.
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {WHAT_WE_BUILD.map((item) => (
+              <div
+                key={item}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 px-4 py-4 text-sm font-medium text-ink-800 shadow-sm"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 
       <section>
-        {SOLUTIONS.map((s, i) => {
-          const reversed = i % 2 === 1;
+        {SOLUTIONS.map((solution, index) => {
+          const reversed = index % 2 === 1;
           return (
-            <div key={s.name} className="border-b border-ink-200">
-              <Container className="py-16 md:py-20">
+            <div key={solution.title} className="border-b border-ink-200">
+              <Container className="py-18 md:py-22">
                 <div
-                  className={`grid gap-10 md:grid-cols-2 md:items-center md:gap-16 ${
+                  className={`grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:items-start md:gap-16 ${
                     reversed ? "md:[&>*:first-child]:order-2" : ""
                   }`}
                 >
                   <div>
-                    <div className="flex items-center gap-3">
-                      <s.Icon className="h-8 w-8 text-signal-500" />
-                      <span className={`label inline-flex items-center gap-1.5 ${STATUS_STYLES[s.status]}`}>
-                        <span className="h-1.5 w-1.5 rounded-full bg-current" />
-                        {s.status}
-                      </span>
+                    <div className="flex items-center gap-4">
+                      <IconBadge Icon={solution.Icon} className="h-12 w-12" />
+                      <div>
+                        <Eyebrow>{solution.eyebrow}</Eyebrow>
+                        <p className="mt-2 text-sm font-medium text-ink-500">
+                          {solution.subtitle}
+                        </p>
+                      </div>
                     </div>
-                    <Eyebrow className="mb-3 mt-6">{s.category}</Eyebrow>
-                    <h2 className="text-h1 font-semibold text-ink-900">{s.name}</h2>
-                    <p className="mt-4 max-w-md text-body-lg text-ink-600">{s.body}</p>
-                    <Link
-                      href={s.href}
-                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600 hover:text-signal-700"
-                    >
-                      See how it works
-                      <span aria-hidden>→</span>
-                    </Link>
+                    <h2 className="mt-6 text-h1 font-semibold text-ink-900">
+                      {solution.title}
+                    </h2>
+                    <p className="mt-4 max-w-2xl text-body-lg text-ink-600">
+                      {solution.body}
+                    </p>
+
+                    {solution.capabilities ? (
+                      <>
+                        <p className="mt-8 label text-ink-500">Capabilities</p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {solution.capabilities.map((item) => (
+                            <span
+                              key={item}
+                              className="rounded-full border border-ink-200 bg-mist-50 px-3 py-1.5 text-sm text-ink-700"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </>
+                    ) : null}
+
+                    {solution.groups ? (
+                      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                        {solution.groups.map((group) => (
+                          <div
+                            key={group.title}
+                            className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5 shadow-sm"
+                          >
+                            <p className="label text-signal-600">{group.title}</p>
+                            <div className="mt-3 grid gap-2 text-sm text-ink-700">
+                              {group.items.map((item) => (
+                                <div key={item} className="flex items-start gap-2">
+                                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-signal-600" />
+                                  <span>{item}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+
+                    {solution.workflow ? (
+                      <>
+                        <p className="mt-8 label text-ink-500">Workflow</p>
+                        <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-ink-700">
+                          {solution.workflow.map((item, i, arr) => (
+                            <div key={item} className="flex items-center gap-2">
+                              <span className="rounded-full border border-ink-200 bg-mist-50 px-3 py-1.5">
+                                {item}
+                              </span>
+                              {i < arr.length - 1 ? (
+                                <span className="text-ink-300">&rarr;</span>
+                              ) : null}
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    ) : null}
+
+                    {solution.bestFor ? (
+                      <>
+                        <p className="mt-8 label text-ink-500">Best For</p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {solution.bestFor.map((item) => (
+                            <span
+                              key={item}
+                              className="rounded-full border border-signal-200 bg-signal-50 px-3 py-1.5 text-sm text-signal-700"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </>
+                    ) : null}
+
+                    {solution.technologies ? (
+                      <>
+                        <p className="mt-8 label text-ink-500">Technologies</p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {solution.technologies.map((item) => (
+                            <span
+                              key={item}
+                              className="rounded-full border border-ink-200 bg-white px-3 py-1.5 text-sm text-ink-700"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </>
+                    ) : null}
+
+                    {solution.note ? (
+                      <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-5">
+                        <p className="label text-signal-700">Differentiator</p>
+                        <p className="mt-3 text-body text-ink-700">{solution.note}</p>
+                      </div>
+                    ) : null}
                   </div>
-                  <Link
-                    href={s.href}
-                    className="block rounded-[var(--radius-lg)] bg-ink-950 p-6 shadow-xl transition-transform hover:scale-[1.01]"
-                  >
-                    {s.diagram}
-                  </Link>
+
+                  <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-6 text-mist-50 shadow-xl">
+                    {solution.visual}
+                  </div>
                 </div>
               </Container>
             </div>
@@ -123,13 +637,105 @@ export default function Solutions() {
         })}
       </section>
 
-      <section className="bg-ink-950 text-mist-50">
-        <Container className="py-16 text-center md:py-20">
-          <h2 className="mx-auto max-w-lg text-h2 font-semibold">
-            Want a system built around your operation?
+      <section className="border-b border-ink-200 bg-mist-200/60">
+        <Container className="py-18 md:py-22">
+          <Eyebrow className="mb-5">Industries We Serve</Eyebrow>
+          <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
+            The same AI systems model, applied to different operating environments.
           </h2>
-          <div className="mt-8">
-            <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {INDUSTRIES.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm"
+              >
+                <IconBadge Icon={item.Icon} variant="muted" className="h-11 w-11" />
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200">
+        <Container className="py-18 md:py-22">
+          <Eyebrow className="mb-5">Technology Stack</Eyebrow>
+          <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
+            Capabilities across AI, automation, backend systems, data, and integrations.
+          </h2>
+          <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+            {STACK_GROUPS.map((group) => (
+              <div
+                key={group.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm"
+              >
+                <h3 className="text-h3 font-medium text-ink-900">{group.title}</h3>
+                <div className="mt-4 grid gap-2 text-sm text-ink-700">
+                  {group.items.map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-signal-600" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-ink-950 text-mist-50">
+        <Container className="py-18 md:py-22">
+          <div className="grid gap-10 md:grid-cols-[0.88fr_1.12fr] md:gap-16">
+            <div>
+              <Eyebrow className="mb-5 text-signal-300">Why Companies Choose Us</Eyebrow>
+              <h2 className="text-h1 font-semibold">
+                We do not just wire up tools. We build AI platforms that hold up in real business use.
+              </h2>
+              <p className="mt-5 max-w-md text-body-lg text-mist-50/68">
+                The value is not one model, one workflow, or one integration.
+                It is the full platform thinking behind revenue, operations,
+                customer engagement, and workflow execution.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {WHY_US.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 backdrop-blur"
+                >
+                  <div className="flex items-start gap-3">
+                    <IconBadge Icon={CheckIcon} className="h-10 w-10 shrink-0" />
+                    <p className="text-body text-mist-50/76">{item}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-7 md:p-8">
+            <div className="grid gap-6 md:grid-cols-[0.7fr_0.3fr] md:items-center">
+              <div>
+                <p className="label text-signal-300">Ready to Build Your AI Platform?</p>
+                <h3 className="mt-3 text-h2 font-semibold">
+                  Whether you are automating customer conversations, healthcare operations, sales, SEO, or internal workflows, we build AI systems that solve real business problems and scale with growth.
+                </h3>
+              </div>
+              <div className="flex flex-wrap items-center gap-4 md:justify-end">
+                <CtaLink href="/contact">Book a Discovery Call</CtaLink>
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
+                >
+                  Discuss Your Project
+                  <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                    &rarr;
+                  </span>
+                </Link>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
