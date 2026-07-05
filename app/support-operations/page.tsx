@@ -5,7 +5,6 @@ import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
 import MethodologyScroll from "@/components/sections/methodology-scroll";
-import SupportHeroVisual from "@/components/illustrations/support-hero-visual";
 import EscalationPath from "@/components/illustrations/escalation-path";
 import { CustomerOperationsIcon } from "@/components/illustrations/service-icons";
 import {
@@ -63,21 +62,21 @@ const SUPPORT_MODES = [
     label: "AI-assisted",
     title: "Use automation where the work is repetitive and the answer path is clear",
     body: "Best when the business needs faster first response, cleaner routing, and relief from repetitive support volume without turning the customer experience into bot theatre.",
-    image: "/photos/support-team.jpg",
+    image: "/photos/support-ai-assisted-generated.png",
   },
   {
     n: "02",
     label: "HITL review",
     title: "Keep humans at the judgment checkpoints where confidence alone is not enough",
     body: "Best when AI can classify, draft, or route, but a specialist still needs to validate, decide, or communicate before the outcome reaches the customer.",
-    image: "/photos/step-design.jpg",
+    image: "/photos/support-hitl-generated.png",
   },
   {
     n: "03",
     label: "Human-led",
     title: "Run specialist or fully human support where trust, complexity, or risk carry the decision",
     body: "Best for industries, escalations, and workflows where empathy, compliance, or technical depth matter more than speed alone.",
-    image: "/photos/step-launch.jpg",
+    image: "/photos/support-specialist-generated.png",
   },
 ];
 
@@ -151,13 +150,12 @@ export default function SupportOperations() {
             <CustomerOperationsIcon className="h-12 w-12 text-signal-400" />
             <Eyebrow className="mb-4 mt-6 text-signal-400">Support Operations</Eyebrow>
             <h1 className="text-display font-semibold">
-              Tech support and human operations designed around complexity.
+              Tech support built for complexity.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
-              We help businesses design support systems that can blend AI-assisted
-              intake, human review, technical escalation, and fully human
-              coverage depending on the workflow, the customer, and the level
-              of judgment required.
+              AI-assisted intake, HITL review, technical escalation, and human
+              coverage designed as one support model so speed, trust, and
+              specialist judgment do not fight each other.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
@@ -189,11 +187,20 @@ export default function SupportOperations() {
             <div className="absolute inset-0 -z-10 bg-signal-500/14 blur-[110px]" />
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
               <div className="relative min-h-[440px]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(108,92,231,0.18),transparent_34%),radial-gradient(circle_at_top_right,rgba(108,92,231,0.12),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(108,92,231,0.18),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))]" />
                 <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/55 to-transparent" />
-                <div className="relative flex min-h-[440px] items-center justify-center px-8 py-12">
-                  <div className="w-full max-w-2xl">
-                    <SupportHeroVisual className="h-auto w-full" />
+                <div className="relative min-h-[440px]">
+                  <Image
+                    src="/photos/support-hero-generated.png"
+                    alt="Support operations team coordinating technical support and human review"
+                    fill
+                    sizes="(min-width: 768px) 48vw, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/62 via-ink-950/18 to-transparent" />
+                  <div className="absolute left-6 top-6 rounded-full border border-mist-50/16 bg-ink-950/64 px-3 py-1.5 text-xs font-medium text-mist-50/80 backdrop-blur">
+                    Tech support + HITL
                   </div>
                 </div>
               </div>
@@ -243,7 +250,7 @@ export default function SupportOperations() {
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 shadow-lg lg:col-span-5">
               <div className="relative h-52">
                 <Image
-                  src="/photos/support-team.jpg"
+                  src="/photos/support-specialist-generated.png"
                   alt="Support team coordinating human and technical support work"
                   fill
                   sizes="(min-width: 1024px) 28vw, 92vw"
@@ -348,7 +355,7 @@ export default function SupportOperations() {
                   <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/10">
                     <div className="relative h-40">
                       <Image
-                        src="/photos/step-launch.jpg"
+                        src="/photos/support-hitl-generated.png"
                         alt="Support system operating under live conditions"
                         fill
                         sizes="(min-width: 768px) 18vw, 92vw"
@@ -430,6 +437,32 @@ export default function SupportOperations() {
                       </span>
                     ))}
                   </div>
+                  <div className="mt-8 overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/10 bg-mist-50/[0.04]">
+                    <div className="relative h-48">
+                      <Image
+                        src="/photos/support-ai-assisted-generated.png"
+                        alt="Support analyst reviewing AI-assisted support work"
+                        fill
+                        sizes="(min-width: 768px) 34vw, 92vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink-950/82 via-ink-950/28 to-transparent" />
+                      <div className="absolute bottom-4 left-4 right-4 grid gap-3 md:grid-cols-2">
+                        <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/72 px-4 py-3 backdrop-blur">
+                          <p className="label text-signal-300">Where it breaks</p>
+                          <p className="mt-2 text-sm text-mist-50/76">
+                            AI replies, technical queues, and human review all living in one messy lane.
+                          </p>
+                        </div>
+                        <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-ink-950/72 px-4 py-3 backdrop-blur">
+                          <p className="label text-signal-300">What we redesign</p>
+                          <p className="mt-2 text-sm text-mist-50/76">
+                            Intake, routing, escalation context, and specialist time allocation.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -485,21 +518,21 @@ export default function SupportOperations() {
               <div>
                 <p className="label text-signal-300">Commercial close</p>
                 <h3 className="mt-3 text-h2 font-semibold">
-                  Need a support model that blends AI, tech support, and human judgment cleanly?
+                  Need support operations that can handle AI, tech support, and human judgment without breaking trust?
                 </h3>
                 <p className="mt-3 max-w-2xl text-body text-mist-50/68">
-                  We can help define what should be automated, what should be
-                  specialist-led, and what should stay fully human for your
-                  industry, your risk profile, and your customer experience.
+                  We help teams map what should be automated, what should route
+                  to specialists, how technical escalations should flow, and
+                  where fully human handling still protects the customer experience.
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-4 md:justify-end">
                 <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
                 <Link
-                  href="/engineering-team"
+                  href="/ai-automation"
                   className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
                 >
-                  Explore engineering team
+                  See the AI layer
                   <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                     &rarr;
                   </span>
