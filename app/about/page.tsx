@@ -1,13 +1,17 @@
 // NOTE: founder/company bio content below is a safe, non-invented first
 // draft (operating philosophy + generic background framing already
-// established in project docs — no company names, no fabricated
+// established in project docs - no company names, no fabricated
 // specifics). Flagged for the client to replace with real details.
 import Image from "next/image";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
-import { BuildIcon, SystemsIcon, AccountableIcon } from "@/components/illustrations/concept-icons";
+import {
+  BuildIcon,
+  SystemsIcon,
+  AccountableIcon,
+} from "@/components/illustrations/concept-icons";
 import { BreadcrumbSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
@@ -19,15 +23,32 @@ export const metadata = buildMetadata({
 });
 
 const PRINCIPLES = [
-  { Icon: BuildIcon, title: "We build, not just advise", body: "The automation and the software, shipped by us — not scoped out and handed off." },
-  { Icon: SystemsIcon, title: "Systems, not isolated tasks", body: "Every engagement starts with how the operation actually runs, not which tool to add next." },
-  { Icon: AccountableIcon, title: "Operationally accountable", body: "We stay attached to how it performs after launch — automation, support, and engineering alike." },
+  {
+    Icon: BuildIcon,
+    title: "We build, not just advise",
+    body: "The automation and the software, shipped by us - not scoped out and handed off.",
+  },
+  {
+    Icon: SystemsIcon,
+    title: "Systems, not isolated tasks",
+    body: "Every engagement starts with how the operation actually runs, not which tool to add next.",
+  },
+  {
+    Icon: AccountableIcon,
+    title: "Operationally accountable",
+    body: "We stay attached to how it performs after launch - automation, support, and engineering alike.",
+  },
 ];
 
 export default function About() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]}
+      />
 
       <section className="bg-ink-950 text-mist-50">
         <Container className="grid items-center gap-12 py-20 md:grid-cols-2 md:gap-16 md:py-24">
@@ -37,15 +58,15 @@ export default function About() {
               Built by people who&apos;ve run the operation, not just advised on it.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/65">
-              Raptric exists because most automation, support, and
-              engineering work gets sold as three separate things. We build
-              them as one system instead.
+              Raptric exists because most automation, support, and engineering
+              work gets sold as three separate things. We build them as one
+              system instead.
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-2xl">
             <Image
-              src="/photos/hero-team.jpg"
-              alt="The Raptric team working through a system design session"
+              src="/photos/about-hero-generated.png"
+              alt="A Raptric operator reviewing systems and performance in a real working environment"
               fill
               sizes="(min-width: 768px) 45vw, 90vw"
               className="object-cover"
@@ -55,7 +76,6 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Operating philosophy */}
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
           <Eyebrow className="mb-10">How we operate</Eyebrow>
@@ -63,7 +83,9 @@ export default function About() {
             {PRINCIPLES.map((item) => (
               <div key={item.title} className="border-t border-ink-200 pt-6">
                 <IconBadge Icon={item.Icon} className="h-12 w-12" />
-                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">
+                  {item.title}
+                </h3>
                 <p className="mt-2 text-body text-ink-600">{item.body}</p>
               </div>
             ))}
@@ -71,19 +93,18 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Background */}
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
           <div className="mx-auto max-w-2xl">
             <Eyebrow className="mb-5">Where this comes from</Eyebrow>
             <p className="text-body-lg text-ink-700">
               The team behind Raptric has spent years running real operations
-              at scale — including healthcare revenue-cycle and support
-              operations — before building automation and software for a
-              living. That&apos;s the lens we bring: we&apos;ve staffed the
-              escalation queue, closed the books at month-end, and lived with
-              a bad automation rollout. Raptric is built the way we wish
-              those systems had been built the first time.
+              at scale - including healthcare revenue-cycle and support
+              operations - before building automation and software for a living.
+              That&apos;s the lens we bring: we&apos;ve staffed the escalation
+              queue, closed the books at month-end, and lived with a bad
+              automation rollout. Raptric is built the way we wish those
+              systems had been built the first time.
             </p>
           </div>
         </Container>
