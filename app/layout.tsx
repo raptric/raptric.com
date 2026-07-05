@@ -21,11 +21,27 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Raptric — AI Automation, Support Operations & Engineering Teams",
+    default: "Raptric | AI Automation, Support Operations & Engineering Teams",
     template: "%s | Raptric",
   },
   description:
-    "Raptric builds operating systems for business workflows — AI automation, support operations, and embedded engineering capacity, combined.",
+    "Raptric builds operating systems for business workflows - AI automation, support operations, and embedded engineering capacity combined.",
+  openGraph: {
+    siteName: "Raptric",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Raptric",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({

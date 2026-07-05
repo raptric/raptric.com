@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "A consistent dedicated development team assigned to your product — not rotating contractors — with direct communication and long-term roadmap ownership.",
   path: "/engineering-team/dedicated-development-team",
+  noIndex: true,
 });
 
 export default function DedicatedDevelopmentTeam() {

@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
   description:
     "eOS is a hyper-personalized email marketing operating system — sequencing outreach based on a contact's profile, designation, and role to get the meeting.",
   path: "/solutions/eos",
+  noIndex: true,
 });
 
 export default function EosSolution() {

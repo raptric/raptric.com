@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Software staff augmentation: developers and QA embedded inside your existing team and roadmap, scaling up or down without a full-time hiring cycle.",
   path: "/engineering-team/staff-augmentation-services",
+  noIndex: true,
 });
 
 export default function StaffAugmentationServices() {

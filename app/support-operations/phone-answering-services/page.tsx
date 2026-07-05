@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Professional phone answering services for small and growing businesses: live call answering, message taking, and appointment scheduling — no call goes to voicemail.",
   path: "/support-operations/phone-answering-services",
+  noIndex: true,
 });
 
 export default function PhoneAnsweringServices() {

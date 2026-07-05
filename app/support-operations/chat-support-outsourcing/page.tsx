@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Live chat support outsourcing across your website and app, with automation handling volume and specialists handling the conversations that need judgment.",
   path: "/support-operations/chat-support-outsourcing",
+  noIndex: true,
 });
 
 export default function ChatSupportOutsourcing() {

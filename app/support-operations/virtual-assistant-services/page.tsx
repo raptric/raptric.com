@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Ongoing virtual assistant services: inbox and calendar management, data entry and research, and recurring administrative work handled by a dedicated specialist.",
   path: "/support-operations/virtual-assistant-services",
+  noIndex: true,
 });
 
 export default function VirtualAssistantServices() {

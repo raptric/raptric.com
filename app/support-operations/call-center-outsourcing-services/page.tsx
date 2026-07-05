@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Inbound and outbound call center outsourcing with structured scripts, quality monitoring, and overflow coverage for peak hours.",
   path: "/support-operations/call-center-outsourcing-services",
+  noIndex: true,
 });
 
 export default function CallCenterOutsourcingServices() {

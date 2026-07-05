@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "SaaS development services: custom platforms, dashboards, portals, APIs, and integrations built for how your business actually operates.",
   path: "/engineering-team/saas-development-services",
+  noIndex: true,
 });
 
 export default function SaasDevelopmentServices() {

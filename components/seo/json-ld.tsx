@@ -18,6 +18,15 @@ export function OrganizationSchema() {
         name: SITE_NAME,
         url: SITE_URL,
         logo: `${SITE_URL}/raptric-mark.png`,
+        email: "usman@raptric.com",
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "sales",
+            email: "usman@raptric.com",
+            url: `${SITE_URL}/contact`,
+          },
+        ],
       }}
     />
   );
@@ -89,11 +98,13 @@ export function ArticleSchema({
   description,
   path,
   datePublished,
+  dateModified,
 }: {
   title: string;
   description: string;
   path: string;
   datePublished: string;
+  dateModified?: string;
 }) {
   return (
     <Schema
@@ -104,11 +115,99 @@ export function ArticleSchema({
         description,
         url: `${SITE_URL}${path}`,
         datePublished,
+        dateModified: dateModified ?? datePublished,
+        author: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
         publisher: {
           "@type": "Organization",
           name: SITE_NAME,
           url: SITE_URL,
         },
+      }}
+    />
+  );
+}
+
+export function FAQSchema({
+  items,
+}: {
+  items: { q: string; a: string }[];
+}) {
+  return (
+    <Schema
+      data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: items.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a,
+          },
+        })),
+      }}
+    />
+  );
+}
+
+export function ContactPageSchema() {
+  return (
+    <Schema
+      data={{
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        name: "Contact Raptric",
+        url: `${SITE_URL}/contact`,
+        mainEntity: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+          email: "usman@raptric.com",
+        },
+      }}
+    />
+  );
+}
+
+export function AboutPageSchema() {
+  return (
+    <Schema
+      data={{
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        name: "About Raptric",
+        url: `${SITE_URL}/about`,
+        about: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      }}
+    />
+  );
+}
+
+export function CollectionPageSchema({
+  name,
+  path,
+  description,
+}: {
+  name: string;
+  path: string;
+  description: string;
+}) {
+  return (
+    <Schema
+      data={{
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name,
+        description,
+        url: `${SITE_URL}${path}`,
       }}
     />
   );

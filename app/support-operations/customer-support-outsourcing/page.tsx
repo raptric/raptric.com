@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Customer support outsourcing built as a system: specialist operators, defined coverage hours, and automation for volume — so quality doesn't erode as you grow.",
   path: "/support-operations/customer-support-outsourcing",
+  noIndex: true,
 });
 
 export default function CustomerSupportOutsourcing() {

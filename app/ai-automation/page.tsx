@@ -14,7 +14,7 @@ import {
   BuildIcon,
   CheckIcon,
 } from "@/components/illustrations/concept-icons";
-import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
+import { BreadcrumbSchema, FAQSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -137,6 +137,7 @@ const FAQS = [
 export default function AiAutomation() {
   return (
     <>
+      <FAQSchema items={FAQS} />
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "AI Automation", path: "/ai-automation" }]} />
       <ServiceSchema
         name="AI Automation Services"

@@ -18,7 +18,7 @@ import {
   PhoneIcon,
   CheckIcon,
 } from "@/components/illustrations/concept-icons";
-import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
+import { BreadcrumbSchema, FAQSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -127,9 +127,29 @@ const PROOF_POINTS = [
   "AI should reduce drag, not create a trust gap the human team has to repair later.",
 ];
 
+const FAQS = [
+  {
+    q: "What kinds of support operations does Raptric design?",
+    a: "We design support systems that combine technical support, customer care, AI-assisted intake, human-in-the-loop review, specialist escalation, and fully human handling where trust or complexity still matter most.",
+  },
+  {
+    q: "Do you only provide outsourced support agents?",
+    a: "No. The point is not just staffing. We help define the structure around intake, routing, escalation, AI assistance, specialist review, and support quality so the operation works as a system.",
+  },
+  {
+    q: "Can Raptric support AI plus human customer operations?",
+    a: "Yes. One of the strongest uses for this model is combining AI-assisted first response with human review and specialist handling where the workflow becomes nuanced, technical, or trust-sensitive.",
+  },
+  {
+    q: "Is this only for customer support teams?",
+    a: "No. The same model can be applied to technical support, service operations, appointment workflows, escalations, and operator-heavy environments where requests need better structure.",
+  },
+];
+
 export default function SupportOperations() {
   return (
     <>
+      <FAQSchema items={FAQS} />
       <BreadcrumbSchema
         items={[
           { name: "Home", path: "/" },
@@ -485,6 +505,18 @@ export default function SupportOperations() {
 
       <section className="bg-ink-950 text-mist-50">
         <Container className="py-18 md:py-22">
+          <Eyebrow className="mb-6 text-signal-300">FAQ</Eyebrow>
+          <div className="mx-auto mb-12 flex max-w-3xl flex-col divide-y divide-mist-50/12 border-y border-mist-50/12">
+            {FAQS.map((item) => (
+              <details key={item.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between text-body-lg font-medium text-mist-50">
+                  {item.q}
+                  <span className="ml-4 shrink-0 text-mist-50/40 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-body text-mist-50/68">{item.a}</p>
+              </details>
+            ))}
+          </div>
           <div className="grid gap-10 md:grid-cols-[0.88fr_1.12fr] md:gap-16">
             <div>
               <Eyebrow className="mb-5 text-signal-300">How the model should feel</Eyebrow>

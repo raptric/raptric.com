@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Custom internal tools built for how your team actually operates: admin panels, internal dashboards, and workflow tools, maintained after they ship.",
   path: "/engineering-team/custom-internal-tools-development",
+  noIndex: true,
 });
 
 export default function CustomInternalToolsDevelopment() {

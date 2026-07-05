@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
   description:
     "LinkOS is the first operating system Raptric has built end-to-end — live, with automation carrying volume and specialist operators carrying judgment calls.",
   path: "/solutions/linkos",
+  noIndex: true,
 });
 
 export default function LinkOSSolution() {

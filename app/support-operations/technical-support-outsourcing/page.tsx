@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Technical support outsourcing with structured Tier 1 and Tier 2 troubleshooting, clear escalation to engineering, and knowledge base upkeep.",
   path: "/support-operations/technical-support-outsourcing",
+  noIndex: true,
 });
 
 export default function TechnicalSupportOutsourcing() {

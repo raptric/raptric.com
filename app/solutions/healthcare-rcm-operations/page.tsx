@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
   description:
     "A voice and agentic AI system for healthcare revenue cycle operations — automating claim intake and routine adjudication, with specialist review for anything that needs a person.",
   path: "/solutions/healthcare-rcm-operations",
+  noIndex: true,
 });
 
 export default function HealthcareRcmSolution() {

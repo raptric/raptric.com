@@ -17,7 +17,7 @@ import {
   ReportIcon,
   AccountableIcon,
 } from "@/components/illustrations/concept-icons";
-import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
+import { BreadcrumbSchema, FAQSchema, ServiceSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -120,9 +120,29 @@ const PROOF_PILLARS = [
   },
 ];
 
+const FAQS = [
+  {
+    q: "What is the difference between Raptric and a normal staff augmentation vendor?",
+    a: "Raptric is positioned as an engineering partner, not just a source of extra hands. We focus on roadmap visibility, QA discipline, support alignment, and internal systems context so the added capacity fits the real operation.",
+  },
+  {
+    q: "Do you only work on new SaaS builds?",
+    a: "No. We can work on new SaaS platforms, existing products, internal systems, support-engineering needs, and technical delivery work that sits between product, operations, and support.",
+  },
+  {
+    q: "Can Raptric handle product plus internal tooling together?",
+    a: "Yes. That is one of the stronger use cases. Many teams need customer-facing product work and internal operational tooling to move together instead of being split between different vendors.",
+  },
+  {
+    q: "What kind of companies are the best fit for this page?",
+    a: "Companies with a real product roadmap, platform needs, release pressure, internal tooling work, or support escalations that require engineering depth are the best fit.",
+  },
+];
+
 export default function EngineeringTeam() {
   return (
     <>
+      <FAQSchema items={FAQS} />
       <BreadcrumbSchema
         items={[
           { name: "Home", path: "/" },
@@ -455,6 +475,18 @@ export default function EngineeringTeam() {
 
       <section className="bg-ink-950 text-mist-50">
         <Container className="py-18 md:py-22">
+          <Eyebrow className="mb-6 text-signal-300">FAQ</Eyebrow>
+          <div className="mx-auto mb-12 flex max-w-3xl flex-col divide-y divide-mist-50/12 border-y border-mist-50/12">
+            {FAQS.map((item) => (
+              <details key={item.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between text-body-lg font-medium text-mist-50">
+                  {item.q}
+                  <span className="ml-4 shrink-0 text-mist-50/40 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-body text-mist-50/68">{item.a}</p>
+              </details>
+            ))}
+          </div>
           <div className="grid gap-10 md:grid-cols-[0.88fr_1.12fr] md:gap-16">
             <div>
               <Eyebrow className="mb-5 text-signal-300">What strong delivery looks like</Eyebrow>

@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "A software development partner that stays accountable after launch — discovery, architecture, delivery, and ongoing support, not a scoped-out proposal handed off.",
   path: "/engineering-team/software-development-partner",
+  noIndex: true,
 });
 
 export default function SoftwareDevelopmentPartner() {

@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "n8n automation agency for teams that want to own their workflows: custom n8n builds, self-hosted setup, and ongoing maintenance — no vendor lock-in.",
   path: "/ai-automation/n8n-automation-agency",
+  noIndex: true,
 });
 
 export default function N8nAutomationAgency() {

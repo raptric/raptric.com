@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "Human-in-the-loop customer support: a designed handoff between automation and specialists, with audit trails and clear ownership — not a checkbox.",
   path: "/support-operations/human-in-the-loop-support",
+  noIndex: true,
 });
 
 export default function HumanInTheLoopSupport() {

@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "A support engineering team for technical escalations support can't resolve — bug triage, reproduction, and root-cause documentation, without pulling product engineers off the roadmap.",
   path: "/engineering-team/support-engineering-team",
+  noIndex: true,
 });
 
 export default function SupportEngineeringTeam() {

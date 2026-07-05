@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "AI customer support services that handle first response and triage, with a clear handoff to a specialist — grounded in your own documentation, not generic answers.",
   path: "/ai-automation/ai-customer-support-services",
+  noIndex: true,
 });
 
 export default function AiCustomerSupportServices() {

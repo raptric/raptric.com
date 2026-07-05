@@ -7,6 +7,7 @@ export const metadata = buildMetadata({
   description:
     "AI automation services built around your real workflows: AI workflow design, agent orchestration, tool integration, and ongoing monitoring — not a pilot that never ships.",
   path: "/ai-automation/ai-automation-services",
+  noIndex: true,
 });
 
 export default function AiAutomationServices() {

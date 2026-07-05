@@ -12,7 +12,7 @@ import {
   SystemsIcon,
   AccountableIcon,
 } from "@/components/illustrations/concept-icons";
-import { BreadcrumbSchema } from "@/components/seo/json-ld";
+import { AboutPageSchema, BreadcrumbSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -43,6 +43,7 @@ const PRINCIPLES = [
 export default function About() {
   return (
     <>
+      <AboutPageSchema />
       <BreadcrumbSchema
         items={[
           { name: "Home", path: "/" },

@@ -8,6 +8,7 @@ export const metadata = buildMetadata({
   description:
     "A voice AI system that answers, resolves, and routes inbound calls — automating the repeatable conversation and handing off to a specialist when it isn't.",
   path: "/solutions/voice-ai",
+  noIndex: true,
 });
 
 export default function VoiceAiSolution() {
