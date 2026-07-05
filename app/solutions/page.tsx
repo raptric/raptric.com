@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
-import { CtaLink } from "@/components/ui/button";
+import { CtaLink, SecondaryCtaLink } from "@/components/ui/button";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import EmailFlow from "@/components/illustrations/email-flow";
 import VoiceFlow from "@/components/illustrations/voice-flow";
@@ -83,6 +83,24 @@ const WHAT_WE_BUILD = [
   "API Integrations",
   "Analytics & Reporting",
   "Secure Cloud Infrastructure",
+];
+
+const PLATFORM_LAYERS = [
+  {
+    title: "AI + decision systems",
+    body: "LLMs, AI agents, RAG, research automation, and reasoning layers built around real operating decisions.",
+    items: ["LLMs", "AI Agents", "RAG", "Research Automation"],
+  },
+  {
+    title: "Workflow + integrations",
+    body: "Automation engines, voice flows, CRM/ERP connections, APIs, and event-driven orchestration across the stack.",
+    items: ["Workflow Automation", "Voice AI", "CRM & ERP", "API Integrations"],
+  },
+  {
+    title: "Data + infrastructure",
+    body: "Pipelines, analytics, reporting, cloud architecture, and secure backend systems that make the product durable.",
+    items: ["Data Pipelines", "Analytics", "Reporting", "Cloud Infrastructure"],
+  },
 ];
 
 const SOLUTIONS: Solution[] = [
@@ -444,7 +462,7 @@ export default function Solutions() {
       <section className="relative overflow-hidden bg-ink-950 text-mist-50">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/40 to-transparent" />
         <div className="absolute right-0 top-20 h-72 w-72 rounded-full bg-signal-500/16 blur-[120px]" />
-        <Container className="grid items-center gap-14 py-18 md:grid-cols-[0.9fr_1.1fr] md:py-24">
+        <Container className="grid items-center gap-16 py-20 md:grid-cols-[0.88fr_1.12fr] md:py-28">
           <div>
             <Eyebrow className="mb-4 text-signal-400">Solutions</Eyebrow>
             <h1 className="max-w-3xl text-display font-semibold">
@@ -457,27 +475,44 @@ export default function Solutions() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <CtaLink href="/contact">Discuss Your Project</CtaLink>
-              <Link
-                href="/ai-automation"
-                className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
-              >
+              <SecondaryCtaLink href="/ai-automation">
                 Explore AI automation
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                  &rarr;
-                </span>
-              </Link>
+              </SecondaryCtaLink>
             </div>
           </div>
 
-          <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-6 shadow-2xl backdrop-blur">
-            <p className="label text-signal-300">What we build</p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              {WHAT_WE_BUILD.map((item) => (
+          <div className="grid gap-5">
+            <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-7 shadow-2xl backdrop-blur">
+              <p className="label text-signal-300">What we build</p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {WHAT_WE_BUILD.slice(0, 6).map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/50 px-4 py-3 text-sm text-mist-50/76"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-3">
+              {PLATFORM_LAYERS.map((layer) => (
                 <div
-                  key={item}
-                  className="rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-900/50 px-4 py-3 text-sm text-mist-50/76"
+                  key={layer.title}
+                  className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.035] p-5 backdrop-blur"
                 >
-                  {item}
+                  <p className="text-base font-medium text-mist-50">{layer.title}</p>
+                  <p className="mt-3 text-sm leading-6 text-mist-50/64">{layer.body}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {layer.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-mist-50/10 bg-ink-900/45 px-3 py-1.5 text-xs text-mist-50/72"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -486,18 +521,36 @@ export default function Solutions() {
       </section>
 
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
-        <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-5">What we build</Eyebrow>
+        <Container className="py-20 md:py-24">
+          <Eyebrow className="mb-5">Platform layers</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
-            Complete business systems - not isolated AI features.
+            The stack underneath the solution is as important as the AI on top.
           </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {WHAT_WE_BUILD.map((item) => (
+          <p className="mt-4 max-w-2xl text-body-lg text-ink-600">
+            The best solutions are not one AI feature glued onto a process. They
+            are layered systems where automation, integrations, data, and
+            infrastructure all support the outcome.
+          </p>
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {PLATFORM_LAYERS.map((layer, index) => (
               <div
-                key={item}
-                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 px-4 py-4 text-sm font-medium text-ink-800 shadow-sm"
+                key={layer.title}
+                className={`rounded-[var(--radius-lg)] border p-6 shadow-sm ${
+                  index === 1
+                    ? "border-signal-200 bg-signal-50"
+                    : "border-ink-200 bg-mist-50"
+                }`}
               >
-                {item}
+                <p className="text-h3 font-medium text-ink-900">{layer.title}</p>
+                <p className="mt-3 text-body text-ink-600">{layer.body}</p>
+                <div className="mt-5 grid gap-2 text-sm text-ink-700">
+                  {layer.items.map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-signal-600" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -509,9 +562,9 @@ export default function Solutions() {
           const reversed = index % 2 === 1;
           return (
             <div key={solution.title} className="border-b border-ink-200">
-              <Container className="py-18 md:py-22">
+              <Container className="py-20 md:py-24">
                 <div
-                  className={`grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:items-start md:gap-16 ${
+                  className={`grid gap-12 md:grid-cols-[0.92fr_1.08fr] md:items-start md:gap-18 ${
                     reversed ? "md:[&>*:first-child]:order-2" : ""
                   }`}
                 >
@@ -525,7 +578,7 @@ export default function Solutions() {
                         </p>
                       </div>
                     </div>
-                    <h2 className="mt-6 text-h1 font-semibold text-ink-900">
+                    <h2 className="mt-6 max-w-3xl text-h1 font-semibold text-ink-900">
                       {solution.title}
                     </h2>
                     <p className="mt-4 max-w-2xl text-body-lg text-ink-600">
@@ -535,11 +588,11 @@ export default function Solutions() {
                     {solution.capabilities ? (
                       <>
                         <p className="mt-8 label text-ink-500">Capabilities</p>
-                        <div className="mt-4 flex flex-wrap gap-2">
+                        <div className="mt-4 flex flex-wrap gap-2.5">
                           {solution.capabilities.map((item) => (
                             <span
                               key={item}
-                              className="rounded-full border border-ink-200 bg-mist-50 px-3 py-1.5 text-sm text-ink-700"
+                              className="rounded-full border border-ink-200 bg-mist-50 px-3.5 py-1.5 text-sm text-ink-700 shadow-sm"
                             >
                               {item}
                             </span>
@@ -553,7 +606,7 @@ export default function Solutions() {
                         {solution.groups.map((group) => (
                           <div
                             key={group.title}
-                            className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5 shadow-sm"
+                            className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
                           >
                             <p className="label text-signal-600">{group.title}</p>
                             <div className="mt-3 grid gap-2 text-sm text-ink-700">
@@ -572,10 +625,10 @@ export default function Solutions() {
                     {solution.workflow ? (
                       <>
                         <p className="mt-8 label text-ink-500">Workflow</p>
-                        <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-ink-700">
+                        <div className="mt-4 flex flex-wrap items-center gap-2.5 text-sm text-ink-700">
                           {solution.workflow.map((item, i, arr) => (
                             <div key={item} className="flex items-center gap-2">
-                              <span className="rounded-full border border-ink-200 bg-mist-50 px-3 py-1.5">
+                              <span className="rounded-full border border-ink-200 bg-mist-50 px-3.5 py-1.5 shadow-sm">
                                 {item}
                               </span>
                               {i < arr.length - 1 ? (
@@ -590,11 +643,11 @@ export default function Solutions() {
                     {solution.bestFor ? (
                       <>
                         <p className="mt-8 label text-ink-500">Best For</p>
-                        <div className="mt-4 flex flex-wrap gap-2">
+                        <div className="mt-4 flex flex-wrap gap-2.5">
                           {solution.bestFor.map((item) => (
                             <span
                               key={item}
-                              className="rounded-full border border-signal-200 bg-signal-50 px-3 py-1.5 text-sm text-signal-700"
+                              className="rounded-full border border-signal-200 bg-signal-50 px-3.5 py-1.5 text-sm text-signal-700 shadow-sm"
                             >
                               {item}
                             </span>
@@ -606,11 +659,11 @@ export default function Solutions() {
                     {solution.technologies ? (
                       <>
                         <p className="mt-8 label text-ink-500">Technologies</p>
-                        <div className="mt-4 flex flex-wrap gap-2">
+                        <div className="mt-4 flex flex-wrap gap-2.5">
                           {solution.technologies.map((item) => (
                             <span
                               key={item}
-                              className="rounded-full border border-ink-200 bg-white px-3 py-1.5 text-sm text-ink-700"
+                              className="rounded-full border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700 shadow-sm"
                             >
                               {item}
                             </span>
@@ -620,15 +673,18 @@ export default function Solutions() {
                     ) : null}
 
                     {solution.note ? (
-                      <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-5">
+                      <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-5 shadow-sm">
                         <p className="label text-signal-700">Differentiator</p>
                         <p className="mt-3 text-body text-ink-700">{solution.note}</p>
                       </div>
                     ) : null}
                   </div>
 
-                  <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-6 text-mist-50 shadow-xl">
-                    {solution.visual}
+                  <div className="md:sticky md:top-24">
+                    <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-7 text-mist-50 shadow-xl">
+                      <p className="label text-signal-300">System view</p>
+                      <div className="mt-6">{solution.visual}</div>
+                    </div>
                   </div>
                 </div>
               </Container>
@@ -638,7 +694,7 @@ export default function Solutions() {
       </section>
 
       <section className="border-b border-ink-200 bg-mist-200/60">
-        <Container className="py-18 md:py-22">
+        <Container className="py-20 md:py-24">
           <Eyebrow className="mb-5">Industries We Serve</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             The same AI systems model, applied to different operating environments.
@@ -659,16 +715,16 @@ export default function Solutions() {
       </section>
 
       <section className="border-b border-ink-200">
-        <Container className="py-18 md:py-22">
+        <Container className="py-20 md:py-24">
           <Eyebrow className="mb-5">Technology Stack</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Capabilities across AI, automation, backend systems, data, and integrations.
           </h2>
-          <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-12 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
             {STACK_GROUPS.map((group) => (
               <div
                 key={group.title}
-                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm"
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
               >
                 <h3 className="text-h3 font-medium text-ink-900">{group.title}</h3>
                 <div className="mt-4 grid gap-2 text-sm text-ink-700">
@@ -686,7 +742,7 @@ export default function Solutions() {
       </section>
 
       <section className="bg-ink-950 text-mist-50">
-        <Container className="py-18 md:py-22">
+        <Container className="py-20 md:py-24">
           <div className="grid gap-10 md:grid-cols-[0.88fr_1.12fr] md:gap-16">
             <div>
               <Eyebrow className="mb-5 text-signal-300">Why Companies Choose Us</Eyebrow>
@@ -704,7 +760,7 @@ export default function Solutions() {
               {WHY_US.map((item) => (
                 <div
                   key={item}
-                  className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 backdrop-blur"
+                  className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 backdrop-blur transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   <div className="flex items-start gap-3">
                     <IconBadge Icon={CheckIcon} className="h-10 w-10 shrink-0" />
@@ -715,8 +771,8 @@ export default function Solutions() {
             </div>
           </div>
 
-          <div className="mt-12 rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-7 md:p-8">
-            <div className="grid gap-6 md:grid-cols-[0.7fr_0.3fr] md:items-center">
+          <div className="mt-14 rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-8 md:p-10">
+            <div className="grid gap-8 md:grid-cols-[0.68fr_0.32fr] md:items-center">
               <div>
                 <p className="label text-signal-300">Ready to Build Your AI Platform?</p>
                 <h3 className="mt-3 text-h2 font-semibold">
