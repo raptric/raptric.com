@@ -5,7 +5,6 @@ import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
 import MethodologyScroll from "@/components/sections/methodology-scroll";
-import EngineeringHeroVisual from "@/components/illustrations/engineering-hero-visual";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import { SaasDevelopmentIcon } from "@/components/illustrations/service-icons";
 import {
@@ -170,11 +169,20 @@ export default function EngineeringTeam() {
             <div className="absolute inset-0 -z-10 bg-signal-500/14 blur-[110px]" />
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] shadow-2xl">
               <div className="relative min-h-[440px]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(108,92,231,0.16),transparent_34%),radial-gradient(circle_at_top_right,rgba(108,92,231,0.1),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(108,92,231,0.18),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))]" />
                 <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/55 to-transparent" />
-                <div className="relative flex min-h-[440px] items-center justify-center px-8 py-12">
-                  <div className="w-full max-w-2xl">
-                    <EngineeringHeroVisual className="h-auto w-full" />
+                <div className="relative min-h-[440px]">
+                  <Image
+                    src="/photos/engineering-hero-generated.png"
+                    alt="Engineering team collaborating around product delivery dashboards and development work"
+                    fill
+                    sizes="(min-width: 768px) 48vw, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/62 via-ink-950/18 to-transparent" />
+                  <div className="absolute left-6 top-6 rounded-full border border-mist-50/16 bg-ink-950/64 px-3 py-1.5 text-xs font-medium text-mist-50/80 backdrop-blur">
+                    Product + platform delivery
                   </div>
                 </div>
               </div>
