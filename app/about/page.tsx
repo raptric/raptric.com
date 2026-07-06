@@ -3,6 +3,7 @@
 // established in project docs - no company names, no fabricated
 // specifics). Flagged for the client to replace with real details.
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
@@ -158,6 +159,47 @@ export default function About() {
                 </div>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Where That Shows Up</Eyebrow>
+          <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
+            The company story only matters if it changes how the work gets built.
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "AI automation services",
+                body: "We design workflows around routing, confidence, escalation, and the operator view instead of treating AI like a disconnected feature.",
+                href: "/ai-automation",
+              },
+              {
+                title: "Support operations",
+                body: "We structure technical support, HITL review, and customer handling so trust and specialist judgment survive under volume.",
+                href: "/support-operations",
+              },
+              {
+                title: "Engineering team",
+                body: "We keep product delivery, QA, support, and internal tooling close enough to ship as one system instead of separate lanes.",
+                href: "/engineering-team",
+              },
+            ].map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
+                  Explore
+                  <span>&rarr;</span>
+                </span>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>

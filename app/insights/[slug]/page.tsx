@@ -1,9 +1,10 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
-import { TextLink } from "@/components/ui/button";
+import { CtaLink, TextLink } from "@/components/ui/button";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/seo/json-ld";
 import { getAllInsights, getInsightBySlug } from "@/lib/mdx";
 import { buildMetadata } from "@/lib/seo";
@@ -39,6 +40,93 @@ function formatDate(date: string) {
   });
 }
 
+const RELATED_CONTENT: Record<
+  string,
+  {
+    pillar: { label: string; href: string };
+    reads: { title: string; href: string }[];
+  }
+> = {
+  "ai-automation-vs-manual-workflows": {
+    pillar: { label: "AI automation services", href: "/ai-automation" },
+    reads: [
+      {
+        title: "What \"human-in-the-loop\" actually requires operationally",
+        href: "/insights/human-in-the-loop-operationally",
+      },
+      {
+        title: "Why point automation plateaus and operation-level systems compound",
+        href: "/insights/point-automation-plateaus",
+      },
+    ],
+  },
+  "hitl-vs-fully-automated-support": {
+    pillar: { label: "technical support systems", href: "/support-operations" },
+    reads: [
+      {
+        title: "What \"human-in-the-loop\" actually requires operationally",
+        href: "/insights/human-in-the-loop-operationally",
+      },
+      {
+        title: "Lessons from legacy managed-services operations that still matter in AI rebuilds",
+        href: "/insights/legacy-managed-services-lessons",
+      },
+    ],
+  },
+  "software-development-partner-vs-staff-augmentation": {
+    pillar: { label: "software development partner services", href: "/engineering-team" },
+    reads: [
+      {
+        title: "Why point automation plateaus and operation-level systems compound",
+        href: "/insights/point-automation-plateaus",
+      },
+      {
+        title: "Lessons from legacy managed-services operations that still matter in AI rebuilds",
+        href: "/insights/legacy-managed-services-lessons",
+      },
+    ],
+  },
+  "human-in-the-loop-operationally": {
+    pillar: { label: "technical support systems", href: "/support-operations" },
+    reads: [
+      {
+        title: "HITL vs fully automated support",
+        href: "/insights/hitl-vs-fully-automated-support",
+      },
+      {
+        title: "AI automation vs manual workflows",
+        href: "/insights/ai-automation-vs-manual-workflows",
+      },
+    ],
+  },
+  "legacy-managed-services-lessons": {
+    pillar: { label: "support operations", href: "/support-operations" },
+    reads: [
+      {
+        title: "HITL vs fully automated support",
+        href: "/insights/hitl-vs-fully-automated-support",
+      },
+      {
+        title: "Software development partner vs staff augmentation",
+        href: "/insights/software-development-partner-vs-staff-augmentation",
+      },
+    ],
+  },
+  "point-automation-plateaus": {
+    pillar: { label: "AI automation services", href: "/ai-automation" },
+    reads: [
+      {
+        title: "AI automation vs manual workflows",
+        href: "/insights/ai-automation-vs-manual-workflows",
+      },
+      {
+        title: "Software development partner vs staff augmentation",
+        href: "/insights/software-development-partner-vs-staff-augmentation",
+      },
+    ],
+  },
+};
+
 export default async function InsightEntry({
   params,
 }: {
@@ -47,6 +135,7 @@ export default async function InsightEntry({
   const { slug } = await params;
   const entry = getInsightBySlug(slug);
   if (!entry) notFound();
+  const related = RELATED_CONTENT[slug];
 
   return (
     <article>
@@ -62,6 +151,7 @@ export default async function InsightEntry({
         description={entry.summary}
         path={`/insights/${entry.slug}`}
         datePublished={entry.date}
+        dateModified={entry.dateModified}
       />
       <Container className="py-20 md:py-24">
         <Eyebrow className="mb-5">{formatDate(entry.date)}</Eyebrow>
@@ -75,6 +165,39 @@ export default async function InsightEntry({
         <div className="prose-insight mt-12 max-w-2xl">
           <MDXRemote source={entry.content} />
         </div>
+
+        {related ? (
+          <div className="mt-14 grid gap-8 rounded-[var(--radius-lg)] border border-ink-900/10 bg-mist-100 p-6 md:grid-cols-[0.58fr_0.42fr]">
+            <div>
+              <Eyebrow className="mb-4">Where This Applies</Eyebrow>
+              <h2 className="text-h3 font-medium text-ink-900">
+                This article is most useful if you are evaluating {related.pillar.label}.
+              </h2>
+              <p className="mt-3 text-body text-ink-600">
+                If the article matches the workflow or delivery problem you are working through, the most relevant next page is the one below.
+              </p>
+              <div className="mt-5">
+                <CtaLink href={related.pillar.href}>
+                  Explore {related.pillar.label}
+                </CtaLink>
+              </div>
+            </div>
+            <div>
+              <Eyebrow className="mb-4">Related Reads</Eyebrow>
+              <div className="grid gap-3">
+                {related.reads.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-[var(--radius-md)] border border-ink-900/10 bg-white px-4 py-4 text-sm font-medium text-ink-800 transition-colors hover:border-signal-300 hover:text-signal-700"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-14 border-t border-ink-900/10 pt-8">
           <TextLink href="/insights">All field notes</TextLink>

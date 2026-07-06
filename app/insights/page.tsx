@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
+import { CtaLink, TextLink } from "@/components/ui/button";
 import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from "@/components/seo/json-ld";
 import { getAllInsights } from "@/lib/mdx";
 import { buildMetadata } from "@/lib/seo";
@@ -50,6 +51,13 @@ export default function Insights() {
           <p className="mt-5 max-w-2xl text-body-lg text-ink-600">
             Answer-first notes on workflow automation, technical support systems, AI plus human operations, and product delivery patterns that hold up in real businesses.
           </p>
+          <p className="mt-4 max-w-2xl text-body text-ink-600">
+            If you want the commercial pages first, start with{" "}
+            <TextLink href="/ai-automation">AI automation services</TextLink>,{" "}
+            <TextLink href="/support-operations">support operations</TextLink>,{" "}
+            and{" "}
+            <TextLink href="/engineering-team">software development partner services</TextLink>.
+          </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
@@ -93,6 +101,20 @@ export default function Insights() {
                 </p>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-10 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
+            <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
+              <div>
+                <p className="label text-signal-700">Need the practical next step?</p>
+                <p className="mt-3 text-body text-ink-700">
+                  If one of these articles matches the workflow or delivery problem you are already dealing with, the fastest next move is a discovery call about the specific system you need to improve.
+                </p>
+              </div>
+              <div className="md:justify-self-end">
+                <CtaLink href="/contact">Book a discovery call</CtaLink>
+              </div>
+            </div>
           </div>
         </Container>
       </section>

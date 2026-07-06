@@ -10,6 +10,7 @@ export type InsightMeta = {
   date: string;
   summary: string;
   author: string;
+  dateModified: string;
 };
 
 export function getAllInsights(): InsightMeta[] {
@@ -17,7 +18,9 @@ export function getAllInsights(): InsightMeta[] {
 
   const insights = files.map((file) => {
     const slug = file.replace(/\.mdx$/, "");
-    const raw = fs.readFileSync(path.join(INSIGHTS_DIR, file), "utf8");
+    const filePath = path.join(INSIGHTS_DIR, file);
+    const raw = fs.readFileSync(filePath, "utf8");
+    const stats = fs.statSync(filePath);
     const { data } = matter(raw);
     return {
       slug,
@@ -25,6 +28,7 @@ export function getAllInsights(): InsightMeta[] {
       date: data.date as string,
       summary: data.summary as string,
       author: (data.author as string) || "Raptric Editorial Team",
+      dateModified: stats.mtime.toISOString(),
     };
   });
 
@@ -36,6 +40,7 @@ export function getInsightBySlug(slug: string) {
   if (!fs.existsSync(filePath)) return null;
 
   const raw = fs.readFileSync(filePath, "utf8");
+  const stats = fs.statSync(filePath);
   const { data, content } = matter(raw);
 
   return {
@@ -44,6 +49,7 @@ export function getInsightBySlug(slug: string) {
     date: data.date as string,
     summary: data.summary as string,
     author: (data.author as string) || "Raptric Editorial Team",
+    dateModified: stats.mtime.toISOString(),
     content,
   };
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
-import { CtaLink } from "@/components/ui/button";
+import { CtaLink, TextLink } from "@/components/ui/button";
 import MethodologyScroll from "@/components/sections/methodology-scroll";
 import EscalationPath from "@/components/illustrations/escalation-path";
 import { CustomerOperationsIcon } from "@/components/illustrations/service-icons";
@@ -172,6 +172,24 @@ const DIFFERENTIATORS = [
   "We combine AI-assisted support, HITL review, and human handling based on complexity instead of forcing one model onto every request.",
 ];
 
+const RELATED_SOLUTIONS = [
+  {
+    title: "AI Voice Agents",
+    body: "A support-led solution where voice intake, qualification, CRM updates, and human handoff need to feel coherent to the customer.",
+    href: "/solutions#ai-voice-agents",
+  },
+  {
+    title: "End-to-End Healthcare Workflow Platform",
+    body: "A healthcare example where support, scheduling, communication, and operational workflows depend on cleaner routing and escalation.",
+    href: "/solutions#end-to-end-healthcare-workflow-platform",
+  },
+  {
+    title: "AI Lead Intelligence Platform",
+    body: "A volume-handling example where intake, qualification, and export logic all need stronger support architecture underneath.",
+    href: "/solutions#ai-lead-intelligence-platform",
+  },
+];
+
 export default function SupportOperations() {
   return (
     <>
@@ -214,17 +232,20 @@ export default function SupportOperations() {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+              <CtaLink href="/contact">Discuss support operations</CtaLink>
               <Link
                 href="/engineering-team"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
               >
-                See the engineering layer
+                See the software development partner layer
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &rarr;
                 </span>
               </Link>
             </div>
+            <p className="mt-4 max-w-lg text-sm text-mist-50/56">
+              This conversation is best for teams dealing with queue pressure, poor escalation, inconsistent response quality, or AI support that still needs human judgment built around it.
+            </p>
           </div>
 
           <div className="relative">
@@ -260,6 +281,20 @@ export default function SupportOperations() {
             <p className="max-w-4xl text-body-lg text-ink-700">
               This page is for companies looking for technical support outsourcing, AI customer support, human-in-the-loop support operations, and specialist escalation systems that can scale without losing customer trust.
             </p>
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
+                <p className="label text-signal-600">What is technical support outsourcing?</p>
+                <p className="mt-2 text-sm text-ink-700">
+                  Technical support outsourcing means adding a dedicated support layer that can handle issue triage, escalation, troubleshooting, and technical coordination without leaving every request to the internal product team.
+                </p>
+              </div>
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
+                <p className="label text-signal-600">What is HITL support?</p>
+                <p className="mt-2 text-sm text-ink-700">
+                  HITL support means AI or automation handles the repeatable first pass, but the system routes trust-sensitive or complex requests to a human before the final response is sent.
+                </p>
+              </div>
+            </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <div>
                 <p className="label text-signal-600">Best fit</p>
@@ -480,6 +515,13 @@ export default function SupportOperations() {
               <p className="mt-4 max-w-md text-body-lg text-ink-600">
                 Buyers usually want faster response, cleaner routing, fewer escalations in the wrong place, and more specialist time spent on real complexity instead of queue cleanup.
               </p>
+              <p className="mt-3 max-w-md text-body text-ink-600">
+                In practice, that often means connecting{" "}
+                <TextLink href="/ai-automation">AI automation services</TextLink>{" "}
+                with{" "}
+                <TextLink href="/engineering-team">software development partner services</TextLink>{" "}
+                so routing, escalation, and product issues do not stay disconnected.
+              </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {OUTCOMES.map((item) => (
@@ -505,6 +547,44 @@ export default function SupportOperations() {
                 <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
               </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
+            <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
+              <div>
+                <p className="label text-signal-700">Mid-page CTA</p>
+                <p className="mt-3 text-body text-ink-700">
+                  If your support model already feels overloaded or trust is starting to slip, a support-operations conversation is usually the clearest next step.
+                </p>
+              </div>
+              <div className="md:justify-self-end">
+                <CtaLink href="/contact">Discuss support operations</CtaLink>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Where this applies</Eyebrow>
+          <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
+            Solution examples where support operations become part of the product system.
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {RELATED_SOLUTIONS.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
+                  View solution example
+                  <span>&rarr;</span>
+                </span>
+              </Link>
             ))}
           </div>
         </Container>
@@ -649,9 +729,12 @@ export default function SupportOperations() {
                   to specialists, how technical escalations should flow, and
                   where fully human handling still protects the customer experience.
                 </p>
+                <p className="mt-3 max-w-2xl text-sm text-mist-50/56">
+                  The call is best for operations leaders, support leaders, founders, and product teams who need a clearer model for intake, escalation, and technical issue handling.
+                </p>
               </div>
               <div className="flex flex-wrap items-center gap-4 md:justify-end">
-                <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+                <CtaLink href="/contact">Discuss support operations</CtaLink>
                 <Link
                   href="/solutions"
                   className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"

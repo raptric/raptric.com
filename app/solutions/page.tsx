@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
-import { CtaLink, SecondaryCtaLink } from "@/components/ui/button";
+import { CtaLink, SecondaryCtaLink, TextLink } from "@/components/ui/button";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import EmailFlow from "@/components/illustrations/email-flow";
 import VoiceFlow from "@/components/illustrations/voice-flow";
@@ -509,11 +509,14 @@ export default function Solutions() {
               software delivery into one operational layer.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <CtaLink href="/contact">Discuss Your Project</CtaLink>
+              <CtaLink href="/contact">Discuss your platform build</CtaLink>
               <SecondaryCtaLink href="/ai-automation">
-                Explore AI automation
+                Explore AI automation services
               </SecondaryCtaLink>
             </div>
+            <p className="mt-4 max-w-lg text-sm text-mist-50/56">
+              This is the right page if you already know the business outcome you want and need the right mix of AI automation, support operations, and engineering to build it.
+            </p>
           </div>
 
           <div className="grid gap-5">
@@ -565,6 +568,14 @@ export default function Solutions() {
             The best solutions are not one AI feature glued onto a process. They
             are layered systems where automation, integrations, data, and
             infrastructure all support the outcome.
+          </p>
+          <p className="mt-3 max-w-2xl text-body text-ink-600">
+            In practice, those layers usually depend on{" "}
+            <TextLink href="/ai-automation">AI automation services</TextLink>,{" "}
+            <TextLink href="/support-operations">support operations</TextLink>,{" "}
+            and{" "}
+            <TextLink href="/engineering-team">software development partner services</TextLink>{" "}
+            working together instead of staying in separate vendor lanes.
           </p>
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {PLATFORM_LAYERS.map((layer, index) => (
@@ -724,6 +735,12 @@ export default function Solutions() {
                       <p className="label text-signal-300">System view</p>
                       <div className="mt-6">{solution.visual}</div>
                     </div>
+                    <div className="mt-4 rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
+                      <p className="label text-signal-600">What supports this build</p>
+                      <p className="mt-2 text-sm text-ink-700">
+                        Most of these solutions rely on a combination of AI automation services, technical support systems, and software development partner capacity to stay operational after launch.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </Container>
@@ -777,6 +794,19 @@ export default function Solutions() {
               </div>
             ))}
           </div>
+          <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
+            <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
+              <div>
+                <p className="label text-signal-700">Mid-page CTA</p>
+                <p className="mt-3 text-body text-ink-700">
+                  If you already know the platform outcome you want, the next conversation is usually about workflow scope, integrations, delivery ownership, and which layers need to ship first.
+                </p>
+              </div>
+              <div className="md:justify-self-end">
+                <CtaLink href="/contact">Discuss your platform build</CtaLink>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -817,14 +847,17 @@ export default function Solutions() {
                 <h3 className="mt-3 text-h2 font-semibold">
                   Whether you are automating customer conversations, healthcare operations, sales, SEO, or internal workflows, we build AI systems that solve real business problems and scale with growth.
                 </h3>
+                <p className="mt-3 max-w-2xl text-sm text-mist-50/56">
+                  The discovery call is best for teams that already know the platform outcome they need and want to discuss workflow scope, integrations, and the fastest build path.
+                </p>
               </div>
               <div className="flex flex-wrap items-center gap-4 md:justify-end">
-                <CtaLink href="/contact">Book a Discovery Call</CtaLink>
+                <CtaLink href="/contact">Discuss your platform build</CtaLink>
                 <Link
                   href="/contact"
                   className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
                 >
-                  Discuss Your Project
+                  Book a discovery call
                   <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                     &rarr;
                   </span>

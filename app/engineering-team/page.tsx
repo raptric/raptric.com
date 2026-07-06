@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
-import { CtaLink } from "@/components/ui/button";
+import { CtaLink, TextLink } from "@/components/ui/button";
 import MethodologyScroll from "@/components/sections/methodology-scroll";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import { SaasDevelopmentIcon } from "@/components/illustrations/service-icons";
@@ -165,6 +165,24 @@ const DIFFERENTIATORS = [
   "We build around the operating model the software has to serve, not only the backlog it came from.",
 ];
 
+const RELATED_SOLUTIONS = [
+  {
+    title: "End-to-End Healthcare Workflow Platform",
+    body: "A platform build where product, internal tooling, permissions, reporting, and revenue operations have to ship together.",
+    href: "/solutions#end-to-end-healthcare-workflow-platform",
+  },
+  {
+    title: "AI Sales Engagement Platform",
+    body: "A productized sales system where engineering delivery, APIs, lead management, and campaign logic need one accountable build lane.",
+    href: "/solutions#ai-sales-engagement-platform",
+  },
+  {
+    title: "AI Lead Intelligence Platform",
+    body: "A systems example where enrichment, workflow orchestration, exports, and sales operations depend on clean platform execution.",
+    href: "/solutions#ai-lead-intelligence-platform",
+  },
+];
+
 export default function EngineeringTeam() {
   return (
     <>
@@ -198,17 +216,20 @@ export default function EngineeringTeam() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+              <CtaLink href="/contact">Talk to an engineering partner</CtaLink>
               <Link
                 href="/support-operations"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
               >
-                See how engineering connects to support
+                See how engineering connects to support operations
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &rarr;
                 </span>
               </Link>
             </div>
+            <p className="mt-4 max-w-lg text-sm text-mist-50/56">
+              This call is best for product leaders, founders, and operators who already feel the pressure between roadmap, QA, internal tooling, and release quality.
+            </p>
           </div>
 
           <div className="relative">
@@ -244,6 +265,20 @@ export default function EngineeringTeam() {
             <p className="max-w-4xl text-body-lg text-ink-700">
               This page is for teams looking for a software development partner, SaaS development support, embedded engineering capacity, staff augmentation, and product delivery help that stays connected to QA, release quality, and real operations.
             </p>
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
+                <p className="label text-signal-600">What is a software development partner?</p>
+                <p className="mt-2 text-sm text-ink-700">
+                  A software development partner adds engineering capacity with delivery visibility, QA discipline, and technical ownership instead of only supplying extra developers.
+                </p>
+              </div>
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
+                <p className="label text-signal-600">What is staff augmentation?</p>
+                <p className="mt-2 text-sm text-ink-700">
+                  Staff augmentation adds people to the team. A software development partner adds delivery structure, release visibility, and stronger alignment with product and operations.
+                </p>
+              </div>
+            </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <div>
                 <p className="label text-signal-600">Best fit</p>
@@ -453,6 +488,13 @@ export default function EngineeringTeam() {
               <p className="mt-4 max-w-md text-body-lg text-ink-600">
                 Buyers usually want clearer release visibility, fewer hidden blockers, better QA discipline, and less operational noise caused by disconnected engineering work.
               </p>
+              <p className="mt-3 max-w-md text-body text-ink-600">
+                That is why this page overlaps with{" "}
+                <TextLink href="/support-operations">support operations</TextLink>{" "}
+                and{" "}
+                <TextLink href="/ai-automation">AI automation services</TextLink>{" "}
+                whenever the software has to serve more than one internal workflow.
+              </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {OUTCOMES.map((item) => (
@@ -473,6 +515,44 @@ export default function EngineeringTeam() {
           </h2>
           <div className="mt-14">
             <MethodologyScroll steps={ENGAGEMENT_STEPS} />
+          </div>
+          <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
+            <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
+              <div>
+                <p className="label text-signal-700">Mid-page CTA</p>
+                <p className="mt-3 text-body text-ink-700">
+                  If the roadmap is moving faster than delivery confidence, the fastest next step is a focused engineering-partner conversation about scope, release pressure, and where the team is getting stuck.
+                </p>
+              </div>
+              <div className="md:justify-self-end">
+                <CtaLink href="/contact">Talk to an engineering partner</CtaLink>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Where this applies</Eyebrow>
+          <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
+            Platform examples where engineering capacity has to support the operating model, not just the backlog.
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {RELATED_SOLUTIONS.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
+                  View solution example
+                  <span>&rarr;</span>
+                </span>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>
@@ -622,14 +702,17 @@ export default function EngineeringTeam() {
                   We can plug into the roadmap, build the missing systems, and
                   stay aligned with the support, automation, and internal workflows that the software has to serve.
                 </p>
+                <p className="mt-3 max-w-2xl text-sm text-mist-50/56">
+                  The call is best for teams that need clearer release visibility, more accountable delivery, or a technical partner that can work across product, platform, and support.
+                </p>
               </div>
               <div className="flex flex-wrap items-center gap-4 md:justify-end">
-                <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+                <CtaLink href="/contact">Talk to an engineering partner</CtaLink>
                 <Link
                   href="/support-operations"
                   className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
                 >
-                  Explore support operations
+                  Explore technical support systems
                   <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                     &rarr;
                   </span>

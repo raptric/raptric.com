@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
-import { CtaLink } from "@/components/ui/button";
+import { CtaLink, TextLink } from "@/components/ui/button";
 import { AiAutomationIcon } from "@/components/illustrations/service-icons";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
 import {
@@ -160,6 +160,24 @@ const DIFFERENTIATORS = [
   "We design human review and escalation boundaries so automation improves trust instead of eroding it.",
 ];
 
+const RELATED_SOLUTIONS = [
+  {
+    title: "AI Voice Agents",
+    body: "A voice-first implementation of AI automation services where routing, summaries, CRM updates, and human handoff matter together.",
+    href: "/solutions#ai-voice-agents",
+  },
+  {
+    title: "AI SEO Outreach Platform",
+    body: "A workflow-heavy example where AI research, qualification, content extraction, and outreach all run inside one platform.",
+    href: "/solutions#ai-seo-outreach-platform",
+  },
+  {
+    title: "AI Sales Engagement Platform",
+    body: "A sales automation example where lead intelligence, personalization, and campaign logic need stronger orchestration than templates alone.",
+    href: "/solutions#ai-sales-engagement-platform",
+  },
+];
+
 export default function AiAutomation() {
   return (
     <>
@@ -199,17 +217,20 @@ export default function AiAutomation() {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+              <CtaLink href="/contact">Book an AI automation call</CtaLink>
               <Link
                 href="/support-operations"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
               >
-                See how this connects to support operations
+                See how AI automation connects to support operations
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &rarr;
                 </span>
               </Link>
             </div>
+            <p className="mt-4 max-w-lg text-sm text-mist-50/56">
+              The call is best for teams that already know the workflow is slow, manually routed, or too dependent on people cleaning up the process after the fact.
+            </p>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-[0.56fr_0.44fr]">
@@ -272,6 +293,20 @@ export default function AiAutomation() {
             <p className="max-w-4xl text-body-lg text-ink-700">
               This page is for companies looking for AI automation services, workflow automation, n8n automation, CRM automation, and AI-assisted support systems that can hold up under real volume, exceptions, and human review requirements.
             </p>
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
+                <p className="label text-signal-600">What is AI automation?</p>
+                <p className="mt-2 text-sm text-ink-700">
+                  AI automation is the use of models, workflows, routing logic, and integrations to complete repeatable work while preserving human review where judgment still matters.
+                </p>
+              </div>
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
+                <p className="label text-signal-600">What is HITL?</p>
+                <p className="mt-2 text-sm text-ink-700">
+                  HITL means human-in-the-loop: the system routes ambiguous, trust-sensitive, or high-risk cases to a person before the outcome goes out.
+                </p>
+              </div>
+            </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               <div>
                 <p className="label text-signal-600">Best fit</p>
@@ -436,6 +471,13 @@ export default function AiAutomation() {
               <p className="mt-4 max-w-md text-body-lg text-ink-600">
                 The goal is not more AI features. The goal is a support, sales, or operational workflow that responds faster, routes cleaner, and depends less on manual cleanup.
               </p>
+              <p className="mt-3 max-w-md text-body text-ink-600">
+                That is why many AI automation projects end up connecting to{" "}
+                <TextLink href="/support-operations">technical support systems</TextLink>{" "}
+                or{" "}
+                <TextLink href="/engineering-team">software development partner services</TextLink>{" "}
+                instead of living as isolated automations.
+              </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {OUTCOMES.map((item) => (
@@ -489,6 +531,44 @@ export default function AiAutomation() {
                 <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
               </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
+            <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
+              <div>
+                <p className="label text-signal-700">Mid-page CTA</p>
+                <p className="mt-3 text-body text-ink-700">
+                  If the workflow is already obvious and you want help choosing the right AI automation architecture, the fastest next step is a focused automation call.
+                </p>
+              </div>
+              <div className="md:justify-self-end">
+                <CtaLink href="/contact">Book an AI automation call</CtaLink>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Where this applies</Eyebrow>
+          <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
+            Solution examples where this automation layer becomes a real operating system.
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {RELATED_SOLUTIONS.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
+                  View solution example
+                  <span>&rarr;</span>
+                </span>
+              </Link>
             ))}
           </div>
         </Container>
@@ -595,12 +675,12 @@ export default function AiAutomation() {
             automation layer that holds up under real operational use.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+            <CtaLink href="/contact">Book an AI automation call</CtaLink>
             <Link
               href="/engineering-team"
               className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
             >
-              Explore engineering team
+              Explore software development partner services
               <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                 &rarr;
               </span>

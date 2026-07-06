@@ -21,7 +21,7 @@ import {
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
-import { CtaLink } from "@/components/ui/button";
+import { CtaLink, TextLink } from "@/components/ui/button";
 import { FAQSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
@@ -228,17 +228,20 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+              <CtaLink href="/contact">Book a discovery call</CtaLink>
               <Link
                 href="/ai-automation"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
               >
-                Explore the system
+                Explore AI automation services
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &rarr;
                 </span>
               </Link>
             </div>
+            <p className="mt-4 max-w-lg text-sm text-mist-50/56">
+              A first call is best for teams dealing with workflow drag, support complexity, or product delivery bottlenecks across more than one function.
+            </p>
           </div>
 
           <div className="relative">
@@ -286,6 +289,11 @@ export default function Home() {
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             Raptric helps companies automate workflows, structure technical support, and add engineering capacity without splitting the work across three separate vendors.
           </h2>
+          <p className="mt-4 max-w-2xl text-body text-ink-600">
+            If you want the market context behind this approach, our{" "}
+            <TextLink href="/insights">insights on AI automation, support operations, and engineering systems</TextLink>{" "}
+            break down where point solutions fail and where system-level design starts compounding.
+          </p>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {ANSWER_FIRST_BLOCKS.map((item) => (
               <Link
@@ -403,7 +411,7 @@ export default function Home() {
                     ))}
                   </div>
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-signal-300">
-                    Learn more
+                    Explore AI automation services
                     <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                   </span>
                 </div>
@@ -487,7 +495,7 @@ export default function Home() {
                   <h3 className="mt-5 text-h2 font-medium text-ink-900">{SOLUTIONS_AREA.name}</h3>
                   <p className="mt-3 max-w-sm text-body text-ink-600">{SOLUTIONS_AREA.body}</p>
                   <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
-                    Learn more
+                    Explore solution examples
                     <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                   </span>
                 </div>
@@ -597,13 +605,16 @@ export default function Home() {
             model so the business stops relying on patches and starts running as
             a system.
           </p>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-mist-50/56">
+            The call is best for founders, operators, product leaders, and support leaders who already know where work is getting stuck and want a clearer next move.
+          </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
+            <CtaLink href="/contact">Book a discovery call</CtaLink>
             <Link
               href="/insights"
               className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
             >
-              Read our field notes
+              Read our insights on operating systems
               <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                 &rarr;
               </span>

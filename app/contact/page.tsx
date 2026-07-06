@@ -66,6 +66,15 @@ export default function Contact() {
                     outcome you need next.
                   </p>
                 </div>
+                <div className="rounded-[var(--radius-md)] border border-mist-50/12 bg-mist-50/[0.04] px-4 py-4">
+                  <p className="text-xs uppercase tracking-[0.18em] text-signal-400">
+                    On the call
+                  </p>
+                  <p className="mt-2 text-sm text-mist-50/72">
+                    We will clarify the workflow, identify the likely system gap,
+                    and recommend the cleanest next step to move.
+                  </p>
+                </div>
               </div>
 
               <div className="mt-8 space-y-3">
