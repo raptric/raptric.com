@@ -19,7 +19,7 @@ import {
   BagIcon,
   CheckIcon,
 } from "@/components/illustrations/concept-icons";
-import { BreadcrumbSchema } from "@/components/seo/json-ld";
+import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 type SolutionGroup = {
@@ -449,14 +449,47 @@ const WHY_US = [
   "Human-centered UX",
 ];
 
+const FAQS = [
+  {
+    q: "What kind of AI platforms does Raptric build?",
+    a: "Raptric builds AI platforms for voice operations, healthcare workflows, SEO outreach, sales engagement, lead intelligence, and internal workflow automation where AI, integrations, and software need to work together as one system.",
+  },
+  {
+    q: "Are these off-the-shelf products or custom systems?",
+    a: "They are solution patterns backed by custom engineering. We use proven platform structures, then adapt the workflows, integrations, reporting, and operating logic to the client environment.",
+  },
+  {
+    q: "Can Raptric build platforms that mix AI, automation, and human workflows?",
+    a: "Yes. That is the core positioning. We build systems where AI, automation, software, and human operations all contribute to the final workflow instead of living in separate tools or vendors.",
+  },
+  {
+    q: "Which industries are the strongest fit for the solutions page?",
+    a: "Healthcare, SaaS, SEO and marketing teams, sales organizations, professional services, and operations-heavy businesses are the strongest fit because they usually have repeated workflows, customer interaction, and integration needs that benefit from platform thinking.",
+  },
+];
+
 export default function Solutions() {
   return (
     <>
+      <FAQSchema items={FAQS} />
       <BreadcrumbSchema
         items={[
           { name: "Home", path: "/" },
           { name: "Solutions", path: "/solutions" },
         ]}
+      />
+      <CollectionPageSchema
+        name="Raptric Solutions"
+        path="/solutions"
+        description="AI voice agents, healthcare workflow platforms, SEO outreach systems, AI sales engagement, and lead intelligence platforms."
+      />
+      <ItemListSchema
+        name="Raptric Solutions"
+        path="/solutions"
+        items={SOLUTIONS.map((solution) => ({
+          name: solution.title,
+          path: `/solutions#${solution.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`,
+        }))}
       />
 
       <section className="relative overflow-hidden bg-ink-950 text-mist-50">
@@ -561,7 +594,11 @@ export default function Solutions() {
         {SOLUTIONS.map((solution, index) => {
           const reversed = index % 2 === 1;
           return (
-            <div key={solution.title} className="border-b border-ink-200">
+            <div
+              key={solution.title}
+              id={solution.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}
+              className="border-b border-ink-200"
+            >
               <Container className="py-20 md:py-24">
                 <div
                   className={`grid gap-12 md:grid-cols-[0.92fr_1.08fr] md:items-start md:gap-18 ${
@@ -792,6 +829,18 @@ export default function Solutions() {
                 </Link>
               </div>
             </div>
+          </div>
+
+          <div className="mx-auto mt-14 flex max-w-3xl flex-col divide-y divide-mist-50/12 border-y border-mist-50/12">
+            {FAQS.map((item) => (
+              <details key={item.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between text-body-lg font-medium text-mist-50">
+                  {item.q}
+                  <span className="ml-4 shrink-0 text-mist-50/40 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-body text-mist-50/68">{item.a}</p>
+              </details>
+            ))}
           </div>
         </Container>
       </section>

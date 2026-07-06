@@ -22,9 +22,9 @@ import { BreadcrumbSchema, FAQSchema, ServiceSchema } from "@/components/seo/jso
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Support Operations | Tech Support, HITL Operations & Human Support Systems | Raptric",
+  title: "Technical Support Outsourcing, AI Customer Support & HITL Operations | Raptric",
   description:
-    "Support operations for growing businesses: tech support, customer care, human-in-the-loop review, AI-assisted intake, specialist escalation, and human coverage systems designed around complexity.",
+    "Technical support outsourcing, AI customer support, human-in-the-loop operations, specialist escalation, and human support systems designed for businesses that need speed without losing trust.",
   path: "/support-operations",
 });
 
@@ -146,6 +146,12 @@ const FAQS = [
   },
 ];
 
+const BEST_FIT = [
+  "SaaS, healthcare, service, and operations-heavy teams dealing with mixed support volume",
+  "Businesses that need technical support outsourcing without turning the experience into generic BPO handling",
+  "Teams exploring AI customer support but still needing human review, trust, and escalation depth",
+];
+
 export default function SupportOperations() {
   return (
     <>
@@ -170,12 +176,10 @@ export default function SupportOperations() {
             <CustomerOperationsIcon className="h-12 w-12 text-signal-400" />
             <Eyebrow className="mb-4 mt-6 text-signal-400">Support Operations</Eyebrow>
             <h1 className="text-display font-semibold">
-              Tech support built for complexity.
+              Technical support built for complexity.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
-              AI-assisted intake, HITL review, technical escalation, and human
-              coverage designed as one support model so speed, trust, and
-              specialist judgment do not fight each other.
+              We design technical support outsourcing, AI customer support, HITL review, technical escalation, and human coverage as one support model so speed, trust, and specialist judgment do not fight each other.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
@@ -192,10 +196,10 @@ export default function SupportOperations() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
               <Link
-                href="/ai-automation"
+                href="/engineering-team"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
               >
-                See the automation layer
+                See the engineering layer
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &rarr;
                 </span>
@@ -231,6 +235,22 @@ export default function SupportOperations() {
 
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-18 md:py-22">
+          <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
+            <Eyebrow className="mb-4">Answer first</Eyebrow>
+            <p className="max-w-4xl text-body-lg text-ink-700">
+              This page is for companies looking for technical support outsourcing, AI customer support, human-in-the-loop support operations, and specialist escalation systems that can scale without losing customer trust.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {BEST_FIT.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
           <Eyebrow className="mb-5">Coverage model</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             One support layer with room for AI, human review, tech escalation, and specialist handling.
@@ -561,10 +581,10 @@ export default function SupportOperations() {
               <div className="flex flex-wrap items-center gap-4 md:justify-end">
                 <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
                 <Link
-                  href="/ai-automation"
+                  href="/solutions"
                   className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
                 >
-                  See the AI layer
+                  Explore support-led solutions
                   <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                     &rarr;
                   </span>

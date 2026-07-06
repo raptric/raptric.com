@@ -18,7 +18,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "About Raptric",
   description:
-    "Raptric is built around one idea: automation, support, and engineering only work as one system. Here's the operating philosophy behind it.",
+    "About Raptric LLC: the operator-led team behind AI automation, support operations, and engineering systems built for real business workflows.",
   path: "/about",
 });
 
@@ -107,6 +107,20 @@ export default function About() {
               automation rollout. Raptric is built the way we wish those
               systems had been built the first time.
             </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
+                <p className="label text-ink-400">Company</p>
+                <p className="mt-2 text-body font-medium text-ink-900">Raptric LLC</p>
+              </div>
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
+                <p className="label text-ink-400">Focus</p>
+                <p className="mt-2 text-body font-medium text-ink-900">AI automation, support operations, and engineering systems</p>
+              </div>
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
+                <p className="label text-ink-400">Approach</p>
+                <p className="mt-2 text-body font-medium text-ink-900">Operator-led, workflow-first, accountable delivery</p>
+              </div>
+            </div>
           </div>
         </Container>
       </section>

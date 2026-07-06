@@ -212,3 +212,30 @@ export function CollectionPageSchema({
     />
   );
 }
+
+export function ItemListSchema({
+  name,
+  path,
+  items,
+}: {
+  name: string;
+  path: string;
+  items: { name: string; path: string }[];
+}) {
+  return (
+    <Schema
+      data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name,
+        url: `${SITE_URL}${path}`,
+        itemListElement: items.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.name,
+          url: `${SITE_URL}${item.path}`,
+        })),
+      }}
+    />
+  );
+}

@@ -134,6 +134,12 @@ const FAQS = [
   },
 ];
 
+const BEST_FIT = [
+  "Growing teams with repetitive intake, routing, follow-up, or reconciliation work",
+  "Sales and support teams that need AI plus human review instead of generic bot behavior",
+  "Businesses already using CRM, helpdesk, booking, or internal systems that need better orchestration",
+];
+
 export default function AiAutomation() {
   return (
     <>
@@ -155,7 +161,7 @@ export default function AiAutomation() {
               AI automation systems built for real business workflows.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
-              We design, build, and operationalize AI automation for growing
+              We design, build, and operationalize AI automation services for growing
               companies using tools like n8n, Make.com, Cursor, APIs, CRM
               systems, and human review layers where judgment is still part of
               the work.
@@ -175,10 +181,10 @@ export default function AiAutomation() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
               <Link
-                href="/solutions"
+                href="/support-operations"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
               >
-                See proof through solutions
+                See how this connects to support operations
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &rarr;
                 </span>
@@ -241,6 +247,22 @@ export default function AiAutomation() {
 
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-16 md:py-20">
+          <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
+            <Eyebrow className="mb-4">Answer first</Eyebrow>
+            <p className="max-w-4xl text-body-lg text-ink-700">
+              This page is for companies looking for AI automation services, workflow automation, n8n automation, CRM automation, and AI-assisted support systems that can hold up under real volume, exceptions, and human review requirements.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {BEST_FIT.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
           <Eyebrow className="mb-8">What we actually build</Eyebrow>
           <div className="grid gap-5 md:grid-cols-3">
             {SERVICE_LINES.map((item) => (
@@ -263,7 +285,7 @@ export default function AiAutomation() {
                 AI is useful when the workflow around it is designed properly.
               </h2>
               <p className="mt-5 max-w-md text-body-lg text-ink-600">
-                We do not start with “where can we add AI?” We start with the
+                We do not start with &quot;where can we add AI?&quot; We start with the
                 flow of work, the tools involved, the decisions being made, and
                 the points where a wrong output becomes a real business problem.
               </p>
@@ -503,10 +525,10 @@ export default function AiAutomation() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
             <Link
-              href="/solutions"
+              href="/engineering-team"
               className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/20 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/40 hover:bg-mist-50/5"
             >
-              Explore solutions
+              Explore engineering team
               <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                 &rarr;
               </span>

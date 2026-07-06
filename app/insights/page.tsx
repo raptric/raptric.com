@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
-import { BreadcrumbSchema, CollectionPageSchema } from "@/components/seo/json-ld";
+import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from "@/components/seo/json-ld";
 import { getAllInsights } from "@/lib/mdx";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Insights",
+  title: "Insights | AI Automation, Support Operations & Engineering Systems",
   description:
-    "Field notes on AI automation, support operations, engineering systems, and human judgment in real business workflows.",
+    "Insights on AI automation, support operations, engineering systems, human judgment, and real business workflows from the Raptric team.",
   path: "/insights",
 });
 
@@ -31,12 +31,23 @@ export default function Insights() {
         path="/insights"
         description="Field notes on AI automation, support operations, engineering systems, and human judgment."
       />
+      <ItemListSchema
+        name="Raptric Insights"
+        path="/insights"
+        items={insights.map((entry) => ({
+          name: entry.title,
+          path: `/insights/${entry.slug}`,
+        }))}
+      />
       <section>
         <Container className="py-20 md:py-24">
           <Eyebrow className="mb-5">Field notes</Eyebrow>
           <h1 className="max-w-2xl text-h1 font-semibold text-ink-900">
-            Notes from building and operating, written as they happen.
+            Insights on AI automation, support operations, and engineering systems.
           </h1>
+          <p className="mt-5 max-w-2xl text-body-lg text-ink-600">
+            Answer-first notes on workflow automation, technical support systems, AI plus human operations, and product delivery patterns that hold up in real businesses.
+          </p>
 
           <div className="mt-14 divide-y divide-ink-900/10 border-t border-ink-900/10">
             {insights.map((entry) => (

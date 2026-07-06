@@ -21,9 +21,9 @@ import { BreadcrumbSchema, FAQSchema, ServiceSchema } from "@/components/seo/jso
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Engineering Teams | SaaS Development, Staff Augmentation & Product Delivery | Raptric",
+  title: "Software Development Partner | SaaS Development, Staff Augmentation & Product Delivery | Raptric",
   description:
-    "Embedded engineering teams for SaaS development, staff augmentation, support engineering, internal tools, and product delivery that stays visible from roadmap through release.",
+    "Software development partner for SaaS teams, internal platforms, support engineering, staff augmentation, and product delivery that stays visible from roadmap through release.",
   path: "/engineering-team",
 });
 
@@ -139,6 +139,12 @@ const FAQS = [
   },
 ];
 
+const BEST_FIT = [
+  "Product teams that need a software development partner instead of isolated contractors",
+  "SaaS companies balancing roadmap work, internal tooling, QA, and support escalations",
+  "Businesses that need engineering capacity to plug into product, platform, and operations at the same time",
+];
+
 export default function EngineeringTeam() {
   return (
     <>
@@ -163,21 +169,21 @@ export default function EngineeringTeam() {
             <SaasDevelopmentIcon className="h-12 w-12 text-signal-400" />
             <Eyebrow className="mb-4 mt-6 text-signal-400">Engineering Team</Eyebrow>
             <h1 className="text-display font-semibold">
-              Engineering teams that ship with the roadmap.
+              Software development partner for teams that need to ship.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
               Product, platform, and internal-systems engineering for companies
               that need visible delivery, strong QA discipline, and technical
-              work that stays aligned with how the business actually runs.
+              work that stays aligned with how the business actually runs, not just another dev shop.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
               <Link
-                href="/solutions"
+                href="/support-operations"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-mist-50/80 hover:text-mist-50"
               >
-                See the systems we build around
+                See how engineering connects to support
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   &rarr;
                 </span>
@@ -213,6 +219,22 @@ export default function EngineeringTeam() {
 
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-18 md:py-22">
+          <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
+            <Eyebrow className="mb-4">Answer first</Eyebrow>
+            <p className="max-w-4xl text-body-lg text-ink-700">
+              This page is for teams looking for a software development partner, SaaS development support, embedded engineering capacity, staff augmentation, and product delivery help that stays connected to QA, release quality, and real operations.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {BEST_FIT.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
           <Eyebrow className="mb-5">Capability map</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Engineering depth across product, platform, support, and the systems behind the scenes.

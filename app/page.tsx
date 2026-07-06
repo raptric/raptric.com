@@ -22,12 +22,13 @@ import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
+import { FAQSchema } from "@/components/seo/json-ld";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "AI Automation, Support Operations & Engineering Teams | Raptric",
+  title: "AI Automation Services, Technical Support & Software Development Partner | Raptric",
   description:
-    "Raptric helps companies scale support, automate operations, and ship products faster with AI workflows, human teams, and embedded engineering capacity.",
+    "Raptric builds AI automation services, technical support systems, and software development capacity for companies that need cleaner workflows, stronger delivery, and better operating systems.",
   path: "/",
 });
 
@@ -57,8 +58,8 @@ const CORE_AREAS = [
     Icon: TechnologyAdvisoryIcon,
     name: "Solutions",
     href: "/solutions",
-    body: "Packaged systems like DentOS, LinkOS, EOS, and Voice AI built from the pillars above.",
-    highlights: ["DentOS", "LinkOS", "EOS", "Voice AI"],
+    body: "AI voice, healthcare operations, outreach automation, sales engagement, and lead intelligence platforms built from the pillars above.",
+    highlights: ["voice AI", "healthcare ops", "SEO outreach", "sales automation"],
   },
 ];
 
@@ -85,6 +86,24 @@ const PROBLEMS = [
   { Icon: TangleIcon, text: "Operations held together by spreadsheets, inboxes, and tribal memory." },
   { Icon: MismatchIcon, text: "Software that looks clean in demos but never matches how the business actually runs." },
   { Icon: ClockIcon, text: "Support and delivery layers that cannot absorb growth without adding chaos." },
+];
+
+const ANSWER_FIRST_BLOCKS = [
+  {
+    title: "AI automation services",
+    body: "We design workflow automation, agent systems, CRM orchestration, and human-in-the-loop AI that fits the operation you already run.",
+    href: "/ai-automation",
+  },
+  {
+    title: "Technical support systems",
+    body: "We help companies structure tech support, customer operations, and AI-assisted intake so complexity routes cleanly instead of piling into one queue.",
+    href: "/support-operations",
+  },
+  {
+    title: "Software development partner",
+    body: "We provide engineering capacity for SaaS, internal tooling, platform delivery, and support engineering that stays aligned with the roadmap.",
+    href: "/engineering-team",
+  },
 ];
 
 const METHODOLOGY_STEPS = [
@@ -137,6 +156,25 @@ const OUTCOMES = [
   },
 ];
 
+const FAQS = [
+  {
+    q: "What does Raptric actually do?",
+    a: "Raptric builds AI automation systems, technical support operations, and engineering delivery capacity for companies that need software, workflows, and human operations to run as one system.",
+  },
+  {
+    q: "Who is Raptric the best fit for?",
+    a: "Raptric is a strong fit for SaaS companies, healthcare operations, service businesses, sales teams, and operations-heavy businesses that need cleaner workflows, stronger support systems, or more delivery capacity.",
+  },
+  {
+    q: "Does Raptric only offer AI automation?",
+    a: "No. AI automation is one pillar. Raptric also designs support operations and provides engineering capacity so automation, product delivery, and human operations do not get split across disconnected vendors.",
+  },
+  {
+    q: "What kind of projects usually start the conversation?",
+    a: "Common starting points include workflow automation, technical support redesign, AI-assisted support intake, embedded engineering capacity, CRM automation, and internal tooling that is slowing the business down.",
+  },
+];
+
 const [AI_AREA, ENGINEERING_AREA, SUPPORT_AREA, SOLUTIONS_AREA] = CORE_AREAS;
 const AiAreaIcon = AI_AREA.Icon;
 const EngineeringAreaIcon = ENGINEERING_AREA.Icon;
@@ -146,6 +184,7 @@ const SolutionsAreaIcon = SOLUTIONS_AREA.Icon;
 export default function Home() {
   return (
     <>
+      <FAQSchema items={FAQS} />
       <section className="relative overflow-hidden bg-ink-950 text-mist-50">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/40 to-transparent" />
         <Container className="grid min-h-[88vh] items-center gap-14 py-16 md:grid-cols-[1.02fr_0.98fr] md:py-20">
@@ -219,6 +258,31 @@ export default function Home() {
                 <p className="label text-ink-400">{item.label}</p>
                 <p className="mt-2 text-sm font-medium text-ink-900">{item.value}</p>
               </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-18">
+          <Eyebrow className="mb-5">Answer first</Eyebrow>
+          <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
+            Raptric helps companies automate workflows, structure technical support, and add engineering capacity without splitting the work across three separate vendors.
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {ANSWER_FIRST_BLOCKS.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-100 p-6 transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
+                  Explore
+                  <span>&rarr;</span>
+                </span>
+              </Link>
             ))}
           </div>
         </Container>
@@ -503,6 +567,23 @@ export default function Home() {
                 &rarr;
               </span>
             </Link>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-6">FAQ</Eyebrow>
+          <div className="mx-auto flex max-w-3xl flex-col divide-y divide-ink-200 border-y border-ink-200">
+            {FAQS.map((item) => (
+              <details key={item.q} className="group py-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between text-body-lg font-medium text-ink-900">
+                  {item.q}
+                  <span className="ml-4 shrink-0 text-ink-400 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-body text-ink-600">{item.a}</p>
+              </details>
+            ))}
           </div>
         </Container>
       </section>
