@@ -3,8 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CALENDLY_URL } from "@/lib/seo";
 import Logo from "./logo";
 import { NAV_LINKS } from "./nav-links";
+
+function openCalendlyPopup() {
+  if (typeof window !== "undefined" && window.Calendly) {
+    window.Calendly.initPopupWidget({
+      url: `${CALENDLY_URL}?hide_event_type_details=1&hide_gdpr_banner=1`,
+    });
+  }
+}
 
 export default function Nav() {
   const pathname = usePathname();
@@ -40,12 +49,13 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link
-            href="/contact"
+          <button
+            type="button"
+            onClick={openCalendlyPopup}
             className="hidden sm:inline-flex items-center bg-signal-500 px-5 py-2.5 text-sm font-medium text-white rounded-[var(--radius-sm)] transition-colors hover:bg-signal-600"
           >
             Let&apos;s Talk
-          </Link>
+          </button>
 
           <button
             type="button"
@@ -96,13 +106,16 @@ export default function Nav() {
               );
             })}
             <li className="pt-2">
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openCalendlyPopup();
+                }}
                 className="inline-flex items-center bg-signal-500 px-5 py-2.5 text-sm font-medium text-white rounded-[var(--radius-sm)]"
               >
                 Let&apos;s Talk
-              </Link>
+              </button>
             </li>
           </ul>
         </nav>

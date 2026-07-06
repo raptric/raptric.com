@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/nav/nav";
 import Footer from "@/components/nav/footer";
@@ -61,6 +62,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
+      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
     </html>
   );
 }
