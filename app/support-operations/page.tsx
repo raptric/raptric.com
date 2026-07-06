@@ -164,6 +164,14 @@ const FAQS = [
     q: "Is this only for customer support teams?",
     a: "No. The same model can be applied to technical support, service operations, appointment workflows, escalations, and operator-heavy environments where requests need better structure.",
   },
+  {
+    q: "What is technical support outsourcing when it is done well?",
+    a: "Technical support outsourcing should not mean pushing every request into a generic queue. Done well, it means cleaner ticket triage, clearer escalation, stronger specialist handling, and better routing between customer support, technical support, and engineering.",
+  },
+  {
+    q: "What is HITL in support operations?",
+    a: "HITL means human-in-the-loop. In support operations, it means AI or automation can classify, draft, or route first, but a human still reviews, validates, or decides when trust, complexity, or risk matters.",
+  },
 ];
 
 const BEST_FIT = [
@@ -208,6 +216,21 @@ const RELATED_SOLUTIONS = [
   },
 ];
 
+const PAGE_PROOF = [
+  {
+    title: "What gets built",
+    body: "Support routing models, ticket triage flows, escalation paths, AI-assisted intake, HITL review layers, specialist coverage, and voice or chat support systems.",
+  },
+  {
+    title: "What improves",
+    body: "First-response speed, cleaner escalation, better use of specialist time, fewer queue collisions, and less trust damage from poorly placed automation.",
+  },
+  {
+    title: "Where it applies",
+    body: "Technical support, customer support, appointment-heavy businesses, SaaS support queues, specialist review workflows, and operations where every request should not land in the same lane.",
+  },
+];
+
 export default function SupportOperations() {
   return (
     <>
@@ -236,6 +259,11 @@ export default function SupportOperations() {
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
               We design technical support outsourcing, AI customer support, HITL review, technical escalation, and human coverage as one support model so speed, trust, and specialist judgment do not fight each other.
+            </p>
+            <p className="mt-4 max-w-xl text-body text-mist-50/60">
+              Raptric helps businesses build support systems where routing,
+              escalation, ticket triage, and human judgment are designed on
+              purpose instead of improvised queue by queue.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
@@ -291,6 +319,22 @@ export default function SupportOperations() {
                 </div>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-100">
+        <Container className="py-12 md:py-14">
+          <div className="grid gap-4 md:grid-cols-3">
+            {PAGE_PROOF.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-5 shadow-sm"
+              >
+                <p className="label text-signal-700">{item.title}</p>
+                <p className="mt-3 text-body text-ink-700">{item.body}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

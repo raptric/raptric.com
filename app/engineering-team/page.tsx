@@ -157,6 +157,14 @@ const FAQS = [
     q: "What kind of companies are the best fit for this page?",
     a: "Companies with a real product roadmap, platform needs, release pressure, internal tooling work, or support escalations that require engineering depth are the best fit.",
   },
+  {
+    q: "What is a software development partner in practical terms?",
+    a: "A software development partner is a team that helps shape scope, ship roadmap work, improve QA and release visibility, and stay accountable to the business outcome. It is more operationally involved than basic staff augmentation.",
+  },
+  {
+    q: "How is this different from a generic dev shop?",
+    a: "A generic dev shop usually focuses on tickets or features. Raptric focuses on delivery truth, QA drag, release visibility, internal tooling, and the operational consequences of what gets shipped.",
+  },
 ];
 
 const BEST_FIT = [
@@ -201,6 +209,21 @@ const RELATED_SOLUTIONS = [
   },
 ];
 
+const PAGE_PROOF = [
+  {
+    title: "What gets built",
+    body: "Customer-facing product work, internal tooling, support engineering bridges, QA processes, APIs, dashboards, and the operational systems around the roadmap.",
+  },
+  {
+    title: "What improves",
+    body: "Release visibility, QA discipline, escalation handling, roadmap fit, and the amount of rework caused by weak handoffs between product, support, and engineering.",
+  },
+  {
+    title: "Where it applies",
+    body: "SaaS teams, internal platforms, product roadmaps under pressure, support-heavy software businesses, and companies that need a software development partner instead of a detached dev lane.",
+  },
+];
+
 export default function EngineeringTeam() {
   return (
     <>
@@ -231,6 +254,11 @@ export default function EngineeringTeam() {
               Product, platform, and internal-systems engineering for companies
               that need visible delivery, strong QA discipline, and technical
               work that stays aligned with how the business actually runs, not just another dev shop.
+            </p>
+            <p className="mt-4 max-w-xl text-body text-mist-50/60">
+              In practice, Raptric helps teams ship roadmap work, reduce QA
+              drag, improve release visibility, and close the gap between
+              engineering delivery and the operational pressure around it.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -275,6 +303,22 @@ export default function EngineeringTeam() {
                 </div>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-100">
+        <Container className="py-12 md:py-14">
+          <div className="grid gap-4 md:grid-cols-3">
+            {PAGE_PROOF.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-5 shadow-sm"
+              >
+                <p className="label text-signal-700">{item.title}</p>
+                <p className="mt-3 text-body text-ink-700">{item.body}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

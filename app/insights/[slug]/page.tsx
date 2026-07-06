@@ -40,6 +40,33 @@ function formatDate(date: string) {
   });
 }
 
+const ARTICLE_DEFINITIONS: Record<string, { title: string; body: string }> = {
+  "ai-automation-vs-manual-workflows": {
+    title: "What this article means in plain terms",
+    body: "This article explains when AI automation is genuinely useful, when manual work is still safer, and where routing, escalation, and human review matter more than adding one more tool.",
+  },
+  "hitl-vs-fully-automated-support": {
+    title: "What HITL means here",
+    body: "HITL means human-in-the-loop. In this context, it is the difference between AI doing the whole job and AI helping first while a person still reviews, decides, or escalates when trust is at stake.",
+  },
+  "software-development-partner-vs-staff-augmentation": {
+    title: "What this comparison is really about",
+    body: "This article is about delivery ownership, QA drag, and release visibility - not just how many engineers get added to the team.",
+  },
+  "technical-support-outsourcing-vs-in-house": {
+    title: "What this comparison is really about",
+    body: "This article explains how support quality changes when routing, escalation, specialist handling, and ticket triage are designed well - whether the team is internal or external.",
+  },
+  "crm-automation-examples": {
+    title: "What CRM automation means in practice",
+    body: "CRM automation usually means lead routing, follow-up triggers, enrichment, status updates, and handoffs that reduce manual cleanup instead of creating new workflow mess.",
+  },
+  "voice-ai-for-operations": {
+    title: "What voice AI means in practice",
+    body: "Voice AI is most valuable when it helps with intake, qualification, scheduling, call summaries, and routing into the right human or system lane.",
+  },
+};
+
 const RELATED_CONTENT: Record<
   string,
   {
@@ -175,6 +202,7 @@ export default async function InsightEntry({
   const entry = getInsightBySlug(slug);
   if (!entry) notFound();
   const related = RELATED_CONTENT[slug];
+  const definition = ARTICLE_DEFINITIONS[slug];
 
   return (
     <article>
@@ -201,6 +229,13 @@ export default async function InsightEntry({
         <p className="mt-4 max-w-2xl text-body text-ink-600">
           By {entry.author}. Field notes on automation, operations, and engineering systems.
         </p>
+
+        {definition ? (
+          <div className="mt-8 max-w-2xl rounded-[var(--radius-lg)] border border-ink-900/10 bg-mist-100 p-5">
+            <p className="label text-signal-700">{definition.title}</p>
+            <p className="mt-3 text-body text-ink-700">{definition.body}</p>
+          </div>
+        ) : null}
 
         <div className="prose-insight mt-12 max-w-2xl">
           <MDXRemote source={entry.content} />

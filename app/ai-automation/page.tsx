@@ -152,6 +152,14 @@ const FAQS = [
     q: "How do you handle risk with AI systems?",
     a: "By deciding where AI should stop. We design human checkpoints, escalation rules, audit trails, and confidence boundaries so sensitive or ambiguous cases route to a person before they become a bad outcome.",
   },
+  {
+    q: "What is AI automation in practical business terms?",
+    a: "AI automation means using workflows, routing logic, models, and integrations to move work through the business with less manual triage. In practice that often means intake automation, CRM follow-up, support triage, approvals, and human escalation paths around exceptions.",
+  },
+  {
+    q: "How is this different from buying a few AI tools?",
+    a: "Tools alone do not solve routing, escalation, accountability, or QA drag. Raptric designs the operating system around the workflow so the automation can survive live usage instead of stalling after the demo.",
+  },
 ];
 
 const BEST_FIT = [
@@ -176,6 +184,21 @@ const DIFFERENTIATORS = [
   "We architect the routing and exception logic, not just the prompt.",
   "We work inside tools like n8n, Make.com, CRM systems, and APIs instead of stopping at strategy.",
   "We design human review and escalation boundaries so automation improves trust instead of eroding it.",
+];
+
+const PAGE_PROOF = [
+  {
+    title: "What gets built",
+    body: "AI workflows, routing logic, CRM follow-up systems, support triage flows, approval layers, and human review checkpoints around the real process.",
+  },
+  {
+    title: "What improves",
+    body: "Lead response speed, cleaner routing, fewer manual handoffs, better exception handling, and less operational drag hidden behind inboxes and spreadsheets.",
+  },
+  {
+    title: "Where it applies",
+    body: "Inbound sales, support intake, back-office automation, CRM operations, internal approvals, and any workflow where people are still patching the gaps by hand.",
+  },
 ];
 
 const RELATED_SOLUTIONS = [
@@ -221,6 +244,11 @@ export default function AiAutomation() {
               companies using tools like n8n, Make.com, Cursor, APIs, CRM
               systems, and human review layers where judgment is still part of
               the work.
+            </p>
+            <p className="mt-4 max-w-xl text-body text-mist-50/60">
+              In practical terms, Raptric builds AI automation for routing,
+              escalation, CRM follow-up, support triage, approvals, and the
+              repetitive operational work that keeps slowing the business down.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
@@ -305,6 +333,22 @@ export default function AiAutomation() {
                 </p>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-100">
+        <Container className="py-12 md:py-14">
+          <div className="grid gap-4 md:grid-cols-3">
+            {PAGE_PROOF.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-5 shadow-sm"
+              >
+                <p className="label text-signal-700">{item.title}</p>
+                <p className="mt-3 text-body text-ink-700">{item.body}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

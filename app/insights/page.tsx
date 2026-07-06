@@ -79,6 +79,31 @@ export default function Insights() {
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
               {
+                title: "What this section is for",
+                body: "These articles explain workflow automation, routing, escalation, ticket triage, CRM follow-up, release visibility, and QA drag in more direct operational terms.",
+              },
+              {
+                title: "Who it serves",
+                body: "Operators, founders, product leaders, support leaders, and teams evaluating AI automation services, technical support systems, or a software development partner.",
+              },
+              {
+                title: "How Raptric differs",
+                body: "The writing stays focused on live operations, not abstract agency language. The goal is to explain what changes in the workflow, not just what the tooling is called.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5 shadow-sm"
+              >
+                <p className="label text-signal-700">{item.title}</p>
+                <p className="mt-3 text-body text-ink-700">{item.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              {
                 title: "AI automation vs manual workflows",
                 body: "Where automation helps, where redesign matters, and where human review still protects the outcome.",
               },

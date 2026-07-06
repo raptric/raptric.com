@@ -123,6 +123,21 @@ const ANSWER_FIRST_BLOCKS = [
   },
 ];
 
+const HOME_PROOF_BLOCKS = [
+  {
+    title: "What gets built",
+    body: "AI routing, support triage, CRM follow-up, internal tooling, and engineering workflows that turn scattered manual steps into one working system.",
+  },
+  {
+    title: "What improves",
+    body: "Response speed, escalation clarity, release visibility, and the amount of manual cleanup teams do after the workflow should have already handled it.",
+  },
+  {
+    title: "Where it applies",
+    body: "Sales intake, customer support, technical support, internal operations, platform delivery, and the queues where work currently gets stuck or misrouted.",
+  },
+];
+
 const METHODOLOGY_STEPS = [
   {
     n: "01",
@@ -236,6 +251,12 @@ export default function Home() {
               so the business can route work, ship faster, and stay reliable
               under real pressure.
             </p>
+            <p className="mt-4 max-w-xl text-body text-mist-50/60">
+              Raptric is an operator-led company that builds AI automation services,
+              technical support systems, and software delivery capacity for
+              businesses that need cleaner routing, stronger escalation, and
+              less workflow drag.
+            </p>
 
             <div className="mt-8 flex flex-wrap gap-3 text-sm text-mist-50/72">
               {["AI workflows and n8n", "Embedded engineering capacity", "HITL support models"].map((item) => (
@@ -287,6 +308,22 @@ export default function Home() {
                 ))}
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-100">
+        <Container className="py-12 md:py-14">
+          <div className="grid gap-4 md:grid-cols-3">
+            {HOME_PROOF_BLOCKS.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-5 shadow-sm"
+              >
+                <p className="label text-signal-700">{item.title}</p>
+                <p className="mt-3 text-body text-ink-700">{item.body}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

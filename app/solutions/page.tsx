@@ -105,6 +105,21 @@ const PLATFORM_LAYERS = [
   },
 ];
 
+const SOLUTIONS_PROOF = [
+  {
+    title: "What gets built",
+    body: "AI voice agents, healthcare workflow systems, SEO outreach platforms, AI sales engagement systems, and lead intelligence products built around real business operations.",
+  },
+  {
+    title: "What improves",
+    body: "Routing speed, campaign execution, support handling, operational visibility, CRM follow-up, and the amount of manual coordination needed to keep the workflow moving.",
+  },
+  {
+    title: "Where it applies",
+    body: "Healthcare operations, SEO and growth teams, outbound sales, local business prospecting, support environments, and workflow-heavy teams that need more than one isolated feature.",
+  },
+];
+
 const SOLUTIONS: Solution[] = [
   {
     Icon: PhoneIcon,
@@ -486,6 +501,14 @@ const FAQS = [
     q: "Which industries are the strongest fit for the solutions page?",
     a: "Healthcare, SaaS, SEO and marketing teams, sales organizations, professional services, and operations-heavy businesses are the strongest fit because they usually have repeated workflows, customer interaction, and integration needs that benefit from platform thinking.",
   },
+  {
+    q: "What is the difference between a solution page and a service page?",
+    a: "A service page explains the capability, like AI automation services or support operations. A solution page shows how those capabilities come together inside a working platform built for a specific business outcome.",
+  },
+  {
+    q: "Are these solutions just demos or can they become production systems?",
+    a: "The goal is production-ready systems. Raptric uses AI, workflows, integrations, reporting, and cloud architecture to build platforms that can support real business execution instead of staying as isolated prototypes.",
+  },
 ];
 
 export default function Solutions() {
@@ -525,6 +548,11 @@ export default function Solutions() {
               We do not build isolated AI features. We engineer complete business
               systems that combine automation, AI, integrations, data, and
               software delivery into one operational layer.
+            </p>
+            <p className="mt-4 max-w-xl text-body text-mist-50/60">
+              This page shows the kinds of systems Raptric builds, what they improve,
+              and where they fit: voice AI, healthcare workflows, outreach automation,
+              AI sales engagement, and lead intelligence tied back to real operating work.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <CtaLink href="/contact">Discuss your platform build</CtaLink>
@@ -572,6 +600,22 @@ export default function Solutions() {
                 </div>
               ))}
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-100">
+        <Container className="py-12 md:py-14">
+          <div className="grid gap-4 md:grid-cols-3">
+            {SOLUTIONS_PROOF.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-5 shadow-sm"
+              >
+                <p className="label text-signal-700">{item.title}</p>
+                <p className="mt-3 text-body text-ink-700">{item.body}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
