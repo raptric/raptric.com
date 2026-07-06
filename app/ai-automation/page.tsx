@@ -249,6 +249,11 @@ export default function AiAutomation() {
             <p className="mt-4 max-w-lg text-sm text-mist-50/56">
               The call is best for teams that already know the workflow is slow, manually routed, or too dependent on people cleaning up the process after the fact.
             </p>
+            <p className="mt-3 max-w-lg text-sm text-mist-50/56">
+              Most conversations start around lead routing,{" "}
+              <TextLink href="/insights/crm-automation-examples">CRM automation examples</TextLink>,{" "}
+              support triage, or the first place where a human review layer clearly belongs.
+            </p>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-[0.56fr_0.44fr]">
@@ -309,7 +314,7 @@ export default function AiAutomation() {
           <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
             <Eyebrow className="mb-4">Answer first</Eyebrow>
             <p className="max-w-4xl text-body-lg text-ink-700">
-              This page is for companies looking for AI automation services, workflow automation, n8n automation, CRM automation, and AI-assisted support systems that can hold up under real volume, exceptions, and human review requirements.
+              If you are looking for AI automation services, workflow automation, n8n systems, CRM automation, or AI-assisted support that can survive real volume and exceptions, this is the page to start with.
             </p>
             <div className="mt-5 grid gap-3 md:grid-cols-2">
               <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
@@ -497,6 +502,12 @@ export default function AiAutomation() {
               </div>
             ))}
           </div>
+          <p className="mt-6 max-w-3xl text-body text-ink-600">
+            These systems usually connect back into{" "}
+            <TextLink href="/support-operations">technical support systems</TextLink>,{" "}
+            <TextLink href="/solutions">solution-level builds</TextLink>, or the comparison notes in{" "}
+            <TextLink href="/insights">Insights</TextLink> once the workflow gets more operationally complex.
+          </p>
         </Container>
       </section>
 
@@ -576,7 +587,7 @@ export default function AiAutomation() {
           <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
             <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
               <div>
-                <p className="label text-signal-700">Mid-page CTA</p>
+                <p className="label text-signal-700">Common starting point</p>
                 <p className="mt-3 text-body text-ink-700">
                   If the workflow is already obvious and you want help choosing the right AI automation architecture, the fastest next step is a focused automation call.
                 </p>
@@ -605,7 +616,7 @@ export default function AiAutomation() {
                 <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
-                  View solution example
+                  See {item.title}
                   <span>&rarr;</span>
                 </span>
               </Link>

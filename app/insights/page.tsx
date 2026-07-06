@@ -25,6 +25,23 @@ function formatDate(date: string) {
 
 export default function Insights() {
   const insights = getAllInsights();
+  const topicTracks = [
+    {
+      title: "AI automation services",
+      body: "Workflow automation, CRM automation, human review boundaries, and where AI should stop.",
+      href: "/ai-automation",
+    },
+    {
+      title: "technical support systems",
+      body: "Support routing, HITL models, escalation structure, and where trust still needs a human layer.",
+      href: "/support-operations",
+    },
+    {
+      title: "software development partner services",
+      body: "Roadmap fit, QA visibility, support engineering, and product delivery that holds up under live pressure.",
+      href: "/engineering-team",
+    },
+  ];
 
   return (
     <>
@@ -81,6 +98,24 @@ export default function Insights() {
                 <p className="text-base font-medium text-ink-900">{item.title}</p>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
               </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {topicTracks.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-5 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <p className="label text-signal-600">Related pillar</p>
+                <h2 className="mt-3 text-h3 font-medium text-ink-900">{item.title}</h2>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
+                  Explore {item.title}
+                  <span>&rarr;</span>
+                </span>
+              </Link>
             ))}
           </div>
 

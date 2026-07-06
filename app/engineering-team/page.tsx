@@ -248,6 +248,9 @@ export default function EngineeringTeam() {
             <p className="mt-4 max-w-lg text-sm text-mist-50/56">
               This call is best for product leaders, founders, and operators who already feel the pressure between roadmap, QA, internal tooling, and release quality.
             </p>
+            <p className="mt-3 max-w-lg text-sm text-mist-50/56">
+              Most teams reach out when delivery still looks fine in status updates, but the real pressure is showing up in QA, escalations, and the work piling up behind the roadmap.
+            </p>
           </div>
 
           <div className="relative">
@@ -281,7 +284,7 @@ export default function EngineeringTeam() {
           <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
             <Eyebrow className="mb-4">Answer first</Eyebrow>
             <p className="max-w-4xl text-body-lg text-ink-700">
-              This page is for teams looking for a software development partner, SaaS development support, embedded engineering capacity, staff augmentation, and product delivery help that stays connected to QA, release quality, and real operations.
+              If you need a software development partner, SaaS delivery support, embedded engineering capacity, or stronger release visibility around real operations, this page should give you the clearest starting point.
             </p>
             <div className="mt-5 grid gap-3 md:grid-cols-2">
               <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
@@ -537,7 +540,7 @@ export default function EngineeringTeam() {
           <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
             <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
               <div>
-                <p className="label text-signal-700">Mid-page CTA</p>
+                <p className="label text-signal-700">A common next step</p>
                 <p className="mt-3 text-body text-ink-700">
                   If the roadmap is moving faster than delivery confidence, the fastest next step is a focused engineering-partner conversation about scope, release pressure, and where the team is getting stuck.
                 </p>
@@ -566,7 +569,7 @@ export default function EngineeringTeam() {
                 <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
-                  View solution example
+                  See {item.title}
                   <span>&rarr;</span>
                 </span>
               </Link>
@@ -594,6 +597,12 @@ export default function EngineeringTeam() {
               </div>
             ))}
           </div>
+          <p className="mt-6 max-w-3xl text-body text-ink-600">
+            These delivery patterns usually overlap with{" "}
+            <TextLink href="/support-operations">technical support systems</TextLink>,{" "}
+            <TextLink href="/solutions">platform-level solutions</TextLink>, and the delivery comparisons in{" "}
+            <TextLink href="/insights/software-development-partner-vs-staff-augmentation">software development partner vs staff augmentation</TextLink>.
+          </p>
         </Container>
       </section>
 

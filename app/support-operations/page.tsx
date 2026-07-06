@@ -264,6 +264,9 @@ export default function SupportOperations() {
             <p className="mt-4 max-w-lg text-sm text-mist-50/56">
               This conversation is best for teams dealing with queue pressure, poor escalation, inconsistent response quality, or AI support that still needs human judgment built around it.
             </p>
+            <p className="mt-3 max-w-lg text-sm text-mist-50/56">
+              Often the first question is not whether to add more people. It is whether requests are being routed well, whether specialists are seeing the right work, and whether AI is helping or quietly hurting trust.
+            </p>
           </div>
 
           <div className="relative">
@@ -297,7 +300,7 @@ export default function SupportOperations() {
           <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
             <Eyebrow className="mb-4">Answer first</Eyebrow>
             <p className="max-w-4xl text-body-lg text-ink-700">
-              This page is for companies looking for technical support outsourcing, AI customer support, human-in-the-loop support operations, and specialist escalation systems that can scale without losing customer trust.
+              If you need technical support outsourcing, AI customer support, HITL operations, or a cleaner specialist escalation model that can scale without losing trust, this is the right page to start with.
             </p>
             <div className="mt-5 grid gap-3 md:grid-cols-2">
               <div className="rounded-[var(--radius-md)] border border-ink-200 bg-white px-4 py-4">
@@ -570,7 +573,7 @@ export default function SupportOperations() {
           <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
             <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
               <div>
-                <p className="label text-signal-700">Mid-page CTA</p>
+                <p className="label text-signal-700">A common next step</p>
                 <p className="mt-3 text-body text-ink-700">
                   If your support model already feels overloaded or trust is starting to slip, a support-operations conversation is usually the clearest next step.
                 </p>
@@ -599,7 +602,7 @@ export default function SupportOperations() {
                 <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
-                  View solution example
+                  See {item.title}
                   <span>&rarr;</span>
                 </span>
               </Link>
@@ -627,6 +630,12 @@ export default function SupportOperations() {
               </div>
             ))}
           </div>
+          <p className="mt-6 max-w-3xl text-body text-ink-600">
+            These support designs usually connect back into{" "}
+            <TextLink href="/ai-automation">AI automation services</TextLink>,{" "}
+            <TextLink href="/engineering-team">software development partner services</TextLink>, and support comparisons like{" "}
+            <TextLink href="/insights/technical-support-outsourcing-vs-in-house">technical support outsourcing vs in-house</TextLink>.
+          </p>
         </Container>
       </section>
 

@@ -108,12 +108,14 @@ export function ArticleSchema({
   path,
   datePublished,
   dateModified,
+  author,
 }: {
   title: string;
   description: string;
   path: string;
   datePublished: string;
   dateModified?: string;
+  author?: string;
 }) {
   return (
     <Schema
@@ -125,11 +127,17 @@ export function ArticleSchema({
         url: `${SITE_URL}${path}`,
         datePublished,
         dateModified: dateModified ?? datePublished,
-        author: {
-          "@type": "Organization",
-          name: LEGAL_NAME,
-          url: SITE_URL,
-        },
+        author: author
+          ? {
+              "@type": "Organization",
+              name: author,
+              url: SITE_URL,
+            }
+          : {
+              "@type": "Organization",
+              name: LEGAL_NAME,
+              url: SITE_URL,
+            },
         publisher: {
           "@type": "Organization",
           name: LEGAL_NAME,

@@ -325,7 +325,7 @@ export default function Home() {
                 <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
-                  Explore
+                  View {item.title}
                   <span>&rarr;</span>
                 </span>
               </Link>
@@ -516,7 +516,7 @@ export default function Home() {
                   <h3 className="mt-5 text-h2 font-medium text-ink-900">{SOLUTIONS_AREA.name}</h3>
                   <p className="mt-3 max-w-sm text-body text-ink-600">{SOLUTIONS_AREA.body}</p>
                   <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-signal-600">
-                    Explore solution examples
+                    See packaged solution examples
                     <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                   </span>
                 </div>

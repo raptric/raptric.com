@@ -191,6 +191,7 @@ export default async function InsightEntry({
         path={`/insights/${entry.slug}`}
         datePublished={entry.date}
         dateModified={entry.dateModified}
+        author={entry.author}
       />
       <Container className="py-20 md:py-24">
         <Eyebrow className="mb-5">{formatDate(entry.date)}</Eyebrow>

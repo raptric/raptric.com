@@ -815,7 +815,7 @@ export default function Solutions() {
           <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
             <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
               <div>
-                <p className="label text-signal-700">Mid-page CTA</p>
+                <p className="label text-signal-700">A common next step</p>
                 <p className="mt-3 text-body text-ink-700">
                   If you already know the platform outcome you want, the next conversation is usually about workflow scope, integrations, delivery ownership, and which layers need to ship first.
                 </p>
@@ -847,6 +847,13 @@ export default function Solutions() {
               </div>
             ))}
           </div>
+          <p className="mt-6 max-w-3xl text-body text-ink-600">
+            Underneath these solution patterns, the work usually pulls from{" "}
+            <TextLink href="/ai-automation">AI automation services</TextLink>,{" "}
+            <TextLink href="/support-operations">support operations</TextLink>,{" "}
+            and{" "}
+            <TextLink href="/engineering-team">software development partner delivery</TextLink>.
+          </p>
         </Container>
       </section>
 
