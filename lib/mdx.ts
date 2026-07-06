@@ -9,6 +9,7 @@ export type InsightMeta = {
   title: string;
   date: string;
   summary: string;
+  author: string;
 };
 
 export function getAllInsights(): InsightMeta[] {
@@ -23,6 +24,7 @@ export function getAllInsights(): InsightMeta[] {
       title: data.title as string,
       date: data.date as string,
       summary: data.summary as string,
+      author: (data.author as string) || "Raptric Editorial Team",
     };
   });
 
@@ -41,6 +43,7 @@ export function getInsightBySlug(slug: string) {
     title: data.title as string,
     date: data.date as string,
     summary: data.summary as string,
+    author: (data.author as string) || "Raptric Editorial Team",
     content,
   };
 }

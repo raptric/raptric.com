@@ -83,6 +83,21 @@ const WHY_RAPTRIC = [
   },
 ];
 
+const COMPARISON = [
+  {
+    title: "Separate vendors",
+    body: "One automation vendor optimizes the workflow, one support vendor handles the queue, and one dev shop ships code. The gaps between them become your problem.",
+  },
+  {
+    title: "Raptric model",
+    body: "Automation, support operations, and engineering are designed around the same routing logic, escalation model, and operational pressure points.",
+  },
+  {
+    title: "What that changes",
+    body: "Cleaner routing, better escalation, stronger delivery visibility, and less manual reconciliation between tools, teams, and vendors.",
+  },
+];
+
 const PROBLEMS = [
   { Icon: StopIcon, text: "Automation that stops at one task and dies on the first exception." },
   { Icon: TangleIcon, text: "Operations held together by spreadsheets, inboxes, and tribal memory." },
@@ -505,6 +520,30 @@ export default function Home() {
               <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7">
                 <IconBadge Icon={item.Icon} className="h-12 w-12" />
                 <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Why this model</Eyebrow>
+          <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
+            Why Raptric instead of hiring separate vendors for automation, support, and engineering.
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {COMPARISON.map((item, index) => (
+              <div
+                key={item.title}
+                className={`rounded-[var(--radius-lg)] border p-6 ${
+                  index === 1
+                    ? "border-signal-200 bg-signal-50"
+                    : "border-ink-200 bg-mist-100"
+                }`}
+              >
+                <h3 className="text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
               </div>
             ))}

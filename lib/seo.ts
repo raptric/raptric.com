@@ -6,6 +6,8 @@ export const LEGAL_NAME = "Raptric LLC";
 export const CONTACT_EMAIL = "info@raptric.com";
 export const CALENDLY_URL = "https://calendly.com/usman-raptric/30min";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/raptric-og-share-1200x630.png`;
+export const COMPANY_LINKEDIN = "https://www.linkedin.com/company/raptric/";
+export const OPERATING_FOOTPRINT = "Remote-first delivery for US and international teams";
 
 type BuildMetadataOptions = {
   title: string;

@@ -6,8 +6,17 @@ import Eyebrow from "@/components/ui/eyebrow";
 import {
   buildMetadata,
   CALENDLY_URL,
+  COMPANY_LINKEDIN,
   CONTACT_EMAIL,
+  OPERATING_FOOTPRINT,
 } from "@/lib/seo";
+
+const TRUST_CUES = [
+  { label: "Company", value: "Raptric LLC" },
+  { label: "Email", value: CONTACT_EMAIL },
+  { label: "Operating footprint", value: OPERATING_FOOTPRINT },
+  { label: "Industries", value: "Healthcare, SaaS, marketing, sales, service businesses, and internal operations teams" },
+];
 
 export const metadata = buildMetadata({
   title: "Contact Raptric - Book a Discovery Call",
@@ -60,9 +69,7 @@ export default function Contact() {
               </div>
 
               <div className="mt-8 space-y-3">
-                <p className="text-xs uppercase tracking-[0.18em] text-signal-400">
-                  Email
-                </p>
+                <p className="text-xs uppercase tracking-[0.18em] text-signal-400">Email</p>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
                   className="inline-block text-display font-semibold text-mist-50 transition-colors hover:text-signal-400"
@@ -71,8 +78,23 @@ export default function Contact() {
                 </a>
               </div>
 
+              <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-2">
+                {TRUST_CUES.map((item) => (
+                  <div key={item.label} className="rounded-[var(--radius-md)] border border-mist-50/12 bg-mist-50/[0.04] px-4 py-4">
+                    <p className="text-xs uppercase tracking-[0.18em] text-signal-400">{item.label}</p>
+                    <p className="mt-2 text-sm text-mist-50/72">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-4">
                 <CtaLink href={CALENDLY_URL}>Book a Discovery Call</CtaLink>
+                <a
+                  href={COMPANY_LINKEDIN}
+                  className="inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/18 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/28 hover:bg-mist-50/[0.05]"
+                >
+                  Visit LinkedIn
+                </a>
                 <a
                   href="#contact-form"
                   className="inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/18 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/28 hover:bg-mist-50/[0.05]"

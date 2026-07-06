@@ -6,14 +6,15 @@ import Image from "next/image";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
-import { CtaLink } from "@/components/ui/button";
+import { CtaLink, SecondaryCtaLink } from "@/components/ui/button";
 import {
   BuildIcon,
   SystemsIcon,
   AccountableIcon,
+  CheckIcon,
 } from "@/components/illustrations/concept-icons";
 import { AboutPageSchema, BreadcrumbSchema } from "@/components/seo/json-ld";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, COMPANY_LINKEDIN, CONTACT_EMAIL, OPERATING_FOOTPRINT } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "About Raptric",
@@ -42,6 +43,28 @@ const PRINCIPLES = [
   },
 ];
 
+const LEADERSHIP_SIGNALS = [
+  {
+    title: "Operator-led leadership",
+    body: "Raptric is shaped by people who have worked inside support queues, revenue-cycle workflows, operational escalations, and delivery pressure - not only in strategy decks.",
+  },
+  {
+    title: "Why Raptric exists",
+    body: "Most companies end up buying automation, support, and engineering separately. Raptric exists to bring those three layers back together as one operating system.",
+  },
+  {
+    title: "What that changes",
+    body: "Instead of shipping isolated tasks, we focus on routing, escalation, delivery visibility, and the real workflows the business depends on every day.",
+  },
+];
+
+const TRUST_CUES = [
+  { label: "Company", value: "Raptric LLC" },
+  { label: "Email", value: CONTACT_EMAIL },
+  { label: "Operating footprint", value: OPERATING_FOOTPRINT },
+  { label: "Industries served", value: "Healthcare, SaaS, marketing, sales, service businesses, and operations-heavy teams" },
+];
+
 export default function About() {
   return (
     <>
@@ -65,6 +88,10 @@ export default function About() {
               work gets sold as three separate things. We build them as one
               system instead.
             </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <CtaLink href="/contact">Book a Discovery Call</CtaLink>
+              <SecondaryCtaLink href={COMPANY_LINKEDIN}>Follow Raptric on LinkedIn</SecondaryCtaLink>
+            </div>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-2xl">
             <Image
@@ -109,18 +136,26 @@ export default function About() {
               automation rollout. Raptric is built the way we wish those
               systems had been built the first time.
             </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
-                <p className="label text-ink-400">Company</p>
-                <p className="mt-2 text-body font-medium text-ink-900">Raptric LLC</p>
-              </div>
-              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
-                <p className="label text-ink-400">Focus</p>
-                <p className="mt-2 text-body font-medium text-ink-900">AI automation, support operations, and engineering systems</p>
-              </div>
-              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
-                <p className="label text-ink-400">Approach</p>
-                <p className="mt-2 text-body font-medium text-ink-900">Operator-led, workflow-first, accountable delivery</p>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {LEADERSHIP_SIGNALS.map((item) => (
+                <div key={item.title} className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-5">
+                  <p className="label text-signal-600">{item.title}</p>
+                  <p className="mt-3 text-body text-ink-700">{item.body}</p>
+                </div>
+              ))}
+              <div className="rounded-[var(--radius-md)] border border-ink-200 bg-ink-950 p-5 text-mist-50">
+                <p className="label text-signal-300">Trust cues</p>
+                <div className="mt-4 grid gap-3">
+                  {TRUST_CUES.map((item) => (
+                    <div key={item.label} className="flex items-start gap-3">
+                      <IconBadge Icon={CheckIcon} className="h-8 w-8 shrink-0" />
+                      <div>
+                        <p className="text-sm font-medium text-mist-50">{item.label}</p>
+                        <p className="mt-1 text-sm text-mist-50/70">{item.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

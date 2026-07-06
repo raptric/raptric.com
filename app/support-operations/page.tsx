@@ -154,6 +154,24 @@ const BEST_FIT = [
   "Teams exploring AI customer support but still needing human review, trust, and escalation depth",
 ];
 
+const NOT_FOR = [
+  "Businesses looking for a generic call-center vendor without support architecture work",
+  "Teams that want AI replies but do not want to define escalation and trust boundaries",
+  "Operations where technical issues, customer issues, and specialist workflows all get forced into one queue",
+];
+
+const OUTCOMES = [
+  "Faster first response without pushing trust-sensitive cases into the wrong lane",
+  "Cleaner routing between AI, technical support, and specialist handling",
+  "Reduced manual triage, fewer escalation mistakes, and better use of expert time",
+];
+
+const DIFFERENTIATORS = [
+  "We focus on technical support systems, not generic BPO headcount.",
+  "We design the support architecture around routing, escalation, and trust - not just queue coverage.",
+  "We combine AI-assisted support, HITL review, and human handling based on complexity instead of forcing one model onto every request.",
+];
+
 export default function SupportOperations() {
   return (
     <>
@@ -242,15 +260,33 @@ export default function SupportOperations() {
             <p className="max-w-4xl text-body-lg text-ink-700">
               This page is for companies looking for technical support outsourcing, AI customer support, human-in-the-loop support operations, and specialist escalation systems that can scale without losing customer trust.
             </p>
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              {BEST_FIT.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
-                >
-                  {item}
-                </span>
-              ))}
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div>
+                <p className="label text-signal-600">Best fit</p>
+                <div className="mt-3 flex flex-wrap gap-2.5">
+                  {BEST_FIT.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="label text-signal-600">Not for</p>
+                <div className="mt-3 flex flex-wrap gap-2.5">
+                  {NOT_FOR.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           <Eyebrow className="mb-5">Coverage model</Eyebrow>
@@ -434,6 +470,29 @@ export default function SupportOperations() {
       </section>
 
       <section className="border-b border-ink-200 bg-mist-200/60">
+        <Container className="py-16 md:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div>
+              <Eyebrow className="mb-5">Support outcomes</Eyebrow>
+              <h2 className="text-h2 font-semibold text-ink-900">
+                What good support operations change in the business.
+              </h2>
+              <p className="mt-4 max-w-md text-body-lg text-ink-600">
+                Buyers usually want faster response, cleaner routing, fewer escalations in the wrong place, and more specialist time spent on real complexity instead of queue cleanup.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {OUTCOMES.map((item) => (
+                <div key={item} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5">
+                  <p className="text-body font-medium text-ink-800">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-18 md:py-22">
           <Eyebrow className="mb-4">Industry fit</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
@@ -564,6 +623,17 @@ export default function SupportOperations() {
                   </div>
                 </div>
               ))}
+              <div className="rounded-[var(--radius-lg)] border border-signal-500/20 bg-signal-500/10 p-6 backdrop-blur">
+                <p className="label text-signal-300">Why this is not generic outsourcing</p>
+                <div className="mt-3 grid gap-2 text-body text-mist-50/76">
+                  {DIFFERENTIATORS.map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-signal-300" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 

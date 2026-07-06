@@ -142,6 +142,24 @@ const BEST_FIT = [
   "Businesses already using CRM, helpdesk, booking, or internal systems that need better orchestration",
 ];
 
+const NOT_FOR = [
+  "Teams looking for a chatbot demo without workflow redesign",
+  "Projects where no one owns the operational process around the automation",
+  "Use cases that need real trust but are being treated like pure prompt output",
+];
+
+const OUTCOMES = [
+  "Faster response and follow-up across sales, support, and intake",
+  "Cleaner routing between AI, specialists, and internal teams",
+  "Reduced manual reconciliation, status chasing, and workflow drag",
+];
+
+const DIFFERENTIATORS = [
+  "We architect the routing and exception logic, not just the prompt.",
+  "We work inside tools like n8n, Make.com, CRM systems, and APIs instead of stopping at strategy.",
+  "We design human review and escalation boundaries so automation improves trust instead of eroding it.",
+];
+
 export default function AiAutomation() {
   return (
     <>
@@ -254,15 +272,33 @@ export default function AiAutomation() {
             <p className="max-w-4xl text-body-lg text-ink-700">
               This page is for companies looking for AI automation services, workflow automation, n8n automation, CRM automation, and AI-assisted support systems that can hold up under real volume, exceptions, and human review requirements.
             </p>
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              {BEST_FIT.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
-                >
-                  {item}
-                </span>
-              ))}
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div>
+                <p className="label text-signal-600">Best fit</p>
+                <div className="mt-3 flex flex-wrap gap-2.5">
+                  {BEST_FIT.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="label text-signal-600">Not for</p>
+                <div className="mt-3 flex flex-wrap gap-2.5">
+                  {NOT_FOR.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           <Eyebrow className="mb-8">What we actually build</Eyebrow>
@@ -389,6 +425,29 @@ export default function AiAutomation() {
         </Container>
       </section>
 
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div>
+              <Eyebrow className="mb-5">What better looks like</Eyebrow>
+              <h2 className="text-h2 font-semibold text-ink-900">
+                Outcomes buyers actually care about from AI automation services.
+              </h2>
+              <p className="mt-4 max-w-md text-body-lg text-ink-600">
+                The goal is not more AI features. The goal is a support, sales, or operational workflow that responds faster, routes cleaner, and depends less on manual cleanup.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {OUTCOMES.map((item) => (
+                <div key={item} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-100 p-5">
+                  <p className="text-body font-medium text-ink-800">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-[0.78fr_1.22fr] md:items-center md:gap-16">
@@ -487,6 +546,17 @@ export default function AiAutomation() {
                   <p className="text-body text-ink-700">{item}</p>
                 </div>
               ))}
+              <div className="rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 p-5">
+                <p className="label text-signal-700">Why this is not a generic automation agency</p>
+                <div className="mt-3 grid gap-2 text-body text-ink-700">
+                  {DIFFERENTIATORS.map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-signal-600" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
               {SALES_SIGNALS.map((item) => (
                 <div key={item.title} className="rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-5">
                   <p className="label text-signal-600">{item.title}</p>

@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, LEGAL_NAME, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { COMPANY_LINKEDIN, CONTACT_EMAIL, LEGAL_NAME, OPERATING_FOOTPRINT, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 function Schema({ data }: { data: Record<string, unknown> }) {
   return (
@@ -19,6 +19,15 @@ export function OrganizationSchema() {
         url: SITE_URL,
         logo: `${SITE_URL}/raptric-mark.png`,
         email: CONTACT_EMAIL,
+        sameAs: [COMPANY_LINKEDIN],
+        areaServed: ["United States", "International"],
+        knowsAbout: [
+          "AI automation services",
+          "Technical support systems",
+          "Software development partner services",
+          "Workflow automation",
+          "Human-in-the-loop operations",
+        ],
         contactPoint: [
           {
             "@type": "ContactPoint",
@@ -167,6 +176,8 @@ export function ContactPageSchema() {
           name: LEGAL_NAME,
           url: SITE_URL,
           email: CONTACT_EMAIL,
+          sameAs: [COMPANY_LINKEDIN],
+          areaServed: OPERATING_FOOTPRINT,
         },
       }}
     />
@@ -185,6 +196,8 @@ export function AboutPageSchema() {
           "@type": "Organization",
           name: LEGAL_NAME,
           url: SITE_URL,
+          sameAs: [COMPANY_LINKEDIN],
+          areaServed: OPERATING_FOOTPRINT,
         },
       }}
     />

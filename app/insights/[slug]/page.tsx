@@ -69,7 +69,7 @@ export default async function InsightEntry({
           {entry.title}
         </h1>
         <p className="mt-4 max-w-2xl text-body text-ink-600">
-          By Raptric. Field notes on automation, operations, and engineering systems.
+          By {entry.author}. Field notes on automation, operations, and engineering systems.
         </p>
 
         <div className="prose-insight mt-12 max-w-2xl">

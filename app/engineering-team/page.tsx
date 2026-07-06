@@ -147,6 +147,24 @@ const BEST_FIT = [
   "Businesses that need engineering capacity to plug into product, platform, and operations at the same time",
 ];
 
+const NOT_FOR = [
+  "Teams looking for anonymous contractors without product or release accountability",
+  "Projects that treat QA, support, and delivery as someone else's problem",
+  "Founders who only want a cheap dev shop and no operational visibility",
+];
+
+const OUTCOMES = [
+  "Better release visibility across roadmap, QA, and delivery risk",
+  "Cleaner bridge between product work, internal tooling, and support escalations",
+  "Reduced workaround debt and more predictable technical execution",
+];
+
+const DIFFERENTIATORS = [
+  "We position as a software development partner, not a generic outsourcing vendor.",
+  "We care about release visibility, QA discipline, and support engineering - not just story points.",
+  "We build around the operating model the software has to serve, not only the backlog it came from.",
+];
+
 export default function EngineeringTeam() {
   return (
     <>
@@ -226,15 +244,33 @@ export default function EngineeringTeam() {
             <p className="max-w-4xl text-body-lg text-ink-700">
               This page is for teams looking for a software development partner, SaaS development support, embedded engineering capacity, staff augmentation, and product delivery help that stays connected to QA, release quality, and real operations.
             </p>
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              {BEST_FIT.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
-                >
-                  {item}
-                </span>
-              ))}
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div>
+                <p className="label text-signal-600">Best fit</p>
+                <div className="mt-3 flex flex-wrap gap-2.5">
+                  {BEST_FIT.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-ink-200 bg-mist-100 px-3.5 py-1.5 text-sm text-ink-700"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="label text-signal-600">Not for</p>
+                <div className="mt-3 flex flex-wrap gap-2.5">
+                  {NOT_FOR.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-ink-200 bg-white px-3.5 py-1.5 text-sm text-ink-700"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
           <Eyebrow className="mb-5">Capability map</Eyebrow>
@@ -406,6 +442,29 @@ export default function EngineeringTeam() {
         </Container>
       </section>
 
+      <section className="border-b border-ink-200 bg-mist-200/60">
+        <Container className="py-16 md:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div>
+              <Eyebrow className="mb-5">Engineering outcomes</Eyebrow>
+              <h2 className="text-h2 font-semibold text-ink-900">
+                What a strong software development partner changes beyond code delivery.
+              </h2>
+              <p className="mt-4 max-w-md text-body-lg text-ink-600">
+                Buyers usually want clearer release visibility, fewer hidden blockers, better QA discipline, and less operational noise caused by disconnected engineering work.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {OUTCOMES.map((item) => (
+                <div key={item} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5">
+                  <p className="text-body font-medium text-ink-800">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section className="border-b border-ink-200">
         <Container className="py-18 md:py-22">
           <Eyebrow className="mb-3">Engagement models</Eyebrow>
@@ -538,6 +597,17 @@ export default function EngineeringTeam() {
                   </div>
                 </div>
               ))}
+              <div className="rounded-[var(--radius-lg)] border border-signal-500/20 bg-signal-500/10 p-6 backdrop-blur">
+                <p className="label text-signal-300">Why this is not generic staff augmentation</p>
+                <div className="mt-3 grid gap-2 text-body text-mist-50/76">
+                  {DIFFERENTIATORS.map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-signal-300" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
