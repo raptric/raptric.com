@@ -5,7 +5,7 @@ export const SITE_NAME = "Raptric";
 export const LEGAL_NAME = "Raptric LLC";
 export const CONTACT_EMAIL = "info@raptric.com";
 export const CALENDLY_URL = "https://calendly.com/usman-raptric/30min";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/raptric-og-share.png`;
 
 type BuildMetadataOptions = {
   title: string;
