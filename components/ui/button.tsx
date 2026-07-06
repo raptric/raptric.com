@@ -1,4 +1,13 @@
 import Link from "next/link";
+import { CALENDLY_URL } from "@/lib/seo";
+
+function isExternalHref(href: string) {
+  return href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:");
+}
+
+function resolvePrimaryHref(href: string) {
+  return href === "/contact" ? CALENDLY_URL : href;
+}
 
 export function CtaLink({
   href,
@@ -7,9 +16,14 @@ export function CtaLink({
   href: string;
   children: React.ReactNode;
 }) {
+  const resolvedHref = resolvePrimaryHref(href);
+  const external = isExternalHref(resolvedHref);
+
   return (
     <Link
-      href={href}
+      href={resolvedHref}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
       className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] bg-signal-500 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-signal-600"
     >
       {children}

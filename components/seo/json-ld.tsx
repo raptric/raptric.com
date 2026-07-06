@@ -1,4 +1,4 @@
-import { SITE_URL, SITE_NAME } from "@/lib/seo";
+import { CONTACT_EMAIL, LEGAL_NAME, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 function Schema({ data }: { data: Record<string, unknown> }) {
   return (
@@ -15,15 +15,15 @@ export function OrganizationSchema() {
       data={{
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: SITE_NAME,
+        name: LEGAL_NAME,
         url: SITE_URL,
         logo: `${SITE_URL}/raptric-mark.png`,
-        email: "usman@raptric.com",
+        email: CONTACT_EMAIL,
         contactPoint: [
           {
             "@type": "ContactPoint",
             contactType: "sales",
-            email: "usman@raptric.com",
+            email: CONTACT_EMAIL,
             url: `${SITE_URL}/contact`,
           },
         ],
@@ -85,7 +85,7 @@ export function ServiceSchema({
         url: `${SITE_URL}${path}`,
         provider: {
           "@type": "Organization",
-          name: SITE_NAME,
+          name: LEGAL_NAME,
           url: SITE_URL,
         },
       }}
@@ -118,12 +118,12 @@ export function ArticleSchema({
         dateModified: dateModified ?? datePublished,
         author: {
           "@type": "Organization",
-          name: SITE_NAME,
+          name: LEGAL_NAME,
           url: SITE_URL,
         },
         publisher: {
           "@type": "Organization",
-          name: SITE_NAME,
+          name: LEGAL_NAME,
           url: SITE_URL,
         },
       }}
@@ -164,9 +164,9 @@ export function ContactPageSchema() {
         url: `${SITE_URL}/contact`,
         mainEntity: {
           "@type": "Organization",
-          name: SITE_NAME,
+          name: LEGAL_NAME,
           url: SITE_URL,
-          email: "usman@raptric.com",
+          email: CONTACT_EMAIL,
         },
       }}
     />
@@ -183,7 +183,7 @@ export function AboutPageSchema() {
         url: `${SITE_URL}/about`,
         about: {
           "@type": "Organization",
-          name: SITE_NAME,
+          name: LEGAL_NAME,
           url: SITE_URL,
         },
       }}
