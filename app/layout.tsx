@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
+import CookieConsent from "@/components/legal/cookie-consent";
 import Nav from "@/components/nav/nav";
 import Footer from "@/components/nav/footer";
 import { OrganizationSchema, WebSiteSchema } from "@/components/seo/json-ld";
@@ -55,12 +56,19 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://assets.calendly.com/assets/external/widget.css"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-mist-100 text-ink-900">
         <OrganizationSchema />
         <WebSiteSchema />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
       <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
     </html>

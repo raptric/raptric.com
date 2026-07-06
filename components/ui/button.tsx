@@ -24,6 +24,15 @@ function openCalendlyPopup() {
     window.Calendly.initPopupWidget({
       url: `${CALENDLY_URL}?hide_event_type_details=1&hide_gdpr_banner=1`,
     });
+    return;
+  }
+
+  if (typeof window !== "undefined") {
+    window.open(
+      `${CALENDLY_URL}?hide_event_type_details=1&hide_gdpr_banner=1`,
+      "_blank",
+      "noopener,noreferrer",
+    );
   }
 }
 
@@ -73,6 +82,21 @@ export function SecondaryCtaLink({
   href: string;
   children: React.ReactNode;
 }) {
+  if (isCalendlyHref(href)) {
+    return (
+      <button
+        type="button"
+        onClick={openCalendlyPopup}
+        className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-ink-900/15 px-6 py-3.5 text-sm font-medium text-ink-900 transition-colors hover:border-ink-900/30 hover:bg-ink-900/[0.03]"
+      >
+        {children}
+        <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+          &rarr;
+        </span>
+      </button>
+    );
+  }
+
   return (
     <Link
       href={href}

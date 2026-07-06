@@ -8,12 +8,17 @@ import {
   CALENDLY_URL,
   COMPANY_LINKEDIN,
   CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+  FULL_ADDRESS,
   OPERATING_FOOTPRINT,
 } from "@/lib/seo";
 
 const TRUST_CUES = [
   { label: "Company", value: "Raptric LLC" },
   { label: "Email", value: CONTACT_EMAIL },
+  { label: "Phone", value: CONTACT_PHONE_DISPLAY },
+  { label: "Address", value: FULL_ADDRESS },
   { label: "Operating footprint", value: OPERATING_FOOTPRINT },
   { label: "Industries", value: "Healthcare, SaaS, marketing, sales, service businesses, and internal operations teams" },
 ];
@@ -85,6 +90,11 @@ export default function Contact() {
                 >
                   {CONTACT_EMAIL}
                 </a>
+                <p className="text-sm text-mist-50/72">
+                  <a href={`tel:${CONTACT_PHONE}`} className="hover:text-signal-400">
+                    {CONTACT_PHONE_DISPLAY}
+                  </a>
+                </p>
               </div>
 
               <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-2">

@@ -7,7 +7,7 @@ import Link from "next/link";
 import Container from "@/components/ui/container";
 import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
-import { CtaLink, SecondaryCtaLink } from "@/components/ui/button";
+import { CtaLink } from "@/components/ui/button";
 import {
   BuildIcon,
   SystemsIcon,
@@ -91,7 +91,15 @@ export default function About() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <CtaLink href="/contact">Book a Discovery Call</CtaLink>
-              <SecondaryCtaLink href={COMPANY_LINKEDIN}>Follow Raptric on LinkedIn</SecondaryCtaLink>
+              <Link
+                href={COMPANY_LINKEDIN}
+                className="group inline-flex items-center gap-2.5 rounded-[var(--radius-sm)] border border-mist-50/18 px-6 py-3.5 text-sm font-medium text-mist-50 transition-colors hover:border-mist-50/28 hover:bg-mist-50/[0.05]"
+              >
+                Follow Raptric on LinkedIn
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  &rarr;
+                </span>
+              </Link>
             </div>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-2xl">
