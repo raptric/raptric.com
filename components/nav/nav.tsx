@@ -22,7 +22,7 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-mist-50/10 bg-ink-950">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Logo variant="light" showWordmark={false} />
+        <Logo variant="light" />
 
         <nav className="hidden lg:flex items-center gap-7" aria-label="Primary">
           {NAV_LINKS.map((link) => {
