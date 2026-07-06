@@ -22,6 +22,8 @@ export const metadata = buildMetadata({
   description:
     "AI automation services for growing companies: workflow automation, n8n systems, process automation, CRM automation, AI customer support flows, and human-in-the-loop operations design.",
   path: "/ai-automation",
+  image: "/og/ai-automation-1200x630.png",
+  imageAlt: "Raptric AI automation services social share image for workflow automation, n8n, and AI systems",
 });
 
 const TOOL_STACK = [

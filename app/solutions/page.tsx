@@ -70,6 +70,8 @@ export const metadata = buildMetadata({
   description:
     "AI voice agents, healthcare workflow platforms, SEO outreach systems, AI sales engagement platforms, and lead intelligence systems built around real business operations.",
   path: "/solutions",
+  image: "/og/solutions-1200x630.png",
+  imageAlt: "Raptric solutions social share image for AI platforms, workflow systems, and automation products",
 });
 
 const WHAT_WE_BUILD = [

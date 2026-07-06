@@ -25,6 +25,8 @@ export const metadata = buildMetadata({
   description:
     "Software development partner for SaaS teams, internal platforms, support engineering, staff augmentation, and product delivery that stays visible from roadmap through release.",
   path: "/engineering-team",
+  image: "/og/engineering-team-1200x630.png",
+  imageAlt: "Raptric engineering team social share image for software development partner and SaaS delivery services",
 });
 
 const CAPABILITY_LAYERS = [
@@ -199,7 +201,7 @@ export default function EngineeringTeam() {
                 <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/55 to-transparent" />
                 <div className="relative min-h-[440px]">
                   <Image
-                    src="/photos/engineering-hero-generated.png"
+                    src="/photos/engineering-hero-generated-optimized.jpg"
                     alt="Engineering team collaborating around product delivery dashboards and development work"
                     fill
                     sizes="(min-width: 768px) 48vw, 100vw"

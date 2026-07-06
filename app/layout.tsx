@@ -32,16 +32,16 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/raptric-og-share-1200x630.png",
+        url: "/og/home-1200x630.png",
         width: 1200,
         height: 630,
-        alt: "Raptric branded social share image",
+        alt: "Raptric AI automation, support operations, and engineering systems social share image",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/raptric-og-share-1200x630.png"],
+    images: ["/og/home-1200x630.png"],
   },
 };
 

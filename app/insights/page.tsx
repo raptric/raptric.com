@@ -10,6 +10,8 @@ export const metadata = buildMetadata({
   description:
     "Insights on AI automation, support operations, engineering systems, human judgment, and real business workflows from the Raptric team.",
   path: "/insights",
+  image: "/og/insights-1200x630.png",
+  imageAlt: "Raptric insights social share image for AI automation, support operations, and engineering systems articles",
 });
 
 function formatDate(date: string) {

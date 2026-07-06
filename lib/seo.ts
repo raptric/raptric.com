@@ -12,6 +12,7 @@ type BuildMetadataOptions = {
   description: string;
   path: string;
   image?: string;
+  imageAlt?: string;
   noIndex?: boolean;
   type?: "website" | "article";
 };
@@ -28,6 +29,7 @@ export function buildMetadata({
   description,
   path,
   image,
+  imageAlt,
   noIndex = false,
   type = "website",
 }: BuildMetadataOptions): Metadata {
@@ -53,7 +55,7 @@ export function buildMetadata({
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: cleanTitle,
+          alt: imageAlt ?? cleanTitle,
         },
       ],
     },

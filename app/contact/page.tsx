@@ -14,6 +14,8 @@ export const metadata = buildMetadata({
   description:
     "Talk to Raptric about AI automation, support operations, engineering capacity, or solution design. Book a call or send your project context directly.",
   path: "/contact",
+  image: "/og/contact-1200x630.png",
+  imageAlt: "Raptric contact page social share image inviting visitors to discuss AI automation, support operations, or engineering needs",
 });
 
 export default function Contact() {

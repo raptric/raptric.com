@@ -25,6 +25,8 @@ export async function generateMetadata({
     title: entry.title,
     description: entry.summary,
     path: `/insights/${slug}`,
+    image: "/og/insights-1200x630.png",
+    imageAlt: `${entry.title} social share image from Raptric Insights`,
     type: "article",
   });
 }

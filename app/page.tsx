@@ -30,6 +30,8 @@ export const metadata = buildMetadata({
   description:
     "Raptric builds AI automation services, technical support systems, and software development capacity for companies that need cleaner workflows, stronger delivery, and better operating systems.",
   path: "/",
+  image: "/og/home-1200x630.png",
+  imageAlt: "Raptric homepage social share image for AI automation, technical support, and software development partner services",
 });
 
 const CORE_AREAS = [

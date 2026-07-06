@@ -20,6 +20,8 @@ export const metadata = buildMetadata({
   description:
     "About Raptric LLC: the operator-led team behind AI automation, support operations, and engineering systems built for real business workflows.",
   path: "/about",
+  image: "/og/about-1200x630.png",
+  imageAlt: "Raptric about page social share image highlighting the operator-led team behind the company",
 });
 
 const PRINCIPLES = [
@@ -66,7 +68,7 @@ export default function About() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] shadow-2xl">
             <Image
-              src="/photos/about-hero-generated.png"
+              src="/photos/about-hero-generated-optimized.jpg"
               alt="A Raptric operator reviewing systems and performance in a real working environment"
               fill
               sizes="(min-width: 768px) 45vw, 90vw"

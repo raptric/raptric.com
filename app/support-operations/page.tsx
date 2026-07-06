@@ -26,6 +26,8 @@ export const metadata = buildMetadata({
   description:
     "Technical support outsourcing, AI customer support, human-in-the-loop operations, specialist escalation, and human support systems designed for businesses that need speed without losing trust.",
   path: "/support-operations",
+  image: "/og/support-operations-1200x630.png",
+  imageAlt: "Raptric support operations social share image for technical support outsourcing, AI customer support, and HITL operations",
 });
 
 const COVERAGE = [
@@ -62,21 +64,21 @@ const SUPPORT_MODES = [
     label: "AI-assisted",
     title: "Use automation where the work is repetitive and the answer path is clear",
     body: "Best when the business needs faster first response, cleaner routing, and relief from repetitive support volume without turning the customer experience into bot theatre.",
-    image: "/photos/support-ai-assisted-generated.png",
+    image: "/photos/support-ai-assisted-generated-optimized.jpg",
   },
   {
     n: "02",
     label: "HITL review",
     title: "Keep humans at the judgment checkpoints where confidence alone is not enough",
     body: "Best when AI can classify, draft, or route, but a specialist still needs to validate, decide, or communicate before the outcome reaches the customer.",
-    image: "/photos/support-hitl-generated.png",
+    image: "/photos/support-hitl-generated-optimized.jpg",
   },
   {
     n: "03",
     label: "Human-led",
     title: "Run specialist or fully human support where trust, complexity, or risk carry the decision",
     body: "Best for industries, escalations, and workflows where empathy, compliance, or technical depth matter more than speed alone.",
-    image: "/photos/support-specialist-generated.png",
+    image: "/photos/support-specialist-generated-optimized.jpg",
   },
 ];
 
@@ -215,7 +217,7 @@ export default function SupportOperations() {
                 <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/55 to-transparent" />
                 <div className="relative min-h-[440px]">
                   <Image
-                    src="/photos/support-hitl-generated.png"
+                    src="/photos/support-hitl-generated-optimized.jpg"
                     alt="Support operations team coordinating technical support and human review"
                     fill
                     sizes="(min-width: 768px) 48vw, 100vw"
@@ -290,7 +292,7 @@ export default function SupportOperations() {
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 shadow-lg lg:col-span-5">
               <div className="relative h-52">
                 <Image
-                  src="/photos/support-specialist-generated.png"
+                  src="/photos/support-specialist-generated-optimized.jpg"
                   alt="Support team coordinating human and technical support work"
                   fill
                   sizes="(min-width: 1024px) 28vw, 92vw"
@@ -395,7 +397,7 @@ export default function SupportOperations() {
                   <div className="overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/10">
                     <div className="relative h-40">
                       <Image
-                        src="/photos/support-hitl-generated.png"
+                        src="/photos/support-hitl-generated-optimized.jpg"
                         alt="Support system operating under live conditions"
                         fill
                         sizes="(min-width: 768px) 18vw, 92vw"
@@ -480,7 +482,7 @@ export default function SupportOperations() {
                   <div className="mt-8 overflow-hidden rounded-[var(--radius-lg)] border border-mist-50/10 bg-mist-50/[0.04]">
                     <div className="relative h-48">
                       <Image
-                        src="/photos/support-ai-assisted-generated.png"
+                        src="/photos/support-ai-assisted-generated-optimized.jpg"
                         alt="Support analyst reviewing AI-assisted support work"
                         fill
                         sizes="(min-width: 768px) 34vw, 92vw"
