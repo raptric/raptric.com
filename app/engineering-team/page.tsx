@@ -81,6 +81,24 @@ const ENGAGEMENT_STEPS = [
   },
 ];
 
+const IMPLEMENTATION_EXAMPLES = [
+  {
+    title: "SaaS roadmap plus internal tooling delivery",
+    build: "Ship customer-facing product work and the internal systems around approvals, reporting, or operations inside one engineering model.",
+    outcome: "Better release visibility and less internal workaround debt building up around the roadmap.",
+  },
+  {
+    title: "Support engineering bridge for escalations",
+    build: "Add engineering depth to incident triage, bug investigation, and support handoff so technical issues do not die between teams.",
+    outcome: "Cleaner feedback loops, faster escalation handling, and fewer repeat issues.",
+  },
+  {
+    title: "Embedded engineering capacity with QA discipline",
+    build: "Plug engineers into sprint rhythm, QA expectations, and release coordination instead of bolting on isolated contractor output.",
+    outcome: "More predictable execution and stronger confidence around what is actually ready to ship.",
+  },
+];
+
 const PROBLEMS = [
   {
     n: "01",
@@ -552,6 +570,28 @@ export default function EngineeringTeam() {
                   <span>&rarr;</span>
                 </span>
               </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-white">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Representative implementations</Eyebrow>
+          <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
+            Common engineering delivery patterns companies usually need when the roadmap, QA, and operations can no longer be handled separately.
+          </h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {IMPLEMENTATION_EXAMPLES.map((item) => (
+              <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm">
+                <p className="label text-signal-600">Delivery example</p>
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.build}</p>
+                <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
+                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
+                </div>
+              </div>
             ))}
           </div>
         </Container>

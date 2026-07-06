@@ -100,6 +100,24 @@ const INDUSTRIES = [
   },
 ];
 
+const IMPLEMENTATION_EXAMPLES = [
+  {
+    title: "Technical support triage and escalation redesign",
+    build: "Separate technical issues from general service volume, define specialist escalation paths, and preserve context between support and engineering.",
+    outcome: "Cleaner escalation, fewer queue collisions, and faster technical resolution.",
+  },
+  {
+    title: "AI-assisted customer support with HITL review",
+    build: "Use automation for repetitive intake and first-response tasks while routing nuanced, technical, or trust-sensitive cases into human review.",
+    outcome: "Faster handling on repeatable volume without pushing risky requests into the wrong lane.",
+  },
+  {
+    title: "Voice plus human support coverage",
+    build: "Combine inbound call handling, specialist coverage, scheduling, and human fallback so voice support feels connected to the rest of the operation.",
+    outcome: "Better continuity for customers and less manual patchwork behind the scenes.",
+  },
+];
+
 const PROBLEMS = [
   {
     n: "01",
@@ -585,6 +603,28 @@ export default function SupportOperations() {
                   <span>&rarr;</span>
                 </span>
               </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-white">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Representative implementations</Eyebrow>
+          <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
+            Common support systems we are brought in to redesign when queues, trust, and escalation all start drifting.
+          </h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {IMPLEMENTATION_EXAMPLES.map((item) => (
+              <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm">
+                <p className="label text-signal-600">Support build pattern</p>
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.build}</p>
+                <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
+                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
+                </div>
+              </div>
             ))}
           </div>
         </Container>

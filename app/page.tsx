@@ -154,6 +154,27 @@ const METHODOLOGY_STEPS = [
   },
 ];
 
+const EXAMPLE_BUILDS = [
+  {
+    title: "AI-assisted intake and routing",
+    body: "An intake layer that classifies requests, enriches context, updates the CRM or helpdesk, and routes exceptions to the right human lane instead of one overloaded queue.",
+    outcome: "Faster first response, cleaner routing, and less manual triage.",
+    href: "/ai-automation",
+  },
+  {
+    title: "Technical support operating model",
+    body: "A support design that separates customer care, technical issues, specialist escalation, and human-in-the-loop review so trust-sensitive requests do not get treated like generic volume.",
+    outcome: "Cleaner escalation, better specialist utilization, and more consistent customer handling.",
+    href: "/support-operations",
+  },
+  {
+    title: "Platform plus internal tooling build",
+    body: "A delivery model where customer-facing product work, internal operations tooling, and QA visibility move inside the same engineering picture instead of being split across vendors.",
+    outcome: "Better release visibility, reduced workaround debt, and steadier delivery under pressure.",
+    href: "/engineering-team",
+  },
+];
+
 const OUTCOMES = [
   {
     label: "Automation layer",
@@ -516,6 +537,32 @@ export default function Home() {
                 </div>
               </div>
             </Link>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Representative builds</Eyebrow>
+          <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
+            Typical systems we help companies put in place when workflows start breaking under real pressure.
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {EXAMPLE_BUILDS.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                <p className="label text-signal-600">Example implementation</p>
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
+                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>

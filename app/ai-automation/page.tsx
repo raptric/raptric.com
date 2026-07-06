@@ -96,6 +96,24 @@ const USE_CASES = [
   },
 ];
 
+const IMPLEMENTATION_EXAMPLES = [
+  {
+    title: "Inbound lead routing and CRM automation",
+    build: "Connect forms, enrichment, qualification rules, CRM updates, and follow-up triggers into one workflow with human review for edge cases.",
+    outcome: "Faster lead response, cleaner sales routing, and less manual CRM cleanup.",
+  },
+  {
+    title: "AI-assisted support intake with HITL review",
+    build: "Use AI for first-pass classification, summarization, and drafting while routing trust-sensitive or technical requests into specialist review.",
+    outcome: "Reduced queue drag, cleaner escalation, and more specialist time spent on real judgment work.",
+  },
+  {
+    title: "Back-office workflow orchestration",
+    build: "Automate reconciliation, approvals, notifications, status changes, and exception queues across existing internal tools.",
+    outcome: "Less manual follow-up, fewer missed steps, and more reliable workflow execution.",
+  },
+];
+
 const PROOF_POINTS = [
   "Hands-on with the tooling, not just strategy language.",
   "Built around live workflows and exception paths, not happy-path diagrams.",
@@ -456,6 +474,28 @@ export default function AiAutomation() {
                 </div>
               ))}
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Representative implementations</Eyebrow>
+          <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
+            Common AI automation systems we are usually brought in to design and ship.
+          </h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {IMPLEMENTATION_EXAMPLES.map((item) => (
+              <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
+                <p className="label text-signal-600">Implementation pattern</p>
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.build}</p>
+                <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
+                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

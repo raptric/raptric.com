@@ -51,12 +51,12 @@ const RELATED_CONTENT: Record<
     pillar: { label: "AI automation services", href: "/ai-automation" },
     reads: [
       {
-        title: "What \"human-in-the-loop\" actually requires operationally",
-        href: "/insights/human-in-the-loop-operationally",
+        title: "CRM automation examples for growing teams",
+        href: "/insights/crm-automation-examples",
       },
       {
-        title: "Why point automation plateaus and operation-level systems compound",
-        href: "/insights/point-automation-plateaus",
+        title: "What \"human-in-the-loop\" actually requires operationally",
+        href: "/insights/human-in-the-loop-operationally",
       },
     ],
   },
@@ -64,12 +64,12 @@ const RELATED_CONTENT: Record<
     pillar: { label: "technical support systems", href: "/support-operations" },
     reads: [
       {
-        title: "What \"human-in-the-loop\" actually requires operationally",
-        href: "/insights/human-in-the-loop-operationally",
+        title: "Technical support outsourcing vs in-house",
+        href: "/insights/technical-support-outsourcing-vs-in-house",
       },
       {
-        title: "Lessons from legacy managed-services operations that still matter in AI rebuilds",
-        href: "/insights/legacy-managed-services-lessons",
+        title: "What \"human-in-the-loop\" actually requires operationally",
+        href: "/insights/human-in-the-loop-operationally",
       },
     ],
   },
@@ -77,12 +77,12 @@ const RELATED_CONTENT: Record<
     pillar: { label: "software development partner services", href: "/engineering-team" },
     reads: [
       {
-        title: "Why point automation plateaus and operation-level systems compound",
-        href: "/insights/point-automation-plateaus",
+        title: "Technical support outsourcing vs in-house",
+        href: "/insights/technical-support-outsourcing-vs-in-house",
       },
       {
-        title: "Lessons from legacy managed-services operations that still matter in AI rebuilds",
-        href: "/insights/legacy-managed-services-lessons",
+        title: "Why point automation plateaus and operation-level systems compound",
+        href: "/insights/point-automation-plateaus",
       },
     ],
   },
@@ -103,8 +103,8 @@ const RELATED_CONTENT: Record<
     pillar: { label: "support operations", href: "/support-operations" },
     reads: [
       {
-        title: "HITL vs fully automated support",
-        href: "/insights/hitl-vs-fully-automated-support",
+        title: "Technical support outsourcing vs in-house",
+        href: "/insights/technical-support-outsourcing-vs-in-house",
       },
       {
         title: "Software development partner vs staff augmentation",
@@ -120,8 +120,47 @@ const RELATED_CONTENT: Record<
         href: "/insights/ai-automation-vs-manual-workflows",
       },
       {
-        title: "Software development partner vs staff augmentation",
-        href: "/insights/software-development-partner-vs-staff-augmentation",
+        title: "CRM automation examples for growing teams",
+        href: "/insights/crm-automation-examples",
+      },
+    ],
+  },
+  "technical-support-outsourcing-vs-in-house": {
+    pillar: { label: "technical support systems", href: "/support-operations" },
+    reads: [
+      {
+        title: "HITL vs fully automated support",
+        href: "/insights/hitl-vs-fully-automated-support",
+      },
+      {
+        title: "Lessons from legacy managed-services operations that still matter in AI rebuilds",
+        href: "/insights/legacy-managed-services-lessons",
+      },
+    ],
+  },
+  "crm-automation-examples": {
+    pillar: { label: "AI automation services", href: "/ai-automation" },
+    reads: [
+      {
+        title: "AI automation vs manual workflows",
+        href: "/insights/ai-automation-vs-manual-workflows",
+      },
+      {
+        title: "Voice AI for operations",
+        href: "/insights/voice-ai-for-operations",
+      },
+    ],
+  },
+  "voice-ai-for-operations": {
+    pillar: { label: "support operations", href: "/support-operations" },
+    reads: [
+      {
+        title: "CRM automation examples for growing teams",
+        href: "/insights/crm-automation-examples",
+      },
+      {
+        title: "HITL vs fully automated support",
+        href: "/insights/hitl-vs-fully-automated-support",
       },
     ],
   },

@@ -387,6 +387,24 @@ const INDUSTRIES = [
   },
 ];
 
+const DELIVERY_EXAMPLES = [
+  {
+    title: "Operational platforms that combine product, workflow, and reporting",
+    body: "A platform build where the visible interface, internal workflow logic, and operator dashboards have to ship together instead of being handed to different vendors.",
+    outcome: "Cleaner execution across customer-facing actions, internal decisions, and performance visibility.",
+  },
+  {
+    title: "AI systems that need both automation and human checkpoints",
+    body: "A solution where AI can classify, draft, score, or route, but trust-sensitive or technical steps still need human review designed into the platform.",
+    outcome: "Faster handling on repeatable work without losing control over complex or sensitive moments.",
+  },
+  {
+    title: "Revenue or outreach systems tied to live operational data",
+    body: "A build where prospecting, qualification, campaign logic, CRM updates, and reporting all depend on integrations behaving like one operating system.",
+    outcome: "Better workflow continuity, less manual data movement, and clearer campaign visibility.",
+  },
+];
+
 const STACK_GROUPS = [
   {
     title: "Artificial Intelligence",
@@ -806,6 +824,28 @@ export default function Solutions() {
                 <CtaLink href="/contact">Discuss your platform build</CtaLink>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-ink-200 bg-mist-50">
+        <Container className="py-16 md:py-20">
+          <Eyebrow className="mb-5">Representative delivery patterns</Eyebrow>
+          <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
+            The kinds of platform builds and operating systems these solutions are usually used to support.
+          </h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {DELIVERY_EXAMPLES.map((item) => (
+              <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
+                <p className="label text-signal-600">Delivery example</p>
+                <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
+                <p className="mt-3 text-body text-ink-600">{item.body}</p>
+                <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
+                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
