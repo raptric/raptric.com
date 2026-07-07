@@ -333,7 +333,6 @@ export default function SupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Answer first</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             Raptric provides technical support outsourcing for AI and SaaS companies that
             need dedicated teams, better escalation, and human oversight around AI-powered
