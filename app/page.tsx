@@ -53,8 +53,8 @@ const CORE_AREAS = [
     Icon: CustomerOperationsIcon,
     name: "Support Operations",
     href: "/support-operations",
-    body: "Tech support, customer care, and HITL operations designed to scale without turning into a staffing mess.",
-    highlights: ["tech support", "human review", "AI-assisted coverage"],
+    body: "24/7 technical support, application support, AI customer support, and HITL operations for AI and SaaS companies that need cleaner routing and stronger escalation.",
+    highlights: ["technical support", "HITL review", "AI support ops"],
   },
   {
     Icon: TechnologyAdvisoryIcon,

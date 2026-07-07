@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", file: "app/page.tsx" },
     { path: "/ai-automation", file: "app/ai-automation/page.tsx" },
     { path: "/support-operations", file: "app/support-operations/page.tsx" },
+    { path: "/ai-support-operations", file: "app/ai-support-operations/page.tsx" },
     { path: "/engineering-team", file: "app/engineering-team/page.tsx" },
     { path: "/solutions", file: "app/solutions/page.tsx" },
     { path: "/about", file: "app/about/page.tsx" },
