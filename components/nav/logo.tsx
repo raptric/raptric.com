@@ -17,9 +17,9 @@ export default function Logo({
       <Image
         src={lockupSrc[variant]}
         alt="Raptric"
-        width={172}
-        height={36}
-        className="h-8 w-auto"
+        width={196}
+        height={42}
+        className="h-9 w-auto md:h-10"
         priority
       />
     </Link>
