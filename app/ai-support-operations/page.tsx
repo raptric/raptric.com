@@ -218,7 +218,7 @@ export default function AiSupportOperationsPage() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <CtaLink href="/support-operations">
-                See the commercial support page
+                View technical support service
               </CtaLink>
               <Link
                 href="/contact"
@@ -249,6 +249,23 @@ export default function AiSupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-mist-100">
         <Container className="py-12 md:py-14">
+          <div className="mb-8 rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
+            <Eyebrow className="mb-4">What this page is about</Eyebrow>
+            <p className="max-w-4xl text-body-lg text-ink-700">
+              This page explains the framework behind Raptric&apos;s long-term category:
+              operating production AI systems through technical support, AI quality
+              checks, human review, escalation control, knowledge maintenance, and
+              continuous improvement.
+            </p>
+            <p className="mt-3 max-w-4xl text-body text-ink-600">
+              If you are looking for a direct commercial service, go to{" "}
+              <TextLink href="/support-operations">
+                24/7 technical support for AI and SaaS companies
+              </TextLink>
+              . If you want the broader operating model behind that service, this is the
+              right page.
+            </p>
+          </div>
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-5 shadow-sm">
               <p className="label text-signal-700">Who Raptric is</p>
@@ -382,7 +399,7 @@ export default function AiSupportOperationsPage() {
               <div>
                 <p className="label text-signal-300">Commercial bridge</p>
                 <h3 className="mt-3 text-h2 font-semibold">
-                  If you need the framework in practice, start with the support service.
+                  If you need this framework applied in the real world, start with the service page.
                 </h3>
                 <p className="mt-3 max-w-2xl text-body text-mist-50/68">
                   Raptric is using AI Support Operations as the authority model, while the
@@ -393,7 +410,7 @@ export default function AiSupportOperationsPage() {
               </div>
               <div className="flex flex-wrap items-center gap-4 md:justify-end">
                 <CtaLink href="/support-operations">
-                  View the support service page
+                  View technical support service
                 </CtaLink>
                 <Link
                   href="/contact"
