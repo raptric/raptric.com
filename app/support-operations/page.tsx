@@ -408,7 +408,7 @@ export default function SupportOperationsPage() {
         <Container className="py-18 md:py-22">
           <div className="grid gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">Why this matters long term</Eyebrow>
+              <Eyebrow className="mb-5">The broader operating model</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
                 AI Support Operations is the broader category behind modern support for AI
                 and SaaS products.
@@ -419,8 +419,9 @@ export default function SupportOperationsPage() {
                 production.
               </p>
               <p className="mt-4 text-body text-ink-600">
-                We are defining that category on a separate authority page so the
-                commercial service offer stays clear while the framework keeps expanding.
+                We also explain this model in more depth on a dedicated AI Support
+                Operations page for teams thinking beyond ticket coverage and into
+                long-term operating design.
               </p>
               <div className="mt-8">
                 <CtaLink href="/ai-support-operations">
@@ -553,9 +554,9 @@ export default function SupportOperationsPage() {
             ))}
           </div>
           <p className="mt-6 max-w-3xl text-body text-ink-600">
-            This page connects naturally with{" "}
+            Related pages include{" "}
             <TextLink href="/ai-automation">AI automation services</TextLink>,{" "}
-            <TextLink href="/engineering-team">software development partner services</TextLink>, and the authority model on{" "}
+            <TextLink href="/engineering-team">software development partner services</TextLink>, and the deeper framework on{" "}
             <TextLink href="/ai-support-operations">AI Support Operations</TextLink>.
           </p>
         </Container>

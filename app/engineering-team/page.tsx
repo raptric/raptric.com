@@ -107,7 +107,7 @@ const PROBLEMS = [
   },
   {
     n: "02",
-    title: "Build work that sounds healthy in status updates but never exposes the real delivery truth",
+    title: "Build work that sounds healthy in status updates but never exposes the real delivery picture",
     body: "Leaders get progress language instead of real visibility into blockers, QA friction, or scope drift.",
   },
   {
@@ -163,7 +163,7 @@ const FAQS = [
   },
   {
     q: "How is this different from a generic dev shop?",
-    a: "A generic dev shop usually focuses on tickets or features. Raptric focuses on delivery truth, QA drag, release visibility, internal tooling, and the operational consequences of what gets shipped.",
+    a: "A generic dev shop usually focuses on tickets or features. Raptric focuses on real delivery visibility, QA drag, release confidence, internal tooling, and the operational consequences of what gets shipped.",
   },
 ];
 
@@ -624,27 +624,27 @@ export default function EngineeringTeam() {
 
       <section className="border-b border-ink-200 bg-white">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Representative implementations</Eyebrow>
+          <Eyebrow className="mb-5">Example delivery models</Eyebrow>
           <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
-            Common engineering delivery patterns companies usually need when the roadmap, QA, and operations can no longer be handled separately.
+            Engineering delivery models for teams balancing roadmap pressure, QA discipline, and operational support.
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {IMPLEMENTATION_EXAMPLES.map((item) => (
               <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-sm">
-                <p className="label text-signal-600">Delivery example</p>
+                <p className="label text-signal-600">Example build</p>
                 <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.build}</p>
                 <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
-                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="label text-signal-700">Likely outcome</p>
                   <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
                 </div>
               </div>
             ))}
           </div>
           <p className="mt-6 max-w-3xl text-body text-ink-600">
-            These delivery patterns usually overlap with{" "}
+            These engineering models often connect with{" "}
             <TextLink href="/support-operations">technical support systems</TextLink>,{" "}
-            <TextLink href="/solutions">platform-level solutions</TextLink>, and the delivery comparisons in{" "}
+            <TextLink href="/solutions">platform solutions</TextLink>, and the comparison in{" "}
             <TextLink href="/insights/software-development-partner-vs-staff-augmentation">software development partner vs staff augmentation</TextLink>.
           </p>
         </Container>
@@ -658,7 +658,7 @@ export default function EngineeringTeam() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(108,92,231,0.34),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(108,92,231,0.16),transparent_28%),linear-gradient(180deg,#0b0b0f,#12121a)]" />
                 <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-signal-500/14 blur-[110px]" />
                 <div className="relative p-7">
-                  <Eyebrow className="text-signal-300">What teams bring us in to fix</Eyebrow>
+                  <Eyebrow className="text-signal-300">Where delivery starts slipping</Eyebrow>
                   <h2 className="mt-4 text-h1 font-semibold">
                     Engineering gaps turn into operational problems fast.
                   </h2>
@@ -745,7 +745,7 @@ export default function EngineeringTeam() {
           </div>
           <div className="grid gap-10 md:grid-cols-[0.88fr_1.12fr] md:gap-16">
             <div>
-              <Eyebrow className="mb-5 text-signal-300">What strong delivery looks like</Eyebrow>
+              <Eyebrow className="mb-5 text-signal-300">What strong engineering delivery looks like</Eyebrow>
               <h2 className="text-h1 font-semibold">
                 Serious engineering support should feel accountable, visible, and steady under pressure.
               </h2>

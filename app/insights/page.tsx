@@ -66,10 +66,10 @@ export default function Insights() {
             Insights on AI automation, support operations, and engineering systems.
           </h1>
           <p className="mt-5 max-w-2xl text-body-lg text-ink-600">
-            Answer-first notes on workflow automation, technical support systems, AI plus human operations, and product delivery patterns that hold up in real businesses.
+            Practical notes on workflow automation, technical support systems, AI plus human operations, and product delivery patterns that hold up in real businesses.
           </p>
           <p className="mt-4 max-w-2xl text-body text-ink-600">
-            If you want the commercial pages first, start with{" "}
+            If you want the service pages first, start with{" "}
             <TextLink href="/ai-automation">AI automation services</TextLink>,{" "}
             <TextLink href="/support-operations">support operations</TextLink>,{" "}
             and{" "}
@@ -79,7 +79,7 @@ export default function Insights() {
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
               {
-                title: "What this section is for",
+                title: "What you will find here",
                 body: "These articles explain workflow automation, routing, escalation, ticket triage, CRM follow-up, release visibility, and QA drag in more direct operational terms.",
               },
               {

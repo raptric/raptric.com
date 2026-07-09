@@ -103,7 +103,7 @@ export default function EngineeringHeroVisual({ className = "" }: { className?: 
         DELIVERY POSTURE
       </text>
       <text x="76" y="251" fill="var(--color-mist-50)" fontSize="18" fontWeight="600">
-        Shared delivery truth
+        Shared delivery view
       </text>
       <text x="76" y="277" fill="var(--color-mist-50)" fillOpacity="0.62" fontSize="13">
         product, engineering, QA,

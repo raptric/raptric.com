@@ -859,7 +859,7 @@ export default function Solutions() {
           <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
             <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
               <div>
-                <p className="label text-signal-700">A common next step</p>
+                <p className="label text-signal-700">Next conversation</p>
                 <p className="mt-3 text-body text-ink-700">
                   If you already know the platform outcome you want, the next conversation is usually about workflow scope, integrations, delivery ownership, and which layers need to ship first.
                 </p>
@@ -874,25 +874,25 @@ export default function Solutions() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Representative delivery patterns</Eyebrow>
+          <Eyebrow className="mb-5">Example platform builds</Eyebrow>
           <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
-            The kinds of platform builds and operating systems these solutions are usually used to support.
+            How these solutions show up inside real operating systems and day-to-day workflows.
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {DELIVERY_EXAMPLES.map((item) => (
               <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
-                <p className="label text-signal-600">Delivery example</p>
+                <p className="label text-signal-600">Example use case</p>
                 <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
                 <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
-                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="label text-signal-700">Business impact</p>
                   <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
                 </div>
               </div>
             ))}
           </div>
           <p className="mt-6 max-w-3xl text-body text-ink-600">
-            Underneath these solution patterns, the work usually pulls from{" "}
+            These solution builds are typically powered by{" "}
             <TextLink href="/ai-automation">AI automation services</TextLink>,{" "}
             <TextLink href="/support-operations">support operations</TextLink>,{" "}
             and{" "}

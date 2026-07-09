@@ -529,27 +529,27 @@ export default function AiAutomation() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Representative implementations</Eyebrow>
+          <Eyebrow className="mb-5">Example automation systems</Eyebrow>
           <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
-            Common AI automation systems we are usually brought in to design and ship.
+            AI automation systems we build for teams running live sales, support, and operational workflows.
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {IMPLEMENTATION_EXAMPLES.map((item) => (
               <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
-                <p className="label text-signal-600">Implementation pattern</p>
+                <p className="label text-signal-600">Example workflow</p>
                 <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.build}</p>
                 <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
-                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="label text-signal-700">Business impact</p>
                   <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
                 </div>
               </div>
             ))}
           </div>
           <p className="mt-6 max-w-3xl text-body text-ink-600">
-            These systems usually connect back into{" "}
+            These systems often connect to{" "}
             <TextLink href="/support-operations">technical support systems</TextLink>,{" "}
-            <TextLink href="/solutions">solution-level builds</TextLink>, or the comparison notes in{" "}
+            <TextLink href="/solutions">solution builds</TextLink>, or the practical guidance in{" "}
             <TextLink href="/insights">Insights</TextLink> once the workflow gets more operationally complex.
           </p>
         </Container>

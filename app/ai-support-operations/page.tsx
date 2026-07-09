@@ -250,20 +250,19 @@ export default function AiSupportOperationsPage() {
       <section className="border-b border-ink-200 bg-mist-100">
         <Container className="py-12 md:py-14">
           <div className="mb-8 rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
-            <Eyebrow className="mb-4">AI Support Operations overview</Eyebrow>
+            <Eyebrow className="mb-4">What AI Support Operations means</Eyebrow>
             <p className="max-w-4xl text-body-lg text-ink-700">
-              This page explains the framework behind Raptric&apos;s long-term category:
-              operating production AI systems through technical support, AI quality
+              This page explains the framework Raptric uses to operate production AI
+              systems through technical support, AI quality
               checks, human review, escalation control, knowledge maintenance, and
               continuous improvement.
             </p>
             <p className="mt-3 max-w-4xl text-body text-ink-600">
-              If you are looking for a direct commercial service, go to{" "}
+              If you need a dedicated service team now, start with{" "}
               <TextLink href="/support-operations">
                 24/7 technical support for AI and SaaS companies
               </TextLink>
-              . If you want the broader operating model behind that service, this is the
-              right page.
+              . If you want the operating model behind that service, this page explains it.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
@@ -276,7 +275,7 @@ export default function AiSupportOperationsPage() {
               </p>
             </div>
             <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-5 shadow-sm">
-              <p className="label text-signal-700">What Raptric does</p>
+              <p className="label text-signal-700">How Raptric applies it</p>
               <p className="mt-3 text-body text-ink-700">
                 We help AI and SaaS companies support live products through technical
                 support, HITL review, escalation design, AI quality checks, and
@@ -345,12 +344,11 @@ export default function AiSupportOperationsPage() {
             ))}
           </div>
           <p className="mt-8 max-w-3xl text-body text-ink-600">
-            For buyers who need immediate help, the most direct commercial entry point is{" "}
+            If you need immediate implementation help, the clearest next step is{" "}
             <TextLink href="/support-operations">
               technical support outsourcing for AI and SaaS companies
             </TextLink>
-            . For teams thinking more strategically about production AI support, this
-            framework explains the bigger operating model.
+            . For teams shaping a longer-term AI operating model, this framework explains how the system fits together.
           </p>
         </Container>
       </section>
@@ -397,15 +395,14 @@ export default function AiSupportOperationsPage() {
           <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-7 md:p-8">
             <div className="grid gap-6 md:grid-cols-[0.68fr_0.32fr] md:items-center">
               <div>
-                <p className="label text-signal-300">Direct service path</p>
+                <p className="label text-signal-300">Need implementation help?</p>
                 <h3 className="mt-3 text-h2 font-semibold">
                   If you need this framework applied in the real world, start with the service page.
                 </h3>
                 <p className="mt-3 max-w-2xl text-body text-mist-50/68">
-                  Raptric is using AI Support Operations as the authority model, while the
-                  live commercial service is delivered through technical support
-                  outsourcing, application support, AI customer support, and HITL
-                  operations for AI and SaaS companies.
+                  Raptric applies this framework through technical support outsourcing,
+                  application support, AI customer support, and HITL operations for AI
+                  and SaaS companies running live products.
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-4 md:justify-end">

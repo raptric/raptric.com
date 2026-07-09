@@ -595,7 +595,7 @@ export default function Home() {
                 <h3 className="mt-4 text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
                 <div className="mt-5 rounded-[var(--radius-md)] border border-signal-200 bg-signal-50 px-4 py-3">
-                  <p className="label text-signal-700">What usually improves</p>
+                  <p className="label text-signal-700">Likely outcome</p>
                   <p className="mt-2 text-sm text-ink-700">{item.outcome}</p>
                 </div>
               </Link>
