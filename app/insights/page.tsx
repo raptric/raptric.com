@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import { CtaLink, TextLink } from "@/components/ui/button";
 import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from "@/components/seo/json-ld";
 import { getAllInsights } from "@/lib/mdx";
@@ -61,7 +60,6 @@ export default function Insights() {
       />
       <section>
         <Container className="py-20 md:py-24">
-          <Eyebrow className="mb-5">Field notes</Eyebrow>
           <h1 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Insights on AI automation, support operations, and engineering systems.
           </h1>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink, TextLink } from "@/components/ui/button";
 import {
@@ -237,8 +236,7 @@ export default function SupportOperationsPage() {
         <Container className="grid items-center gap-14 py-18 md:grid-cols-[0.94fr_1.06fr] md:py-24">
           <div>
             <CustomerOperationsIcon className="h-12 w-12 text-signal-400" />
-            <Eyebrow className="mb-4 mt-6 text-signal-400">Support Operations</Eyebrow>
-            <h1 className="text-display font-semibold">
+            <h1 className="mt-6 text-display font-semibold">
               24/7 Technical Support for AI &amp; SaaS Companies
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
@@ -354,7 +352,6 @@ export default function SupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-5">Who we help</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Built for software companies where customer issues, product behavior, and
             technical escalation all meet in the same support reality.
@@ -374,7 +371,6 @@ export default function SupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-white">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-5">What we do</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             Customer support, technical support, application support, and AI support
             operations designed as one service system.
@@ -408,7 +404,6 @@ export default function SupportOperationsPage() {
         <Container className="py-18 md:py-22">
           <div className="grid gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">The broader operating model</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
                 AI Support Operations is the broader category behind modern support for AI
                 and SaaS products.
@@ -454,7 +449,6 @@ export default function SupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-5">How Raptric works</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             A dedicated support model built around product knowledge, AI assistance, and
             continuous improvement.
@@ -478,7 +472,6 @@ export default function SupportOperationsPage() {
         <Container className="py-18 md:py-22">
           <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">Why companies choose Raptric</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
                 A modern support model for AI and SaaS companies, not a generic call-center
                 staffing program.
@@ -507,7 +500,6 @@ export default function SupportOperationsPage() {
         <Container className="py-16 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">Technologies we support</Eyebrow>
               <h2 className="text-h2 font-semibold text-ink-900">
                 Support workflows usually sit inside a real stack, not a blank page.
               </h2>
@@ -532,7 +524,6 @@ export default function SupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Where this applies</Eyebrow>
           <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
             Solution examples where technical support, AI review, and escalation design
             become part of the product system.
@@ -553,18 +544,20 @@ export default function SupportOperationsPage() {
               </Link>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl text-body text-ink-600">
-            Related pages include{" "}
-            <TextLink href="/ai-automation">AI automation services</TextLink>,{" "}
-            <TextLink href="/engineering-team">software development partner services</TextLink>, and the deeper framework on{" "}
-            <TextLink href="/ai-support-operations">AI Support Operations</TextLink>.
-          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-500">
+            <span>Also relevant:</span>
+            <TextLink href="/ai-automation">AI automation services</TextLink>
+            <span>·</span>
+            <TextLink href="/engineering-team">software development partner services</TextLink>
+            <span>·</span>
+            <TextLink href="/ai-support-operations">AI Support Operations</TextLink>
+          </div>
         </Container>
       </section>
 
       <section className="bg-ink-950 text-mist-50">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-6 text-signal-300">FAQ</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold">Frequently asked questions</h2>
           <div className="mx-auto mb-12 flex max-w-3xl flex-col divide-y divide-mist-50/12 border-y border-mist-50/12">
             {FAQS.map((item) => (
               <details key={item.q} className="group py-4">

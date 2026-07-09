@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink, SecondaryCtaLink, TextLink } from "@/components/ui/button";
 import WorkflowGraph from "@/components/illustrations/workflow-graph";
@@ -540,7 +539,6 @@ export default function Solutions() {
         <div className="absolute right-0 top-20 h-72 w-72 rounded-full bg-signal-500/16 blur-[120px]" />
         <Container className="grid items-center gap-16 py-20 md:grid-cols-[0.88fr_1.12fr] md:py-28">
           <div>
-            <Eyebrow className="mb-4 text-signal-400">Solutions</Eyebrow>
             <h1 className="max-w-3xl text-display font-semibold">
               AI-powered operating systems built for real business workflows.
             </h1>
@@ -622,7 +620,6 @@ export default function Solutions() {
 
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-20 md:py-24">
-          <Eyebrow className="mb-5">Platform layers</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             The stack underneath the solution is as important as the AI on top.
           </h2>
@@ -683,12 +680,9 @@ export default function Solutions() {
                   <div>
                     <div className="flex items-center gap-4">
                       <IconBadge Icon={solution.Icon} className="h-12 w-12" />
-                      <div>
-                        <Eyebrow>{solution.eyebrow}</Eyebrow>
-                        <p className="mt-2 text-sm font-medium text-ink-500">
-                          {solution.subtitle}
-                        </p>
-                      </div>
+                      <p className="text-sm font-medium text-ink-500">
+                        {solution.subtitle}
+                      </p>
                     </div>
                     <h2 className="mt-6 max-w-3xl text-h1 font-semibold text-ink-900">
                       {solution.title}
@@ -813,7 +807,6 @@ export default function Solutions() {
 
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-20 md:py-24">
-          <Eyebrow className="mb-5">Industries We Serve</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             The same AI systems model, applied to different operating environments.
           </h2>
@@ -834,7 +827,6 @@ export default function Solutions() {
 
       <section className="border-b border-ink-200">
         <Container className="py-20 md:py-24">
-          <Eyebrow className="mb-5">Technology Stack</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Capabilities across AI, automation, backend systems, data, and integrations.
           </h2>
@@ -874,7 +866,6 @@ export default function Solutions() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Example platform builds</Eyebrow>
           <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
             How these solutions show up inside real operating systems and day-to-day workflows.
           </h2>
@@ -905,7 +896,6 @@ export default function Solutions() {
         <Container className="py-20 md:py-24">
           <div className="grid gap-10 md:grid-cols-[0.88fr_1.12fr] md:gap-16">
             <div>
-              <Eyebrow className="mb-5 text-signal-300">Why Companies Choose Us</Eyebrow>
               <h2 className="text-h1 font-semibold">
                 We do not just wire up tools. We build AI platforms that hold up in real business use.
               </h2>

@@ -1,5 +1,4 @@
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import {
   buildMetadata,
   CONTACT_EMAIL,
@@ -71,7 +70,6 @@ export default function Terms() {
   return (
     <section className="py-20 md:py-24">
       <Container className="max-w-4xl">
-        <Eyebrow className="mb-5">Legal</Eyebrow>
         <h1 className="max-w-3xl text-h1 font-semibold text-ink-900">
           Terms of Service
         </h1>

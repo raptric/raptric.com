@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import { CtaLink, TextLink } from "@/components/ui/button";
 import {
   BreadcrumbSchema,
@@ -203,7 +202,6 @@ export default function AiSupportOperationsPage() {
         <div className="absolute right-0 top-20 h-72 w-72 rounded-full bg-signal-500/16 blur-[120px]" />
         <Container className="grid gap-12 py-18 md:grid-cols-[0.94fr_1.06fr] md:items-center md:py-24">
           <div>
-            <Eyebrow className="mb-5 text-signal-400">AI Support Operations</Eyebrow>
             <h1 className="text-display font-semibold">
               AI Support Operations for production AI systems.
             </h1>
@@ -250,7 +248,7 @@ export default function AiSupportOperationsPage() {
       <section className="border-b border-ink-200 bg-mist-100">
         <Container className="py-12 md:py-14">
           <div className="mb-8 rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
-            <Eyebrow className="mb-4">What AI Support Operations means</Eyebrow>
+            <h2 className="mb-4 text-h2 font-semibold text-ink-900">What AI Support Operations means.</h2>
             <p className="max-w-4xl text-body-lg text-ink-700">
               This page explains the framework Raptric uses to operate production AI
               systems through technical support, AI quality
@@ -295,7 +293,6 @@ export default function AiSupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-5">The framework</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             Six layers that explain how production AI systems actually stay reliable
             after launch.
@@ -327,7 +324,6 @@ export default function AiSupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-white">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-5">Why this category matters</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             AI Support Operations sits between technical support outsourcing, AI quality,
             and production AI reliability.
@@ -357,7 +353,6 @@ export default function AiSupportOperationsPage() {
         <Container className="py-16 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">Where it shows up</Eyebrow>
               <h2 className="text-h2 font-semibold text-ink-900">
                 Practical applications where AI Support Operations becomes visible.
               </h2>
@@ -378,7 +373,7 @@ export default function AiSupportOperationsPage() {
 
       <section className="bg-ink-950 text-mist-50">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-6 text-signal-300">FAQ</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold">Frequently asked questions</h2>
           <div className="mx-auto mb-12 flex max-w-3xl flex-col divide-y divide-mist-50/12 border-y border-mist-50/12">
             {FAQS.map((item) => (
               <details key={item.q} className="group py-4">

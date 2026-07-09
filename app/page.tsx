@@ -19,7 +19,6 @@ import {
   ClockIcon,
 } from "@/components/illustrations/concept-icons";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink, TextLink } from "@/components/ui/button";
 import { FAQSchema } from "@/components/seo/json-ld";
@@ -242,7 +241,6 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal-400/40 to-transparent" />
         <Container className="grid min-h-[88vh] items-center gap-14 py-16 md:grid-cols-[1.02fr_0.98fr] md:py-20">
           <div>
-            <Eyebrow className="mb-6 text-signal-400">Operating Systems for Business Workflows</Eyebrow>
             <h1 className="text-display font-semibold">
               We build operating systems for business workflows.
             </h1>
@@ -343,7 +341,6 @@ export default function Home() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-18">
-          <Eyebrow className="mb-5">What Raptric does</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             Raptric helps companies automate workflows, structure technical support, and add engineering capacity without splitting the work across three separate vendors.
           </h2>
@@ -375,7 +372,6 @@ export default function Home() {
         <Container className="py-20 md:py-24">
           <div className="grid gap-12 md:grid-cols-[0.88fr_1.12fr] md:items-center md:gap-16">
             <div>
-              <Eyebrow className="mb-5">System design</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
                 A control room for workflows, not another stack of vendors.
               </h2>
@@ -443,7 +439,6 @@ export default function Home() {
 
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-20 md:py-24">
-          <Eyebrow className="mb-5">Core areas</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Three operating pillars and one packaged solutions layer.
           </h2>
@@ -580,7 +575,6 @@ export default function Home() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Example systems</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             Typical systems we help companies put in place when workflows start breaking under real pressure.
           </h2>
@@ -606,8 +600,10 @@ export default function Home() {
 
       <section className="border-b border-ink-200">
         <Container className="py-20 md:py-24">
-          <Eyebrow className="mb-10">Why Raptric</Eyebrow>
-          <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+          <h2 className="max-w-xl text-h1 font-semibold text-ink-900">
+            Why companies choose Raptric.
+          </h2>
+          <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-8">
             {WHY_RAPTRIC.map((item) => (
               <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7">
                 <IconBadge Icon={item.Icon} className="h-12 w-12" />
@@ -621,7 +617,6 @@ export default function Home() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Why companies choose this model</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Why Raptric instead of hiring separate vendors for automation, support, and engineering.
           </h2>
@@ -647,7 +642,6 @@ export default function Home() {
         <Container className="py-20 md:py-24">
           <div className="grid gap-12 md:grid-cols-[0.84fr_1.16fr] md:gap-16">
             <div>
-              <Eyebrow className="mb-5">Problems we solve</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
                 The gap between a tool and a working operation.
               </h2>
@@ -669,7 +663,6 @@ export default function Home() {
 
       <section className="border-b border-ink-200">
         <Container className="py-20 md:py-24">
-          <Eyebrow className="mb-3">How we work</Eyebrow>
           <h2 className="max-w-xl text-h1 font-semibold text-ink-900">
             Turning complexity into a system that runs.
           </h2>
@@ -709,7 +702,7 @@ export default function Home() {
 
       <section className="border-t border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-6">FAQ</Eyebrow>
+          <h2 className="mb-6 text-h1 font-semibold text-ink-900">Frequently asked questions</h2>
           <div className="mx-auto flex max-w-3xl flex-col divide-y divide-ink-200 border-y border-ink-200">
             {FAQS.map((item) => (
               <details key={item.q} className="group py-4">

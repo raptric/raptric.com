@@ -5,7 +5,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
 import {
@@ -80,7 +79,6 @@ export default function About() {
       <section className="bg-ink-950 text-mist-50">
         <Container className="grid items-center gap-12 py-20 md:grid-cols-2 md:gap-16 md:py-24">
           <div>
-            <Eyebrow className="mb-4 text-signal-400">About Raptric</Eyebrow>
             <h1 className="text-display font-semibold">
               Built by people who&apos;ve run the operation, not just advised on it.
             </h1>
@@ -117,7 +115,7 @@ export default function About() {
 
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-10">How we operate</Eyebrow>
+          <h2 className="mb-10 text-h1 font-semibold text-ink-900">How we operate.</h2>
           <div className="grid gap-10 md:grid-cols-3 md:gap-8">
             {PRINCIPLES.map((item) => (
               <div key={item.title} className="border-t border-ink-200 pt-6">
@@ -135,7 +133,7 @@ export default function About() {
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
           <div className="mx-auto max-w-2xl">
-            <Eyebrow className="mb-5">How Raptric started</Eyebrow>
+            <h2 className="mb-5 text-h2 font-semibold text-ink-900">How Raptric started.</h2>
             <p className="text-body-lg text-ink-700">
               The team behind Raptric has spent years running real operations
               at scale - including healthcare revenue-cycle and support
@@ -173,7 +171,6 @@ export default function About() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Where we apply it</Eyebrow>
           <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
             The company story only matters if it changes how the work gets built.
           </h2>

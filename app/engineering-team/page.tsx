@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink, TextLink } from "@/components/ui/button";
 import MethodologyScroll from "@/components/sections/methodology-scroll";
@@ -246,8 +245,7 @@ export default function EngineeringTeam() {
         <Container className="grid items-center gap-14 py-18 md:grid-cols-[0.92fr_1.08fr] md:py-24">
           <div>
             <SaasDevelopmentIcon className="h-12 w-12 text-signal-400" />
-            <Eyebrow className="mb-4 mt-6 text-signal-400">Engineering Team</Eyebrow>
-            <h1 className="text-display font-semibold">
+            <h1 className="mt-6 text-display font-semibold">
               Software development partner for teams that need to ship.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
@@ -326,7 +324,7 @@ export default function EngineeringTeam() {
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-18 md:py-22">
           <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
-            <Eyebrow className="mb-4">What this service covers</Eyebrow>
+            <h2 className="mb-4 text-h2 font-semibold text-ink-900">What this service covers.</h2>
             <p className="max-w-4xl text-body-lg text-ink-700">
               If you need a software development partner, SaaS delivery support, embedded engineering capacity, or stronger release visibility around real operations, this page should give you the clearest starting point.
             </p>
@@ -373,7 +371,6 @@ export default function EngineeringTeam() {
               </div>
             </div>
           </div>
-          <Eyebrow className="mb-5">Capability map</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Engineering depth across product, platform, support, and the systems behind the scenes.
           </h2>
@@ -461,7 +458,6 @@ export default function EngineeringTeam() {
         <Container className="py-18 md:py-22">
           <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-16">
             <div>
-              <Eyebrow className="mb-5">Delivery model</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
                 Delivery visibility designed into the work from day one.
               </h2>
@@ -546,7 +542,6 @@ export default function EngineeringTeam() {
         <Container className="py-16 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">Engineering outcomes</Eyebrow>
               <h2 className="text-h2 font-semibold text-ink-900">
                 What a strong software development partner changes beyond code delivery.
               </h2>
@@ -554,11 +549,11 @@ export default function EngineeringTeam() {
                 Buyers usually want clearer release visibility, fewer hidden blockers, better QA discipline, and less operational noise caused by disconnected engineering work.
               </p>
               <p className="mt-3 max-w-md text-body text-ink-600">
-                That is why this page overlaps with{" "}
+                When software has to serve more than one internal workflow,{" "}
                 <TextLink href="/support-operations">support operations</TextLink>{" "}
                 and{" "}
                 <TextLink href="/ai-automation">AI automation services</TextLink>{" "}
-                whenever the software has to serve more than one internal workflow.
+                usually come into it too.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -574,7 +569,6 @@ export default function EngineeringTeam() {
 
       <section className="border-b border-ink-200">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-3">Engagement models</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Different structures depending on whether you need capacity, ownership, or a systems pod.
           </h2>
@@ -599,7 +593,6 @@ export default function EngineeringTeam() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Where this applies</Eyebrow>
           <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
             Platform examples where engineering capacity has to support the operating model, not just the backlog.
           </h2>
@@ -624,7 +617,6 @@ export default function EngineeringTeam() {
 
       <section className="border-b border-ink-200 bg-white">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Example delivery models</Eyebrow>
           <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
             Engineering delivery models for teams balancing roadmap pressure, QA discipline, and operational support.
           </h2>
@@ -641,12 +633,14 @@ export default function EngineeringTeam() {
               </div>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl text-body text-ink-600">
-            These engineering models often connect with{" "}
-            <TextLink href="/support-operations">technical support systems</TextLink>,{" "}
-            <TextLink href="/solutions">platform solutions</TextLink>, and the comparison in{" "}
-            <TextLink href="/insights/software-development-partner-vs-staff-augmentation">software development partner vs staff augmentation</TextLink>.
-          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-500">
+            <span>Also relevant:</span>
+            <TextLink href="/support-operations">technical support systems</TextLink>
+            <span>·</span>
+            <TextLink href="/solutions">platform solutions</TextLink>
+            <span>·</span>
+            <TextLink href="/insights/software-development-partner-vs-staff-augmentation">software development partner vs staff augmentation</TextLink>
+          </div>
         </Container>
       </section>
 
@@ -658,8 +652,7 @@ export default function EngineeringTeam() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(108,92,231,0.34),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(108,92,231,0.16),transparent_28%),linear-gradient(180deg,#0b0b0f,#12121a)]" />
                 <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-signal-500/14 blur-[110px]" />
                 <div className="relative p-7">
-                  <Eyebrow className="text-signal-300">Where delivery starts slipping</Eyebrow>
-                  <h2 className="mt-4 text-h1 font-semibold">
+                  <h2 className="text-h1 font-semibold">
                     Engineering gaps turn into operational problems fast.
                   </h2>
                   <p className="mt-4 max-w-lg text-body text-mist-50/72">
@@ -731,7 +724,7 @@ export default function EngineeringTeam() {
 
       <section className="bg-ink-950 text-mist-50">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-6 text-signal-300">FAQ</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold">Frequently asked questions</h2>
           <div className="mx-auto mb-12 flex max-w-3xl flex-col divide-y divide-mist-50/12 border-y border-mist-50/12">
             {FAQS.map((item) => (
               <details key={item.q} className="group py-4">
@@ -745,7 +738,6 @@ export default function EngineeringTeam() {
           </div>
           <div className="grid gap-10 md:grid-cols-[0.88fr_1.12fr] md:gap-16">
             <div>
-              <Eyebrow className="mb-5 text-signal-300">What strong engineering delivery looks like</Eyebrow>
               <h2 className="text-h1 font-semibold">
                 Serious engineering support should feel accountable, visible, and steady under pressure.
               </h2>

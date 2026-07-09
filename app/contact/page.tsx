@@ -2,7 +2,6 @@ import ContactForm from "@/components/contact/contact-form";
 import { BreadcrumbSchema, ContactPageSchema } from "@/components/seo/json-ld";
 import { CtaLink } from "@/components/ui/button";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import {
   buildMetadata,
   CALENDLY_URL,
@@ -42,7 +41,6 @@ export default function Contact() {
         <Container className="py-20 lg:py-24">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <Eyebrow className="mb-6 text-signal-400">Contact</Eyebrow>
               <h1 className="max-w-2xl text-h1 font-semibold text-mist-50">
                 Start with the clearest next step.
               </h1>
@@ -140,7 +138,6 @@ export default function Contact() {
         <Container className="py-16 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">Project Inquiry</Eyebrow>
               <h2 className="max-w-lg text-h2 font-semibold text-ink-900">
                 Prefer to send the project context first?
               </h2>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink, TextLink } from "@/components/ui/button";
 import { AiAutomationIcon } from "@/components/illustrations/service-icons";
@@ -235,8 +234,7 @@ export default function AiAutomation() {
         <Container className="grid gap-12 py-20 md:grid-cols-[0.94fr_1.06fr] md:items-center md:py-28">
           <div>
             <AiAutomationIcon className="h-12 w-12 text-signal-400" />
-            <Eyebrow className="mb-4 mt-6 text-signal-400">AI Automation Services</Eyebrow>
-            <h1 className="text-display font-semibold">
+            <h1 className="mt-6 text-display font-semibold">
               AI automation systems built for real business workflows.
             </h1>
             <p className="mt-6 max-w-xl text-body-lg text-mist-50/68">
@@ -356,7 +354,6 @@ export default function AiAutomation() {
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-16 md:py-20">
           <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
-            <Eyebrow className="mb-4">What this service covers</Eyebrow>
             <p className="max-w-4xl text-body-lg text-ink-700">
               If you are looking for AI automation services, workflow automation, n8n systems, CRM automation, or AI-assisted support that can survive real volume and exceptions, this is the page to start with.
             </p>
@@ -403,12 +400,12 @@ export default function AiAutomation() {
               </div>
             </div>
           </div>
-          <Eyebrow className="mb-8">What we actually build</Eyebrow>
+          <h2 className="mb-8 text-h2 font-semibold text-ink-900">What we actually build.</h2>
           <div className="grid gap-5 md:grid-cols-3">
             {SERVICE_LINES.map((item) => (
               <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-7 shadow-lg">
                 <IconBadge Icon={item.Icon} className="h-12 w-12" />
-                <h2 className="mt-5 text-h3 font-medium text-ink-900">{item.title}</h2>
+                <h3 className="mt-5 text-h3 font-medium text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-body text-ink-600">{item.body}</p>
               </div>
             ))}
@@ -420,7 +417,6 @@ export default function AiAutomation() {
         <Container className="py-16 md:py-20">
           <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center md:gap-16">
             <div>
-              <Eyebrow className="mb-5">How we architect it</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
                 AI is useful when the workflow around it is designed properly.
               </h2>
@@ -490,7 +486,6 @@ export default function AiAutomation() {
 
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">Hands-on expertise</Eyebrow>
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-7 text-mist-50 shadow-xl">
               <p className="label text-signal-300">What buyers need confidence in</p>
@@ -529,7 +524,6 @@ export default function AiAutomation() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Example automation systems</Eyebrow>
           <h2 className="max-w-3xl text-h2 font-semibold text-ink-900">
             AI automation systems we build for teams running live sales, support, and operational workflows.
           </h2>
@@ -546,12 +540,14 @@ export default function AiAutomation() {
               </div>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl text-body text-ink-600">
-            These systems often connect to{" "}
-            <TextLink href="/support-operations">technical support systems</TextLink>,{" "}
-            <TextLink href="/solutions">solution builds</TextLink>, or the practical guidance in{" "}
-            <TextLink href="/insights">Insights</TextLink> once the workflow gets more operationally complex.
-          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-500">
+            <span>Also relevant:</span>
+            <TextLink href="/support-operations">technical support systems</TextLink>
+            <span>·</span>
+            <TextLink href="/solutions">solution builds</TextLink>
+            <span>·</span>
+            <TextLink href="/insights">Insights</TextLink>
+          </div>
         </Container>
       </section>
 
@@ -559,7 +555,6 @@ export default function AiAutomation() {
         <Container className="py-16 md:py-20">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">What better looks like</Eyebrow>
               <h2 className="text-h2 font-semibold text-ink-900">
                 Outcomes buyers actually care about from AI automation services.
               </h2>
@@ -589,7 +584,6 @@ export default function AiAutomation() {
         <Container className="py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-[0.78fr_1.22fr] md:items-center md:gap-16">
             <div>
-              <Eyebrow className="mb-4">Why buyers reach out</Eyebrow>
               <h2 className="text-h2 font-semibold text-ink-900">
                 The gap is usually not tooling. It is structure.
               </h2>
@@ -618,7 +612,7 @@ export default function AiAutomation() {
 
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">Example sales-facing use cases</Eyebrow>
+          <h2 className="mb-8 text-h2 font-semibold text-ink-900">Common starting points for AI automation projects.</h2>
           <div className="grid gap-5 md:grid-cols-3">
             {USE_CASES.map((item) => (
               <div key={item.title} className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 shadow-lg">
@@ -646,7 +640,6 @@ export default function AiAutomation() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Where this applies</Eyebrow>
           <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
             Solution examples where this automation layer becomes a real operating system.
           </h2>
@@ -671,7 +664,7 @@ export default function AiAutomation() {
 
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-6">Why Raptric</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold text-ink-900">Why companies work with Raptric on AI automation.</h2>
           <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
             <div className="grid gap-4">
               <div className="relative min-h-[420px] overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 shadow-xl">
@@ -745,7 +738,7 @@ export default function AiAutomation() {
 
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-6">FAQ</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold text-ink-900">Frequently asked questions</h2>
           <div className="mx-auto flex max-w-3xl flex-col divide-y divide-ink-200 border-y border-ink-200">
             {FAQS.map((item) => (
               <details key={item.q} className="group py-4">

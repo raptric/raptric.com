@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import { CtaLink, TextLink } from "@/components/ui/button";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/seo/json-ld";
 import { getAllInsights, getInsightBySlug } from "@/lib/mdx";
@@ -222,12 +221,11 @@ export default async function InsightEntry({
         author={entry.author}
       />
       <Container className="py-20 md:py-24">
-        <Eyebrow className="mb-5">{formatDate(entry.date)}</Eyebrow>
         <h1 className="max-w-2xl text-h1 font-semibold text-ink-900">
           {entry.title}
         </h1>
         <p className="mt-4 max-w-2xl text-body text-ink-600">
-          By {entry.author}. Field notes on automation, operations, and engineering systems.
+          {formatDate(entry.date)} · By {entry.author}. Field notes on automation, operations, and engineering systems.
         </p>
 
         {definition ? (
@@ -244,7 +242,6 @@ export default async function InsightEntry({
         {related ? (
           <div className="mt-14 grid gap-8 rounded-[var(--radius-lg)] border border-ink-900/10 bg-mist-100 p-6 md:grid-cols-[0.58fr_0.42fr]">
             <div>
-              <Eyebrow className="mb-4">Where This Applies</Eyebrow>
               <h2 className="text-h3 font-medium text-ink-900">
                 This article is most useful if you are evaluating {related.pillar.label}.
               </h2>
@@ -258,7 +255,7 @@ export default async function InsightEntry({
               </div>
             </div>
             <div>
-              <Eyebrow className="mb-4">Related Reads</Eyebrow>
+              <h3 className="mb-4 text-h3 font-medium text-ink-900">Related reads</h3>
               <div className="grid gap-3">
                 {related.reads.map((item) => (
                   <Link

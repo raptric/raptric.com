@@ -1,7 +1,6 @@
 import type { ComponentType } from "react";
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import IconBadge from "@/components/ui/icon-badge";
 import { CtaLink } from "@/components/ui/button";
 import { CheckIcon, FlowIcon } from "@/components/illustrations/concept-icons";
@@ -28,7 +27,6 @@ export type ChildServicePageData = {
 
 export default function ChildServicePage({ data }: { data: ChildServicePageData }) {
   const {
-    eyebrow,
     title,
     intro,
     Icon,
@@ -65,8 +63,7 @@ export default function ChildServicePage({ data }: { data: ChildServicePageData 
             <Link href={parentHref} className="hover:text-mist-50">{parentLabel}</Link>
           </nav>
           <Icon className="h-11 w-11 text-signal-400" />
-          <Eyebrow className="mb-4 mt-6 text-signal-400">{eyebrow}</Eyebrow>
-          <h1 className="max-w-2xl text-h1 font-semibold">{title}</h1>
+          <h1 className="mt-6 max-w-2xl text-h1 font-semibold">{title}</h1>
           <p className="mt-6 max-w-xl text-body-lg text-mist-50/65">{intro}</p>
           <div className="mt-8">
             <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
@@ -77,7 +74,7 @@ export default function ChildServicePage({ data }: { data: ChildServicePageData 
       {/* Covers */}
       <section className="border-b border-ink-200">
         <Container className="py-14 md:py-16">
-          <Eyebrow className="mb-6">What this covers</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold text-ink-900">What this covers.</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {covers.map((item) => (
               <div key={item} className="flex gap-3 rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
@@ -92,7 +89,7 @@ export default function ChildServicePage({ data }: { data: ChildServicePageData 
       {/* Problems */}
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-14 md:py-16">
-          <Eyebrow className="mb-4">Problems this solves</Eyebrow>
+          <h2 className="mb-4 text-h2 font-semibold text-ink-900">Problems this solves.</h2>
           <dl className="grid gap-6 sm:grid-cols-2">
             {problems.map((p, i) => (
               <div key={p} className="border-t border-ink-200 pt-4">
@@ -107,7 +104,7 @@ export default function ChildServicePage({ data }: { data: ChildServicePageData 
       {/* How it works */}
       <section className="border-b border-ink-200">
         <Container className="py-14 md:py-16">
-          <Eyebrow className="mb-8">How it works</Eyebrow>
+          <h2 className="mb-8 text-h2 font-semibold text-ink-900">How it works.</h2>
           <div className="grid gap-8 md:grid-cols-3">
             {howItWorks.map((step, i) => (
               <div key={step.title} className="border-t border-ink-200 pt-5">
@@ -123,7 +120,7 @@ export default function ChildServicePage({ data }: { data: ChildServicePageData 
       {/* Use cases */}
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-14 md:py-16">
-          <Eyebrow className="mb-6">Example use cases</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold text-ink-900">Example use cases.</h2>
           <div className="grid gap-5 md:grid-cols-3">
             {useCases.map((u, i) => (
               <div key={u} className="flex flex-col gap-3 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5">
@@ -139,7 +136,7 @@ export default function ChildServicePage({ data }: { data: ChildServicePageData 
       {/* FAQ */}
       <section className="border-b border-ink-200">
         <Container className="py-14 md:py-16">
-          <Eyebrow className="mb-6">FAQ</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold text-ink-900">Frequently asked questions</h2>
           <div className="mx-auto flex max-w-2xl flex-col divide-y divide-ink-200 border-y border-ink-200">
             {faq.map((item) => (
               <details key={item.q} className="group py-4">

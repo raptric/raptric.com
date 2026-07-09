@@ -1,7 +1,6 @@
 import type { ComponentType } from "react";
 import Link from "next/link";
 import Container from "@/components/ui/container";
-import Eyebrow from "@/components/ui/eyebrow";
 import { CtaLink } from "@/components/ui/button";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/json-ld";
 
@@ -60,15 +59,16 @@ export default function PackagedSolutionPage({ data }: { data: PackagedSolutionD
             <span>/</span>
             <Link href="/solutions" className="hover:text-mist-50">Solutions</Link>
           </nav>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Icon className="h-10 w-10 text-signal-400" />
-            <span className={`label inline-flex items-center gap-1.5 ${STATUS_STYLES[status]}`}>
+            <span className={`inline-flex items-center gap-1.5 text-sm font-medium ${STATUS_STYLES[status]}`}>
               <span className="h-1.5 w-1.5 rounded-full bg-current" />
               {status}
             </span>
+            <span className="text-sm text-mist-50/50">·</span>
+            <span className="text-sm font-medium text-mist-50/70">{category}</span>
           </div>
-          <Eyebrow className="mb-4 mt-6 text-signal-400">{category}</Eyebrow>
-          <h1 className="max-w-2xl text-display font-semibold">{name}</h1>
+          <h1 className="mt-6 max-w-2xl text-display font-semibold">{name}</h1>
           <p className="mt-6 max-w-xl text-body-lg text-mist-50/65">{intro}</p>
           <div className="mt-8">
             <CtaLink href="/contact">Let&apos;s Talk</CtaLink>
@@ -81,7 +81,6 @@ export default function PackagedSolutionPage({ data }: { data: PackagedSolutionD
         <Container className="py-16 md:py-20">
           <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
             <div>
-              <Eyebrow className="mb-5">What it is</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">{title}</h2>
               <p className="mt-5 max-w-md text-body-lg text-ink-600">{whatItIs}</p>
             </div>
@@ -93,7 +92,7 @@ export default function PackagedSolutionPage({ data }: { data: PackagedSolutionD
       {/* How it works */}
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-8">How it works</Eyebrow>
+          <h2 className="mb-8 text-h2 font-semibold text-ink-900">How it works.</h2>
           <div className="grid gap-8 md:grid-cols-3">
             {steps.map((step, i) => (
               <div key={step.title} className="border-t border-ink-200 pt-5">
@@ -109,7 +108,7 @@ export default function PackagedSolutionPage({ data }: { data: PackagedSolutionD
       {/* Who it's for */}
       <section className="border-b border-ink-200">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-6">Who it&apos;s for</Eyebrow>
+          <h2 className="mb-6 text-h2 font-semibold text-ink-900">Who it&apos;s for.</h2>
           <ul className="grid gap-4 sm:grid-cols-2">
             {whoItsFor.map((w) => (
               <li key={w} className="flex gap-3 rounded-[var(--radius-md)] border border-ink-200 bg-mist-50 p-4">
