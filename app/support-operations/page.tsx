@@ -303,7 +303,7 @@ export default function SupportOperationsPage() {
                   AI + human support coverage
                 </div>
                 <div className="absolute bottom-6 left-6 right-6 rounded-[var(--radius-lg)] border border-mist-50/12 bg-ink-950/72 p-5 backdrop-blur">
-                  <p className="label text-signal-300">Support posture</p>
+                  <p className="label text-signal-300">Service model</p>
                   <p className="mt-3 text-body text-mist-50/80">
                     Faster first response, cleaner escalation, stronger ticket triage, and
                     better protection for the engineering roadmap.
@@ -408,7 +408,7 @@ export default function SupportOperationsPage() {
         <Container className="py-18 md:py-22">
           <div className="grid gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
             <div>
-              <Eyebrow className="mb-5">Where this is going</Eyebrow>
+              <Eyebrow className="mb-5">Why this matters long term</Eyebrow>
               <h2 className="text-h1 font-semibold text-ink-900">
                 AI Support Operations is the broader category behind modern support for AI
                 and SaaS products.
@@ -429,7 +429,7 @@ export default function SupportOperationsPage() {
               </div>
             </div>
             <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
-              <p className="label text-signal-700">Framework preview</p>
+                <p className="label text-signal-700">AI support framework</p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {AI_FRAMEWORK_PREVIEW.map((item) => (
                   <div
@@ -580,7 +580,7 @@ export default function SupportOperationsPage() {
           <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-7 md:p-8">
             <div className="grid gap-6 md:grid-cols-[0.68fr_0.32fr] md:items-center">
               <div>
-                <p className="label text-signal-300">Commercial close</p>
+                <p className="label text-signal-300">Next step</p>
                 <h3 className="mt-3 text-h2 font-semibold">
                   Need technical support that can handle AI, product complexity, and human
                   judgment without breaking trust?

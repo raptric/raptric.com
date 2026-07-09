@@ -135,7 +135,7 @@ export default function About() {
       <section className="border-b border-ink-200 bg-mist-200/60">
         <Container className="py-16 md:py-20">
           <div className="mx-auto max-w-2xl">
-            <Eyebrow className="mb-5">Where this comes from</Eyebrow>
+            <Eyebrow className="mb-5">How Raptric started</Eyebrow>
             <p className="text-body-lg text-ink-700">
               The team behind Raptric has spent years running real operations
               at scale - including healthcare revenue-cycle and support
@@ -153,7 +153,7 @@ export default function About() {
                 </div>
               ))}
               <div className="rounded-[var(--radius-md)] border border-ink-200 bg-ink-950 p-5 text-mist-50">
-                <p className="label text-signal-300">Trust cues</p>
+                <p className="label text-signal-300">Company details</p>
                 <div className="mt-4 grid gap-3">
                   {TRUST_CUES.map((item) => (
                     <div key={item.label} className="flex items-start gap-3">
@@ -173,7 +173,7 @@ export default function About() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Where That Shows Up</Eyebrow>
+          <Eyebrow className="mb-5">Where we apply it</Eyebrow>
           <h2 className="max-w-2xl text-h2 font-semibold text-ink-900">
             The company story only matters if it changes how the work gets built.
           </h2>

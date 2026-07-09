@@ -326,7 +326,7 @@ export default function EngineeringTeam() {
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-18 md:py-22">
           <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
-            <Eyebrow className="mb-4">Answer first</Eyebrow>
+            <Eyebrow className="mb-4">What this service covers</Eyebrow>
             <p className="max-w-4xl text-body-lg text-ink-700">
               If you need a software development partner, SaaS delivery support, embedded engineering capacity, or stronger release visibility around real operations, this page should give you the clearest starting point.
             </p>
@@ -475,7 +475,7 @@ export default function EngineeringTeam() {
             <div className="overflow-hidden rounded-[var(--radius-lg)] border border-ink-200 bg-ink-950 p-6 shadow-xl">
               <div className="grid gap-5 md:grid-cols-[0.62fr_0.38fr]">
                 <div className="rounded-[var(--radius-lg)] border border-mist-50/10 bg-mist-50/[0.04] p-5">
-                  <p className="label text-signal-300">Build path</p>
+                  <p className="label text-signal-300">Delivery stages</p>
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     {["Roadmap", "Build", "QA", "Release"].map((item) => (
                       <div
@@ -584,7 +584,7 @@ export default function EngineeringTeam() {
           <div className="mt-8 rounded-[var(--radius-lg)] border border-signal-200 bg-signal-50 p-6">
             <div className="grid gap-4 md:grid-cols-[0.72fr_0.28fr] md:items-center">
               <div>
-                <p className="label text-signal-700">A common next step</p>
+                <p className="label text-signal-700">Common engagement model</p>
                 <p className="mt-3 text-body text-ink-700">
                   If the roadmap is moving faster than delivery confidence, the fastest next step is a focused engineering-partner conversation about scope, release pressure, and where the team is getting stuck.
                 </p>
@@ -787,7 +787,7 @@ export default function EngineeringTeam() {
           <div className="mt-12 rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-7 md:p-8">
             <div className="grid gap-6 md:grid-cols-[0.68fr_0.32fr] md:items-center">
               <div>
-                <p className="label text-signal-300">Commercial close</p>
+                <p className="label text-signal-300">Next step</p>
                 <h3 className="mt-3 text-h2 font-semibold">
                   Need engineering capacity that can live inside the system you are building?
                 </h3>

@@ -306,7 +306,7 @@ export default function AiAutomation() {
 
             <div className="grid gap-4">
               <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur">
-                <p className="label text-signal-300">Working stack</p>
+                <p className="label text-signal-300">Tooling and integrations</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {TOOL_STACK.slice(0, 6).map((item) => (
                     <span
@@ -319,14 +319,14 @@ export default function AiAutomation() {
                 </div>
               </div>
               <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur">
-                <p className="label text-signal-300">Build posture</p>
+                <p className="label text-signal-300">Delivery approach</p>
                 <p className="mt-3 text-sm leading-6 text-mist-50/78">
                   Hands-on builders with practical workflow experience, not just
                   AI strategy slides and prompt theatre.
                 </p>
               </div>
               <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-5 shadow-xl backdrop-blur">
-                <p className="label text-signal-300">Sales angle</p>
+                <p className="label text-signal-300">Business outcome</p>
                 <p className="mt-3 text-sm leading-6 text-mist-50/78">
                   Automation that improves response times, lead handling,
                   throughput, and specialist utilization.
@@ -356,7 +356,7 @@ export default function AiAutomation() {
       <section className="border-b border-ink-200 bg-[radial-gradient(circle_at_top_left,_rgba(108,92,231,0.08),_transparent_38%),linear-gradient(to_bottom,_var(--color-mist-50),_var(--color-mist-100))]">
         <Container className="py-16 md:py-20">
           <div className="mb-10 rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-6 md:p-7">
-            <Eyebrow className="mb-4">Answer first</Eyebrow>
+            <Eyebrow className="mb-4">What this service covers</Eyebrow>
             <p className="max-w-4xl text-body-lg text-ink-700">
               If you are looking for AI automation services, workflow automation, n8n systems, CRM automation, or AI-assisted support that can survive real volume and exceptions, this is the page to start with.
             </p>

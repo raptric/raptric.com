@@ -250,7 +250,7 @@ export default function AiSupportOperationsPage() {
       <section className="border-b border-ink-200 bg-mist-100">
         <Container className="py-12 md:py-14">
           <div className="mb-8 rounded-[var(--radius-lg)] border border-ink-200 bg-white p-6 shadow-sm">
-            <Eyebrow className="mb-4">What this page is about</Eyebrow>
+            <Eyebrow className="mb-4">AI Support Operations overview</Eyebrow>
             <p className="max-w-4xl text-body-lg text-ink-700">
               This page explains the framework behind Raptric&apos;s long-term category:
               operating production AI systems through technical support, AI quality
@@ -328,7 +328,7 @@ export default function AiSupportOperationsPage() {
 
       <section className="border-b border-ink-200 bg-white">
         <Container className="py-18 md:py-22">
-          <Eyebrow className="mb-5">How this category fits the market</Eyebrow>
+          <Eyebrow className="mb-5">Why this category matters</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             AI Support Operations sits between technical support outsourcing, AI quality,
             and production AI reliability.
@@ -397,7 +397,7 @@ export default function AiSupportOperationsPage() {
           <div className="rounded-[var(--radius-lg)] border border-mist-50/12 bg-mist-50/[0.04] p-7 md:p-8">
             <div className="grid gap-6 md:grid-cols-[0.68fr_0.32fr] md:items-center">
               <div>
-                <p className="label text-signal-300">Commercial bridge</p>
+                <p className="label text-signal-300">Direct service path</p>
                 <h3 className="mt-3 text-h2 font-semibold">
                   If you need this framework applied in the real world, start with the service page.
                 </h3>

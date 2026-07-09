@@ -343,7 +343,7 @@ export default function Home() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-18">
-          <Eyebrow className="mb-5">Answer first</Eyebrow>
+          <Eyebrow className="mb-5">What Raptric does</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             Raptric helps companies automate workflows, structure technical support, and add engineering capacity without splitting the work across three separate vendors.
           </h2>
@@ -411,7 +411,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/35 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 rounded-[var(--radius-md)] border border-mist-50/10 bg-ink-950/75 p-4 backdrop-blur">
-                    <p className="label text-signal-300">Architecture review</p>
+                    <p className="label text-signal-300">System architecture</p>
                     <p className="mt-2 text-sm leading-6 text-mist-50/78">
                       Real exceptions, routing logic, and operator visibility get designed before a workflow ever goes live.
                     </p>
@@ -419,13 +419,13 @@ export default function Home() {
                 </div>
                 <div className="grid gap-4">
                   <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-mist-50 p-5 shadow-lg">
-                    <p className="label text-slate-500">Checkpoint rule</p>
+                    <p className="label text-slate-500">Human checkpoint</p>
                     <p className="mt-3 text-body text-ink-700">
                       AI handles repeatability. Humans handle trust, judgment, and the edge cases that define the customer experience.
                     </p>
                   </div>
                   <div className="rounded-[var(--radius-lg)] border border-ink-200 bg-gradient-to-br from-signal-500 to-signal-700 p-5 text-white shadow-lg">
-                    <p className="label text-white/70">Live signal</p>
+                    <p className="label text-white/70">Production outcome</p>
                     <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
                       {["Input", "Route", "Resolve"].map((item) => (
                         <div key={item} className="rounded-md border border-white/12 bg-white/8 px-3 py-2 text-center">
@@ -580,7 +580,7 @@ export default function Home() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Representative builds</Eyebrow>
+          <Eyebrow className="mb-5">Example systems</Eyebrow>
           <h2 className="max-w-3xl text-h1 font-semibold text-ink-900">
             Typical systems we help companies put in place when workflows start breaking under real pressure.
           </h2>
@@ -621,7 +621,7 @@ export default function Home() {
 
       <section className="border-b border-ink-200 bg-mist-50">
         <Container className="py-16 md:py-20">
-          <Eyebrow className="mb-5">Why this model</Eyebrow>
+          <Eyebrow className="mb-5">Why companies choose this model</Eyebrow>
           <h2 className="max-w-2xl text-h1 font-semibold text-ink-900">
             Why Raptric instead of hiring separate vendors for automation, support, and engineering.
           </h2>
